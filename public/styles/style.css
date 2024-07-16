@@ -3,7 +3,7 @@
   padding: 0;
   box-sizing: border-box;
 }
-a{
+a {
   text-decoration: none;
   color: inherit;
 }
@@ -76,7 +76,7 @@ body {
   font-size: 5.25rem;
   font-style: normal;
   font-weight: 700;
-  line-height: 137%;
+  line-height: 8.563rem;
 }
 .main_content .left .let {
   text-decoration: underline #ffa03f;
@@ -160,7 +160,7 @@ body {
     rgba(255, 255, 255, 0.4),
     rgba(255, 255, 255, 0.2)
   );
-  backdrop-filter: blur(.25rem);
+  backdrop-filter: blur(0.25rem);
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
   padding: 2.5rem 3.75rem;
 }
@@ -169,6 +169,7 @@ body {
   font-weight: 500;
   line-height: 2.055rem;
 }
+
 .search-box input {
   color: rgba(0, 0, 0, 0.65);
   font-size: 1rem;
@@ -177,6 +178,53 @@ body {
   margin-left: -0.5rem;
   border: none;
 }
+
+.date {
+  padding: 0.5rem 0.2rem 0.2rem;
+  border: none;
+  font-family: Inter;
+  color: rgba(0, 0, 0, 0.65);
+  margin-left: -0.5rem;
+  font-weight: 500;
+}
+
+.range {
+  appearance: none;
+  width: 7rem;
+  margin-top: 0.5rem;
+  height: 0.8rem;
+  border-radius: 0.5rem;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+
+.range:hover {
+  opacity: 1;
+}
+
+.range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  border-radius: 50%;
+  height: 20px;
+  background: #ffa03f;
+  cursor: pointer;
+}
+
+.range::-moz-range-thumb {
+  width: 25px;
+  cursor: pointer;
+}
+
+#priceDisplay {
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 1rem;
+}
+
 .search_icon {
   display: flex;
   justify-content: center;
@@ -188,6 +236,7 @@ body {
   padding-right: 1.875rem;
   border-radius: 50%;
 }
+
 .search_icon i {
   color: white;
   font-size: 1.563rem;
