@@ -65,14 +65,14 @@ body {
 }
 .main_content .left {
   width: 40%;
-  padding: 6rem 6rem;
+  padding: 6rem 8rem;
 }
 .main_content .left h1 {
   color: #000;
   font-size: 5.25rem;
   font-style: normal;
   font-weight: 700;
-  line-height: 137%;
+  line-height: 137px;
 }
 .main_content .left .let {
   text-decoration: underline #ffa03f;
@@ -86,19 +86,123 @@ body {
   display: flex;
   width: 60%;
   gap: 5rem;
+  padding-left: 200px;
 }
 
 .main_content .right .column1 {
-  width: 30rem;
+  padding-top: 50px;
+  width: 305px;
+  height: 830px;
+}
+.main_content .right .column1 .card1 {
+  background-image: url("/TravelTicketFrontend/assets/img1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 305px;
+  height: 420px;
+  border-radius: 30px;
+  margin-bottom: 15px;
+}
+.main_content .right .column1 .card2 {
+  background-image: url("/TravelTicketFrontend/assets/img7.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 305px;
+  height: 399px;
+  border-radius: 30px;
+}
+
+.plane {
+  margin-top: -50px;
+  background-image: url("/TravelTicketFrontend/assets/plane.jpg");
+  height: 250px;
+  width: 500px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.main_content .right .card3 {
+  width: 409px;
+  height: 612px;
+  border-radius: 1.875rem;
+  background-image: url("/TravelTicketFrontend/assets/img4.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-top: 0.5rem;
+}
+
+.para_content {
+  font-size: 1.5rem;
+  font-weight: 500;
   margin-top: 2rem;
+  line-height: 2.055rem;
+  color: rgba(0, 0, 0, 0.75);
 }
-.main_content .right .column1 .card {
-  background-color: #eb6161;
-  width: 19rem;
-  height: 25rem;
+
+/* location search */
+.location_search {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  z-index: 1;
+  width: 50.063rem;
+  height: 8.75rem;
+  border-radius: 3.063rem;
+  margin-top: 7.5rem;
+  margin-left: 5rem;
+  background: white;
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.4),
+    rgba(255, 255, 255, 0.2)
+  );
+  backdrop-filter: blur(4px);
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+  padding: 40px 60px;
 }
-.main_content .right .column2 {
-  width: 30rem;
-  background-color: rgb(202, 138, 60);
-  margin-top: 6rem;
+
+.location_search p {
+  font-weight: 500;
+  line-height: 2.055rem;
+}
+
+.search_icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.8rem;
+  height: 3rem;
+  width: 3rem;
+  background-color: #ffa03f;
+  padding-right: 30px;
+  border-radius: 50%;
+}
+.search_icon i {
+  color: white;
+  font-size: 25px;
+}
+
+/* footer */
+footer {
+  background-color: #ffa03f;
+  color: #fff;
+  font-size: 1.8rem;
+  justify-content: center;
+  align-items: center;
+}
+.copyright {
+  margin-left: 35%;
+  padding-bottom: 3rem;
+}
+.foot {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 5rem;
+  margin-bottom: 2rem;
+}
+.foot-el {
+  margin-top: 5rem;
+}
+.foot-el h3 {
+  margin-bottom: 3rem;
 }
