@@ -3,6 +3,10 @@
   padding: 0;
   box-sizing: border-box;
 }
+a{
+  text-decoration: none;
+  color: inherit;
+}
 html,
 body {
   width: 100%;
@@ -191,7 +195,7 @@ footer {
   align-items: center;
 }
 .copyright {
-  margin-left: 35%;
+  text-align: center;
   padding-bottom: 3rem;
 }
 .foot {
