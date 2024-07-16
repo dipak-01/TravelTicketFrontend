@@ -72,7 +72,7 @@ body {
   font-size: 5.25rem;
   font-style: normal;
   font-weight: 700;
-  line-height: 137px;
+  line-height: 137%;
 }
 .main_content .left .let {
   text-decoration: underline #ffa03f;
@@ -86,44 +86,44 @@ body {
   display: flex;
   width: 60%;
   gap: 5rem;
-  padding-left: 200px;
+  padding-left: 12.5rem;
 }
 
 .main_content .right .column1 {
-  padding-top: 50px;
-  width: 305px;
-  height: 830px;
+  padding-top: 3.125rem;
+  width: 19.063rem;
+  height: 51.875rem;
 }
 .main_content .right .column1 .card1 {
   background-image: url("/TravelTicketFrontend/assets/img1.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  width: 305px;
-  height: 420px;
-  border-radius: 30px;
-  margin-bottom: 15px;
+  width: 19.063rem;
+  height: 26.25rem;
+  border-radius: 1.875rem;
+  margin-bottom: 0.938rem;
 }
 .main_content .right .column1 .card2 {
   background-image: url("/TravelTicketFrontend/assets/img7.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  width: 305px;
-  height: 399px;
-  border-radius: 30px;
+  width: 19.063rem;
+  height: 24.938rem;
+  border-radius: 1.875rem;
 }
 
 .plane {
-  margin-top: -50px;
+  margin-top: -3.125rem;
   background-image: url("/TravelTicketFrontend/assets/plane.jpg");
-  height: 250px;
-  width: 500px;
+  height: 15.625rem;
+  width: 31.25rem;
   background-repeat: no-repeat;
   background-size: contain;
 }
 
 .main_content .right .card3 {
-  width: 409px;
-  height: 612px;
+  width: 25.563rem;
+  height: 38.25rem;
   border-radius: 1.875rem;
   background-image: url("/TravelTicketFrontend/assets/img4.jpg");
   background-repeat: no-repeat;
@@ -156,9 +156,9 @@ body {
     rgba(255, 255, 255, 0.4),
     rgba(255, 255, 255, 0.2)
   );
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(.25rem);
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
-  padding: 40px 60px;
+  padding: 2.5rem 3.75rem;
 }
 
 .location_search p {
@@ -174,12 +174,12 @@ body {
   height: 3rem;
   width: 3rem;
   background-color: #ffa03f;
-  padding-right: 30px;
+  padding-right: 1.875rem;
   border-radius: 50%;
 }
 .search_icon i {
   color: white;
-  font-size: 25px;
+  font-size: 1.563rem;
 }
 
 /* footer */
