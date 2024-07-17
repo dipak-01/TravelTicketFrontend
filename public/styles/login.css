@@ -1,0 +1,264 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+    font-family: Inter;
+    background-color: #fff;
+  }
+  
+  /*nav bar*/
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.48rem 2.5rem;
+    width: 100%;
+  }
+  .nav .logo {
+    display: flex;
+    gap: 0;
+  }
+  .nav .logo a {
+    color: #000;
+    font-size: 1.75rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 137%;
+    cursor: pointer;
+  }
+  .nav .logo .toor {
+    color: #ffa03f;
+  }
+  
+  .nav .navigation {
+    display: flex;
+    align-items: center;
+    gap: 3.8rem;
+  }
+  .nav .navigation a {
+    color: #000;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 137%;
+    cursor: pointer;
+  }
+  
+  .nav .menu {
+    color: #000;
+    font-size: 1.75rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 137%;
+    cursor: pointer;
+  }
+
+
+
+.container{
+  position: relative;
+}
+  .form-container{
+    display: flex;
+    gap:5vw;
+    position: absolute;
+    margin-left: 13vw;
+    height: 80vh;
+    width: 74vw;
+    background-color:#ffebd7;
+    margin-top: 4.5vh;
+    
+  }
+  .image{
+    background-image:url("/TravelTicketFrontend/assets/img8.jpg") ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height:100%;
+    width: 50%;
+  }
+
+
+   /*sign up*/
+.sign-up-container{
+  z-index: 2;
+  opacity: 1;
+}
+.sign-up-form{
+  padding: 3vh 4vw;
+}
+.sign-up-form h1{
+  color: #000;
+  font-weight: 600;
+  margin: 100px 10px 0px;
+  padding: 0px 30px 0px 30px;
+  text-align: center;
+  
+}
+.sign-up-form .social-container{
+  color: #000;
+  font-weight: 400;
+  margin: 20px 10px 0px;
+  padding: 0px 30px 0px 30px;
+  text-align: center;
+}
+.sign-up-form .social-container a{
+  margin-left: 0.75vw;
+  margin-right: 0.75vw;
+}
+.sign-up-form  .infield{
+  position: relative;
+  margin: 18px 0;
+  width: 100%;
+  height: 35px;
+}
+.sign-up-form  .infield input{
+  border-radius: 4px;
+  height: 100%;
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 10px 40px;
+  transition: all 0.2s ease;
+  border-bottom: 1.5px solid #aaaaaa;
+}
+
+.sign-up-form button{
+  border-radius: 10px;
+  height: 100%;
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 10px 40px;
+  background-color:  #040200;
+  color: #fff;
+  text-align: center;
+}
+.sign-up-form .have_account{
+  font-size: 12px;
+  text-align: center;
+  margin-top: 15px;
+}
+.sign-up-form .have_account a{
+  color: #ff3f6c;
+  font-size: 12px;
+}
+.sign-up-form .have_account a:hover{
+  text-decoration: underline;
+}
+.container .down{
+  z-index: 1;
+  opacity: 0;
+}
+
+
+.infield i{
+  position: absolute;
+  top: 50%;
+  font-size: 17px;
+  transform: translateY(-50%);
+  color: #707070;
+  left: 10px;
+}
+
+
+
+
+
+/*sign in*/
+.container .up{
+  z-index: 3;
+  opacity: 1;
+}
+.sign-in-container{
+  z-index: 1;
+  opacity: 0;
+}
+.sign-in-form{
+  padding: 3vh 5vw;
+}
+.sign-in-form h1{
+  color: #000;
+  font-weight: 600;
+  margin: 100px 10px 0px;
+  padding: 0px 30px 0px 30px;
+  text-align: center;
+  
+}
+.sign-in-form .social-container{
+  color: #000;
+  font-weight: 400;
+  margin: 20px 10px 0px;
+  padding: 0px 30px 0px 30px;
+  text-align: center;
+}
+.sign-in-form .social-container a{
+  margin-left: 0.75vw;
+  margin-right: 0.75vw;
+}
+.sign-in-form  .infield{
+  position: relative;
+  margin: 18px 0;
+  width: 100%;
+  height: 35px;
+}
+.sign-in-form  .infield input{
+  border-radius: 4px;
+  height: 100%;
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 10px 40px;
+  transition: all 0.2s ease;
+  border-bottom: 1.5px solid #aaaaaa;
+}
+
+.sign-in-form button{
+  border-radius: 10px;
+  height: 100%;
+  width: 100%;
+  border: none;
+  margin-top: 18px;
+  margin-left: 0;
+  margin-right: 0;
+  outline: none;
+  padding: 10px 40px;
+  background-color:  #040200;
+  color: #fff;
+  text-align: center;
+}
+
+.sign-in-form .forgot{
+  color: #ff3f6c;
+  font-size: 12px;
+}
+.sign-in-form .forgot:hover{
+  text-decoration: underline;
+}
+.sign-in-form .Dont_have_account{
+  font-size: 12px;
+  text-align: center;
+  margin-top: 15px;
+}
+.sign-in-form .Dont_have_account a{
+  color: #ff3f6c;
+  font-size: 12px;
+}
+.sign-in-form .Dont_have_account a:hover{
+  text-decoration: underline;
+}
+
+
+.plane{
+  height:150px;
+  width: 200px;
+  
+}
