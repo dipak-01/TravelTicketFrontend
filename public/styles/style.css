@@ -14,7 +14,9 @@ body {
   font-family: Inter;
   background-color: #fff;
 }
-
+.home{
+  width: 100vw;
+}
 /*nav bar*/
 .nav {
   display: flex;
@@ -88,7 +90,7 @@ body {
 
 .main_content .right {
   display: flex;
-  width: 60%;
+  width: 65%;
   gap: 5rem;
   padding-left: 12.5rem;
 }
@@ -265,3 +267,5 @@ footer {
 .foot-el h3 {
   margin-bottom: 3rem;
 }
+
+
