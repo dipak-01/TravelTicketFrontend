@@ -15,7 +15,9 @@ body {
   background-color: #fff;
   overflow-x: hidden;
 }
-
+.home {
+  width: 100vw;
+}
 /*nav bar*/
 .nav {
   display: flex;

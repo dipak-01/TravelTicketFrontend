@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.hero{
+    background-image: url(https://cdn.wallpapersafari.com/4/53/GDrQIT.jpg);
+    height: 65rem;
+    text-align: end;
+    padding: 8rem 5rem 0;
+    font-size: 2.5rem;
+}
+.hero p{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2rem;
+    padding: 2rem 5rem 0 50rem;
+    text-align: justify;
+    position: absolute;
+    float: right;
+}
+.members{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 5rem;
+}
+.teamcard{
+    height: 30rem;
+    width: 25rem;
+    padding: 1rem;
+    text-align: center;
+    border: 0.2rem solid #555;
+    border-radius: 1rem;
+    padding: 3rem;
+}
+.teamcard img{
+    height: 10rem;
+    width: 10rem;
+    border-radius: 50%;
+}
+.teamcard p{
+    font-size: 1.5rem;
+}
+.teamcard i{
+    font-size: 3rem;
+}
