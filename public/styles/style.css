@@ -9,9 +9,10 @@ a {
 }
 
 body {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   font-family: Inter;
+  scroll-behavior: smooth;
   background-color: #fff;
   overflow-x: hidden;
 }
@@ -26,10 +27,12 @@ body {
   padding: 1.48rem 2.5rem;
   width: 100vw;
 }
+
 .nav .logo {
   display: flex;
   gap: 0;
 }
+
 .nav .logo a {
   color: #000;
   font-size: 1.75rem;
@@ -38,6 +41,7 @@ body {
   line-height: 137%;
   cursor: pointer;
 }
+
 .nav .logo .toor {
   color: #ffa03f;
 }
@@ -132,7 +136,7 @@ body {
   width: 25.563rem;
   height: 38.25rem;
   border-radius: 1.875rem;
-  background-image: url("/TravelTicketFrontend/assets/img4.jpg");
+  background-image: url("/TravelTicketFrontend/assets/img3.jpg");
   background-repeat: no-repeat;
   background-size: contain;
   margin-top: 0.5rem;
@@ -249,15 +253,16 @@ body {
 .card_header {
   display: flex;
   justify-content: space-around;
-  margin-top: 8rem;
-  margin-left: 9rem;
+  margin-top: 10rem;
+  margin-left: 6rem;
 }
 
 .card_header img {
-  margin-top: -22rem;
-  margin-left: -15rem;
+  margin-top: -20rem;
+  margin-left: 0rem;
   width: 500px;
   height: 500px;
+  transform: rotate(270deg);
   color: rgba(0, 0, 0, 0.65);
 }
 
@@ -361,7 +366,7 @@ body {
 
 .card .img img {
   width: 100%;
-  height: 330px;
+  height: 350px;
   border-radius: 40px 40px 0 0;
 }
 
@@ -410,9 +415,9 @@ body {
 }
 
 .carousel .card h2 {
-  margin-top: 2.5rem;
+  margin-top: 1rem;
   padding-left: 1rem;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 500;
   line-height: 27.36px;
 }
@@ -428,15 +433,14 @@ body {
 
 .carousel .card span {
   color: rgba(0, 0, 0, 0.5);
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
   line-height: 20.52px;
 }
 
 .carousel .card .icons {
-  margin-left: -0.6rem;
   margin-bottom: 2rem;
-  padding: 1rem;
+  padding: 0 2rem 0 1rem;
   display: flex;
   justify-content: space-between;
 }
@@ -444,7 +448,6 @@ body {
 .icons img {
   height: 20px;
   width: 20px;
-
   color: rgba(0, 0, 0, 0.75);
 }
 
@@ -662,10 +665,10 @@ body {
 
 .description .right_part .box {
   position: relative;
-  background-image: url("/TravelTicketFrontend/assets/img2.jpg");
+  background-image: url("/TravelTicketFrontend/assets/description.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  width: 548px;
+  width: 500px;
   height: 685px;
   left: -60px;
   border-radius: 40px;
@@ -677,7 +680,7 @@ body {
   background-color: rgba(217, 217, 217);
   background-repeat: no-repeat;
   background-size: cover;
-  width: 548px;
+  width: 500px;
   height: 685px;
   top: -35px;
   left: -50px;
@@ -710,20 +713,189 @@ body {
   padding: 5px;
 }
 
-/* review section */
-
-/* newsletter */
-.newsletter {
+/* review header */
+.review_header {
+  margin-top: 6rem;
   width: 100vw;
-  margin-top: 10rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 9rem;
+}
+
+.review_heading p {
+  color: #ffa03f;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 38.36px;
+}
+
+.review_heading h1 {
+  font-size: 58px;
+  font-weight: 700;
+  line-height: 66.12px;
+}
+
+.review_plane img {
+  margin-top: -2.5rem;
+  width: 340px;
+  height: 260px;
+  margin-left: -25rem;
+  transform: rotate(45deg);
+}
+
+#leftarrow,
+#rightarrow {
+  top: 50%;
+  padding-top: 10px;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  text-align: center;
+  position: relative;
+  background: #ffa03f;
+  color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23);
+  transition: transform 0.1s linear;
+}
+
+#leftarrow {
+  margin-left: -20rem;
+}
+
+#rightarrow {
+  margin-left: 10rem;
+  background: #fff;
+  color: #ffa03f;
+}
+
+.review_plane i:active {
+  transform: scale(0.85);
+}
+
+/* review section */
+.review_section {
+  width: 100vw;
+  height: 80vh;
+  margin-top: -3rem;
+}
+
+.photo {
+  position: relative;
+  width: 480px;
+  height: 710px;
+  left: -60px;
+  border-radius: 40px;
+}
+
+.client1 {
+  background-image: url("/TravelTicketFrontend/assets/client1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.client2 {
+  background-image: url("/TravelTicketFrontend/assets/client2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.client3 {
+  background-image: url("/TravelTicketFrontend/assets/client3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.client4 {
+  background-image: url("/TravelTicketFrontend/assets/client4.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.photo-back {
+  position: relative;
+  z-index: -1;
+  background-color: rgba(235, 235, 235);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 480px;
+  height: 710px;
+  top: 35px;
+  left: 35px;
+  border-radius: 40px;
+}
+
+.comment {
+  display: flex;
+  position: relative;
+  box-shadow: 4px 0px 163px -52px rgba(0, 0, 0, 0.25);
+  z-index: 1;
+  margin-top: 200px;
+  background-color: #fff;
+  width: 50vw;
+  height: 300px;
+  margin-left: -400px;
+}
+
+.orangeStrip {
+  height: 100%;
+  width: 20px;
+  background-color: #ffa03f;
+}
+
+.comments {
+  padding: 3rem 5rem;
+}
+
+.comments h1 {
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 50.92px;
+}
+
+.comments h3 {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 32.16px;
+  color: #ffa03f;
+}
+
+.comments p {
+  margin-top: 15px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 32.16px;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+/*slider review section*/
+.review_section {
+  display: flex;
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
+
+.review_section .slide {
+  display: flex;
+}
+
+.slide .review {
+  height: 500px;
+  width: 100vw;
   display: flex;
   justify-content: space-evenly;
 }
 
+/* newsletter */
+.newsletter {
+  width: 100vw;
+  margin-top: 5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
 .newsletter .planeimg1 img {
   margin-top: 5rem;
-  width: 400px;
-  height: 250px;
+  width: 500px;
+  height: 350px;
   color: rgba(0, 0, 0, 0.75);
 }
 
@@ -731,7 +903,6 @@ body {
   width: 500px;
   height: 400px;
   color: rgba(0, 0, 0, 0.75);
-  transform: rotate(135deg);
 }
 
 .content {
