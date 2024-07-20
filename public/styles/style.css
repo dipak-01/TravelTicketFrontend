@@ -9,8 +9,11 @@ a {
 }
 
 body {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: auto;
+  max-width: 1420px;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
   font-family: Inter;
   scroll-behavior: smooth;
   background-color: #fff;
