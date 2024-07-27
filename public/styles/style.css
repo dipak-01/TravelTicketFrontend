@@ -20,6 +20,66 @@ body {
   position: fixed;
 }
 
+/* navigation */
+.newNav {
+  border-radius: 0 20px 20px 0;
+  height: 600px;
+  position: fixed;
+  left: -29rem;
+  top: 10rem;
+  bottom: 0;
+  background-color: #ffa03f;
+  border-right: 50px solid #ffa03f;
+  box-shadow: 4px 0 5px rgba(0, 0, 0, 0.2);
+  z-index: 10000000;
+}
+
+.newNav:after {
+  position: absolute;
+  content: " ";
+  width: 0;
+  height: 0;
+  right: -70px;
+  top: 50%;
+  border-width: 15px 10px;
+  border-style: solid;
+  border-color: transparent transparent transparent #ffa03f;
+}
+
+.newNav .offer {
+  display: block;
+  justify-content: flex-end;
+  width: 100%;
+  list-style-type: none;
+  margin: 0;
+  padding: 1rem;
+}
+
+.offer-heading {
+  margin-top: 2rem;
+  font-size: 2rem;
+  padding: 2rem;
+}
+
+.offer-content {
+  font-size: 1.2rem;
+  padding: 1rem;
+}
+
+.offer-content b {
+  font-size: 2rem;
+}
+
+/* hovering */
+.newNav,
+.newNav * {
+  transition: all 600ms ease;
+}
+
+.newNav:hover {
+  left: 0;
+}
+
 /*nav bar*/
 nav {
   position: relative;
@@ -76,13 +136,13 @@ nav li .toor {
   height: 100vh;
   width: 300px;
   z-index: 99999;
-  background-color: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
+  background-color: #ffa03f;
   box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
   display: none;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
+  transition: opacity 2s ease-out;
 }
 
 .sidebar li {
@@ -124,11 +184,14 @@ nav li .toor {
   .sidebar {
     width: 50%;
   }
+  .newNav {
+    display: none;
+  }
 }
 
 @media (max-width: 430px) {
   nav {
-    padding: 0 1rem;
+    padding: 0 2rem 0 1rem;
     height: 60px;
   }
   nav li:first-child {
@@ -148,6 +211,9 @@ nav li .toor {
   .sidebar {
     padding: 0 1rem;
     width: 100%;
+  }
+  .newNav {
+    display: none;
   }
 }
 
@@ -293,7 +359,7 @@ nav li .toor {
 
 @media (max-width: 430px) {
   .home {
-    height: 83vh;
+    height: 100vh;
   }
 
   .main_content {
@@ -326,6 +392,8 @@ nav li .toor {
   }
 
   .plane {
+    position: relative;
+    z-index: -1;
     margin-top: 0rem;
     margin-left: -13rem;
     height: 180px;
@@ -336,8 +404,8 @@ nav li .toor {
     background-image: url("/TravelTicketFrontend/assets/img1.jpg");
     background-repeat: no-repeat;
     margin-top: 5rem;
-    margin-left: -14rem;
-    width: 200px;
+    margin-left: -14.8em;
+    width: 205px;
     height: 350px;
     background-size: cover;
     border-radius: 30px;
@@ -517,7 +585,7 @@ nav li .toor {
     height: 300px;
     border-radius: 2rem;
     margin-top: 2rem;
-    margin-left: 0;
+    margin-left: -1rem;
     padding: 1rem 1rem;
   }
 
@@ -810,7 +878,7 @@ nav li .toor {
 
 @media (max-width: 430px) {
   .trip {
-    margin-top: 0;
+    margin-top: -8rem;
   }
 
   .trip .column3 .card4,
@@ -875,6 +943,11 @@ nav li .toor {
     margin-left: 11rem;
     width: 200px;
     height: 200px;
+  }
+}
+@media (max-height: 665px) {
+  .trip {
+    margin-top: 0;
   }
 }
 
@@ -1600,6 +1673,33 @@ nav li .toor {
   }
 }
 
+@media (max-width: 390px) {
+  .desc_content1 p {
+    width: 45%;
+  }
+
+  .description .right_part .box {
+    left: -190px;
+  }
+
+  .experience {
+    height: 60px;
+    width: 210px;
+    top: 95%;
+    left: 45%;
+  }
+
+  .experience p {
+    margin-top: -0.2rem;
+    font-size: 0.75rem;
+    margin-left: 2.5rem;
+  }
+
+  .first {
+    margin-left: 1.8rem;
+  }
+}
+
 /* review header */
 .review_header {
   margin-top: 6rem;
@@ -1762,6 +1862,18 @@ nav li .toor {
 
   .review_plane i:active {
     transform: scale(0.5);
+  }
+}
+
+@media (max-height: 665px) {
+  .review_header {
+    margin-top: 8rem;
+  }
+
+  #leftarrow,
+  #rightarrow {
+    top: -15%;
+    margin-left: 1rem;
   }
 }
 
@@ -2217,6 +2329,41 @@ nav li .toor {
     border-radius: 10px;
   }
 }
+@media (max-width: 390px) {
+  .newsletter {
+    margin-top: 1rem;
+  }
+
+  .content .mail {
+    width: 350px;
+    height: 60px;
+    margin-left: 7rem;
+    margin-top: 5rem;
+    border-radius: 20px;
+    padding: 10px;
+  }
+
+  .content .mailbox {
+    width: 75%;
+    border-radius: 10px;
+  }
+
+  .content .mailbox::placeholder,
+  .content input {
+    padding-left: 1rem;
+    color: #fff;
+    font-size: 14px;
+  }
+
+  .content .submit-btn {
+    width: 22%;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 30px;
+    height: 100%;
+    border-radius: 10px;
+  }
+}
 
 /* footer */
 .footer {
@@ -2337,8 +2484,6 @@ nav li .toor {
 
 /*responsive styles for laptops */
 
-@media (min-width: 900px) and (max-width: 1250px) {
-}
 @media (min-width: 1300px) and (max-width: 1550px) {
   nav {
     margin-bottom: 0.5rem;
