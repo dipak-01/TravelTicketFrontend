@@ -136,13 +136,16 @@ nav li .toor {
   height: 100vh;
   width: 300px;
   z-index: 99999;
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
   background-color: #ffa03f;
   box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
-  display: none;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  transition: opacity 2s ease-out;
+  transform: translateX(100%);
+  transition: transform 0.5s ease-out;
+}
+.show {
+  transform: translateX(0);
 }
 
 .sidebar li {
