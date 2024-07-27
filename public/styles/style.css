@@ -1313,6 +1313,7 @@ nav li .toor {
   color: #fff;
   font-size: 28px;
   font-weight: 600;
+  cursor: pointer;
   line-height: 43.68px;
   background-color: rgba(255, 160, 63, 1);
 }
@@ -2161,7 +2162,7 @@ nav li .toor {
   }
 
   .content h1 {
-    margin-left: 9rem;
+    margin-left: 8rem;
     width: 70%;
     height: 30px;
     font-size: 24px;
@@ -2187,9 +2188,9 @@ nav li .toor {
   }
 
   .content .mail {
-    width: 400px;
+    width: 380px;
     height: 60px;
-    margin-left: 7rem;
+    margin-left: 6.5rem;
     margin-top: 5rem;
     border-radius: 20px;
     padding: 10px;
@@ -2219,6 +2220,7 @@ nav li .toor {
 
 /* footer */
 .footer {
+  width: 100%;
   color: #fff;
   background-color: rgba(255, 160, 63, 0.9);
   display: flex;
@@ -2330,5 +2332,372 @@ nav li .toor {
   }
   .footer-copyright {
     text-align: center;
+  }
+}
+
+/*responsive styles for laptops */
+
+@media (min-width: 900px) and (max-width: 1250px) {
+}
+@media (min-width: 1300px) and (max-width: 1550px) {
+  nav {
+    margin-bottom: 0.5rem;
+  }
+
+  nav ul {
+    font-size: 1.1rem;
+    font-weight: 500;
+    line-height: 120%;
+    cursor: pointer;
+  }
+
+  .main_content .left {
+    width: 40%;
+    padding: 6rem 4rem;
+  }
+  .main_content .left h1 {
+    margin-top: -5rem;
+    font-size: 4.25rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 11rem;
+  }
+
+  .main_content .right {
+    display: flex;
+    width: 60%;
+    gap: 5rem;
+    padding-left: 9rem;
+  }
+
+  .main_content .right .column1 {
+    padding-top: 3.125rem;
+    width: 19.063rem;
+    height: 51.875rem;
+  }
+  .main_content .right .column1 .card1 {
+    margin-top: -3rem;
+    width: 280px;
+    height: 360px;
+    border-radius: 1.875rem;
+    margin-bottom: 0.938rem;
+  }
+
+  .main_content .right .column1 .card2 {
+    width: 280px;
+    height: 360px;
+    border-radius: 1.875rem;
+  }
+
+  .plane {
+    margin-top: -2.125rem;
+    height: 200px;
+    width: 250px;
+  }
+
+  .main_content .right .card3 {
+    width: 300px;
+    height: 450px;
+    margin-left: -3rem;
+    border-radius: 1.875rem;
+    margin-top: 0rem;
+  }
+
+  .para_content {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-top: 0.5rem;
+    line-height: 1.6rem;
+  }
+
+  .location_search {
+    width: 45rem;
+    height: 7.5rem;
+    border-radius: 3.063rem;
+    margin-top: 4rem;
+    margin-left: 1rem;
+    padding: 1.5rem 3rem;
+  }
+
+  .trip {
+    width: 100%;
+    margin-top: 5rem;
+  }
+
+  .trip .column3 .card4 {
+    margin-left: 8rem;
+    width: 400px;
+    height: 600px;
+  }
+
+  .trip .column3 .card5 {
+    width: 400px;
+    height: 600px;
+  }
+
+  .trip_content {
+    margin-top: 4rem;
+    margin-left: 8rem;
+  }
+
+  .trip_content h1 {
+    font-size: 50px;
+    line-height: 75px;
+  }
+
+  .header,
+  .trip_content h3 {
+    font-size: 24px;
+    line-height: 35px;
+  }
+
+  .trip_content .image img {
+    margin-top: -12rem;
+    margin-left: 20rem;
+  }
+
+  .wrapper {
+    margin-top: 3rem;
+    margin-left: 8rem;
+    margin-bottom: 10rem;
+  }
+
+  .wrapper i {
+    top: 45%;
+  }
+
+  .wrapper i:first-child {
+    margin-left: -5rem;
+  }
+
+  .wrapper i:last-child {
+    margin-right: -2rem;
+  }
+
+  .description {
+    margin-top: 8rem;
+  }
+
+  .desc_content {
+    margin-left: 5rem;
+  }
+
+  .way {
+    font-size: 24px;
+    line-height: 35px;
+  }
+
+  .desc_content h1 {
+    font-size: 50px;
+    line-height: 75px;
+  }
+
+  .desc_content1 p {
+    font-size: 20x;
+    line-height: 35px;
+  }
+
+  .btn {
+    width: 250px;
+    height: 70px;
+    border-radius: 14px;
+  }
+
+  .about-btn {
+    font-size: 24px;
+    line-height: 40px;
+  }
+
+  .desc_content2 {
+    margin-top: 5rem;
+  }
+
+  .desc_content2 h1 {
+    font-size: 48px;
+    line-height: 60px;
+  }
+
+  .desc_content2 p {
+    width: 3rem;
+    font-size: 24px;
+    line-height: 35px;
+  }
+
+  .right_part {
+    margin-top: 2rem;
+  }
+
+  .description .right_part .box {
+    width: 400px;
+    height: 550px;
+  }
+
+  .description .right_part .back_box {
+    width: 400px;
+    height: 550px;
+  }
+
+  .experience p {
+    margin-left: 4rem;
+    color: #000;
+  }
+
+  .first {
+    margin-left: 3rem;
+  }
+
+  .review_header {
+    margin-top: 10rem;
+    margin-left: -2rem;
+  }
+
+  #leftarrow,
+  #rightarrow {
+    top: 10%;
+  }
+
+  #leftarrow {
+    margin-left: -30rem;
+  }
+
+  #rightarrow {
+    margin-left: 8rem;
+  }
+
+  .review_plane img {
+    margin-left: -20rem;
+  }
+
+  .review_section {
+    margin-top: -5rem;
+    height: 90vh;
+  }
+
+  .photo,
+  .photo-back {
+    width: 450px;
+    height: 600px;
+  }
+
+  .comment {
+    width: 60vw;
+    margin-top: 180px;
+    margin-left: -300px;
+  }
+
+  .newsletter .planeimg1 img {
+    margin-left: -2rem;
+    width: 400px;
+    height: 300px;
+  }
+
+  .newsletter .planeimg2 img {
+    width: 400px;
+    position: relative;
+    z-index: -1;
+    height: 300px;
+    margin-left: -1.5rem;
+  }
+
+  .content {
+    display: block;
+    justify-content: space-evenly;
+    margin-left: -3rem;
+  }
+
+  .content .mail {
+    margin-left: 1rem;
+  }
+}
+@media (min-width: 1551px) and (max-width: 1750px) {
+  .main_content .left {
+    width: 45%;
+    padding: 6rem 4rem;
+  }
+
+  .main_content .left h1 {
+    margin-top: -5rem;
+    font-size: 4.5rem;
+    line-height: 11rem;
+  }
+
+  .plane {
+    margin-top: -2.125rem;
+    height: 250px;
+    width: 300px;
+  }
+
+  .main_content .right .card3 {
+    width: 330px;
+    height: 495px;
+    margin-left: -3rem;
+    border-radius: 1.875rem;
+    margin-top: -3rem;
+  }
+
+  .location_search {
+    width: 45rem;
+    height: 7.5rem;
+    border-radius: 3.063rem;
+    margin-top: 7rem;
+    margin-left: 5rem;
+    padding: 1.5rem 3rem;
+  }
+
+  .trip {
+    width: 100%;
+    margin-top: 10rem;
+  }
+
+  .wrapper {
+    margin-top: 3rem;
+    margin-left: 12rem;
+    margin-bottom: 10rem;
+  }
+
+  .review_header {
+    margin-top: 15rem;
+    margin-left: -2rem;
+  }
+
+  .review_section {
+    margin-top: -5rem;
+    height: 90vh;
+  }
+
+  .photo,
+  .photo-back {
+    width: 450px;
+    height: 600px;
+  }
+
+  .comment {
+    width: 60vw;
+    margin-top: 180px;
+    margin-left: -300px;
+  }
+
+  .newsletter .planeimg1 img {
+    margin-left: -2rem;
+    width: 400px;
+    height: 300px;
+  }
+
+  .newsletter .planeimg2 img {
+    width: 400px;
+    position: relative;
+    z-index: -1;
+    height: 300px;
+    margin-left: -1.5rem;
+  }
+
+  .content {
+    display: block;
+    justify-content: space-evenly;
+    margin-left: -3rem;
+  }
+
+  .content .mail {
+    margin-left: 1rem;
   }
 }
