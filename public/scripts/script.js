@@ -1,14 +1,14 @@
 //navbar
 function showSidebar() {
   const sidebar = document.querySelector(".sidebar");
-  sidebar.style.display = "flex";
+  sidebar.classList.add("show");
   const body = document.querySelector(".body");
   body.style.overflow = "hidden";
 }
 
 function hideSidebar() {
   const sidebar = document.querySelector(".sidebar");
-  sidebar.style.display = "none";
+  sidebar.classList.remove("show");
   const body = document.querySelector(".body");
   body.style.overflow = "";
 }
