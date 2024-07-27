@@ -1,3 +1,18 @@
+//navbar
+function showSidebar() {
+  const sidebar = document.querySelector(".sidebar");
+  sidebar.style.display = "flex";
+  const body = document.querySelector(".body");
+  body.style.overflow = "hidden";
+}
+
+function hideSidebar() {
+  const sidebar = document.querySelector(".sidebar");
+  sidebar.style.display = "none";
+  const body = document.querySelector(".body");
+  body.style.overflow = "";
+}
+
 //landing page
 var config = {
   cUrl: "https://api.api-ninjas.com/v1/city?name=",
@@ -30,6 +45,16 @@ output.innerHTML = slider.value;
 slider.oninput = function () {
   output.innerHTML = this.value;
 };
+
+//default date value
+document.getElementById("checkInDate").defaultValue = "2024-07-21";
+document.getElementById("checkOutDate").defaultValue = "2024-07-21";
+
+//price change from range to input
+function smallDevices() {
+  const priceConvertor = document.getElementById(".convertor");
+  priceConvertor.type = "number";
+}
 
 //swiper for cards
 const wrapper = document.querySelector(".wrapper");

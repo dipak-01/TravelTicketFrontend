@@ -6,8 +6,6 @@
 
     <link rel="stylesheet" href="public/styles/style.css" />
 
-    <link rel="stylesheet" href="public/styles/responsive.css" />
-
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -26,24 +24,46 @@
     />
     <title>Travel</title>
   </head>
-  <body>
+  <body class="body">
+    <!-- navbar -->
+    <nav class="nav">
+      <ul class="sidebar">
+        <li onclick="hideSidebar()">
+          <a><i class="fa-solid fa-xmark"></i></a>
+        </li>
+        <li>
+          <a href="/TravelTicketFrontend/public/pages/about.html">About</a>
+        </li>
+        <li><a href="#">Packages</a></li>
+        <li>
+          <a href="/TravelTicketFrontend/public/pages/contact.html">Contact</a>
+        </li>
+        <li>
+          <a href="/TravelTicketFrontend/public/pages/login.html">Login</a>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <a href="#">Travel<span class="toor">Toor</span></a>
+        </li>
+        <li class="hideonMobile">
+          <a href="/TravelTicketFrontend/public/pages/about.html">About</a>
+        </li>
+        <li class="hideonMobile"><a href="#">Packages</a></li>
+        <li class="hideonMobile">
+          <a href="/TravelTicketFrontend/public/pages/contact.html">Contact</a>
+        </li>
+        <li class="hideonMobile">
+          <a href="/TravelTicketFrontend/public/pages/login.html">Login</a>
+        </li>
+        <li class="menu-btn" onclick="showSidebar()">
+          <a><i class="fa-solid fa-bars-staggered"></i></a>
+        </li>
+      </ul>
+    </nav>
+
     <!-- home -->
     <div class="home">
-      <nav class="nav">
-        <div class="logo">
-          <a>Travel</a>
-          <a class="toor">Toor</a>
-        </div>
-        <div class="navigation">
-          <a href="index.html">Home</a>
-          <a href="public/pages/about.html">About</a>
-          <a>Packages</a>
-          <a href="public/pages/contact.html">Contact</a>
-        </div>
-        <div class="menu">
-          <a><i class="fa-solid fa-bars-staggered"></i></a>
-        </div>
-      </nav>
       <div class="main_content">
         <div class="left">
           <div class="firstline">
@@ -57,74 +77,76 @@
             quam commodi amet tenetur qui accusamus
           </p>
           <div class="location_search">
-            <div class="search-box">
-              <p>
-                Location
-                <i
-                  class="fa-solid fa-caret-down"
-                  style="margin-left: 0.2rem"
-                ></i>
-              </p>
-              <input
-                type="search"
-                id="searchBar"
-                name="searchBar"
-                placeholder="Lakshadweep"
-              />
-            </div>
-            <div class="check-in">
-              <p>
-                Check-In
-                <i
-                  class="fa-solid fa-caret-down"
-                  style="margin-left: 0.2rem"
-                ></i>
-              </p>
-              <input
-                type="date"
-                name="checkInDate"
-                id="checkInDate"
-                class="date"
-              />
-            </div>
-            <div class="check-out">
-              <p>
-                Check-Out
-                <i
-                  class="fa-solid fa-caret-down"
-                  style="margin-left: 0.2rem"
-                ></i>
-              </p>
-              <input
-                type="date"
-                name="checkInDate"
-                id="checkInDate"
-                class="date"
-              />
-            </div>
-            <div class="price">
-              <p>
-                Price
-                <i
-                  class="fa-solid fa-caret-down"
-                  style="margin-left: 0.2rem"
-                ></i>
-              </p>
-              <input
-                type="range"
-                min="2000"
-                max="50000"
-                value="2000"
-                id="priceRange"
-                class="range"
-              />
-              <p style="color: rgba(0, 0, 0, 0.65)">
-                &#8377; <span id="priceDisplay"></span>
-              </p>
-            </div>
-            <div class="search_icon">
-              <i class="fa-solid fa-magnifying-glass"></i>
-            </div>
+            <form action="">
+              <div class="search-box">
+                <p>
+                  Location
+                  <i
+                    class="fa-solid fa-caret-down"
+                    style="margin-left: 0.2rem"
+                  ></i>
+                </p>
+                <input
+                  type="search"
+                  id="searchBar"
+                  name="searchBar"
+                  placeholder="Lakshadweep"
+                />
+              </div>
+              <div class="check-in">
+                <p>
+                  Check-In
+                  <i
+                    class="fa-solid fa-caret-down"
+                    style="margin-left: 0.2rem"
+                  ></i>
+                </p>
+                <input
+                  type="date"
+                  name="checkInDate"
+                  id="checkInDate"
+                  class="date"
+                />
+              </div>
+              <div class="check-out">
+                <p>
+                  Check-Out
+                  <i
+                    class="fa-solid fa-caret-down"
+                    style="margin-left: 0.2rem"
+                  ></i>
+                </p>
+                <input
+                  type="date"
+                  name="checkOutDate"
+                  id="checkOutDate"
+                  class="date"
+                />
+              </div>
+              <div class="price">
+                <p>
+                  Price
+                  <i
+                    class="fa-solid fa-caret-down"
+                    style="margin-left: 0.2rem"
+                  ></i>
+                </p>
+                <input
+                  type="range"
+                  min="2000"
+                  max="50000"
+                  value="2000"
+                  id="priceRange"
+                  class="range"
+                />
+                <p style="color: rgba(0, 0, 0, 0.65)">
+                  &#8377; <span id="priceDisplay"></span>
+                </p>
+              </div>
+              <button class="search_icon" type="submit">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+            </form>
           </div>
         </div>
         <div class="right">
@@ -171,6 +193,9 @@
           <h3>Great Places</h3>
           <p>Places that will win your hearts</p>
         </div>
+        <div class="image">
+          <img src="/TravelTicketFrontend/assets/plane1.png" alt="" />
+        </div>
       </div>
     </div>
 
@@ -179,9 +204,6 @@
       <div>
         <p>Famous Dictation!</p>
         <h1>Our Popular <span>Dictation's</span></h1>
-      </div>
-      <div>
-        <img src="/TravelTicketFrontend/assets/plane1.png" alt="" />
       </div>
     </div>
 
@@ -427,8 +449,7 @@
             <img
               src="/TravelTicketFrontend/assets/angry_face.png"
               alt=""
-              class="emoji"
-              style="margin-left: 4rem"
+              class="emoji first"
             />
             <img
               src="/TravelTicketFrontend/assets/sad_face.png"
@@ -484,7 +505,7 @@
                 "Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                 Perspiciatis odio iste doloribus, ipsam eius, a rem sed facere
                 consequatur fugiat vel dolor, ipsum quam totam neque corporis
-                voluptatum corrupti sunt.""
+                voluptatum corrupti sunt."
               </p>
             </div>
           </div>
@@ -552,12 +573,9 @@
         <img src="/TravelTicketFrontend/assets/plane4.jpg" alt="" />
       </div>
       <div class="content">
-        <h1>
-          Subscribe To Get The Latest
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          News About Us
-        </h1>
-        <p>
+        <h1 class="content_head">Subscribe To Get The Latest</h1>
+        <h1 class="news">News About Us</h1>
+        <p class="text">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate
           optio nulla vitae eos necessitatibus nesciunt quaerat temporibus aut
         </p>
@@ -578,51 +596,46 @@
       </div>
     </div>
 
-    <!-- footer -->
-    <footer>
-      <div class="foot">
-        <div class="foot-el travel">
-          <h3>Travel</h3>
-          <p style="margin-bottom: 3rem">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae
-            quas quod ad repellendus sequi ab recusandae velit necessitatibus?
-            Cumque atque aspernatur reiciendis excepturi voluptatem quisquam!
-            Alias tempore ex ipsa neque!
+    <!-- footer section -->
+    <div class="footer" id="footer">
+      <div class="footer-content">
+        <div class="footer-content-left">
+          <h1>TravelToor</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            Voluptatum, tenetur reprehenderit suscipit a sit ad ullam, debitis
+            inventore iure totam corrupti optio adipisci accusantium nostrum
+            perferendis vitae soluta asperiores? Sapiente.
           </p>
-          <div class="follow-on">
-            <i class="fa-brands fa-facebook-f" style="margin-right: 1rem"></i>
-            <i class="fa-brands fa-linkedin-in" style="margin-right: 1rem"></i>
-            <i class="fa-brands fa-instagram" style="margin-right: 1rem"></i>
-            <a href="https://github.com/akashtripathi12/TravelTicketFrontend"
-              ><i class="fa-brands fa-github"></i
-            ></a>
+          <div class="footer-social-icons">
+            <img src="assets/facebook_icon.png" alt="" />
+            <img src="assets/linkedin_icon.png" alt="" />
+            <img src="assets/twitter_icon.png" alt="" />
           </div>
         </div>
-        <div class="foot-el" style="padding-left: 15rem">
-          <h3>Services</h3>
-          <p><a href="about.html">About Us</a></p>
-          <p style="padding: 0.5rem 0">Destinations</p>
-          <p>Services</p>
-          <p style="padding: 0.5rem 0">Contact Us</p>
+        <div class="footer-content-center">
+          <h2>COMPANY</h2>
+          <ul>
+            <li>Home</li>
+            <li>About us</li>
+            <li>Packages</li>
+            <li>Privacy Policy</li>
+          </ul>
         </div>
-        <div class="foot-el" style="padding-left: 2rem">
-          <h3>Contact</h3>
-          <p style="margin-bottom: 2rem">
-            <i class="fa-solid fa-location-dot"></i> IIIT Gwalior, India
-          </p>
-          <p style="margin-bottom: 2rem">
-            <i class="fa-solid fa-phone"></i> +91 9876543210
-          </p>
-          <p style="margin-bottom: 2rem">
-            <i class="fa-regular fa-envelope"></i> traveltoor@gmail.com
-          </p>
+        <div class="footer-content-right">
+          <h2>GET IN TOUCH</h2>
+          <ul>
+            <li>+1-212-456-7890</li>
+            <li>contact@TravelToor.com</li>
+          </ul>
         </div>
       </div>
-      <div class="copyright">
-        TravelToor<i class="fa-regular fa-copyright"></i>2024: All Rights
-        Reserved
-      </div>
-    </footer>
+      <hr />
+      <p class="footer-copyright">
+        Copyright © 2024 TravelToor. All rights reserved
+      </p>
+    </div>
+
     <script src="/TravelTicketFrontend/public/scripts/script.js"></script>
   </body>
 </html>
