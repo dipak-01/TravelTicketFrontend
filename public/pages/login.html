@@ -11,6 +11,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -44,7 +45,7 @@
       <div class="form-container sign-up-container">
         <div class="image"></div>
         <div class="form sign-up-form">
-          <form action="#">
+          <form class="register" action="#" method="POST">
             <h1>Create Account</h1>
             <div class="social-container">
               <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
@@ -54,21 +55,38 @@
               <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
             </div>
             <div class="infield">
-              <input type="text" placeholder="Name" name="name" />
+              <input
+                type="name"
+                placeholder="Name"
+                name="name"
+                id="name"
+                required
+              />
               <i class="fa-solid fa-user"></i>
             </div>
             <div class="infield">
-              <input type="email" placeholder="Email" name="email" />
+              <input
+                id="email"
+                type="email"
+                placeholder="Email"
+                name="email"
+                required
+              />
               <i class="fa-solid fa-envelope"></i>
             </div>
             <div class="infield">
-              <input type="password" placeholder="Password" name="password" />
+              <input
+                id="password"
+                type="password"
+                placeholder="Password"
+                name="password"
+                required
+                pattern="[a-zA-Z0-9]{8,}"
+                title="Password must be 8 characters"
+              />
               <i class="fa-solid fa-lock"></i>
             </div>
-            <button class="signup button" type="submit">
-              <b>Sign Up</b>
-              <div></div>
-            </button>
+            <button class="signup" type="submit">Sign Up</button>
             <div class="have_account">
               Already have an account? <a href="#" id="login">Login</a>
             </div>
@@ -79,7 +97,7 @@
       <div class="form-container sign-in-container">
         <div class="image"></div>
         <div class="form sign-in-form">
-          <form action="#">
+          <form class="log-in" action="#" method="POST">
             <h1>Sign in</h1>
             <div class="social-container">
               <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
@@ -89,15 +107,20 @@
               <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
             </div>
             <div class="infield">
-              <input type="email" placeholder="Email" name="email" />
+              <input type="email" placeholder="Email" name="email" required />
               <i class="fa-solid fa-envelope"></i>
             </div>
             <div class="infield">
-              <input type="password" placeholder="Password" />
+              <input
+                type="password"
+                placeholder="Password"
+                name="password"
+                required
+              />
               <i class="fa-solid fa-lock"></i>
             </div>
             <a href="#" class="forgot">Forgot your password?</a>
-            <button class="signin">Sign In</button>
+            <button type="submit" class="signin">Sign In</button>
             <div class="Dont_have_account">
               Don't have an account? <a href="#" id="signup">Signup</a>
             </div>
@@ -106,5 +129,6 @@
       </div>
     </div>
     <script src="../scripts/login.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
   </body>
 </html>

@@ -166,7 +166,7 @@ nav li .toor {
   cursor: pointer;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 850px) {
   nav li:first-child {
     font-size: 1.55rem;
     font-weight: 700;
@@ -306,7 +306,7 @@ nav li .toor {
   color: rgba(0, 0, 0, 0.75);
 }
 
-@media (max-width: 800px) {
+@media (max-width: 850px) {
   .main_content {
     display: flex;
     width: 100%;
@@ -525,7 +525,7 @@ nav li .toor {
   font-size: 1.563rem;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 850px) {
   .location_search {
     position: relative;
     z-index: 0;
@@ -782,7 +782,7 @@ nav li .toor {
 
 /*responsive styles for trip content section*/
 
-@media (max-width: 800px) {
+@media (max-width: 850px) {
   .trip {
     margin-top: 0.2rem;
   }
@@ -984,7 +984,7 @@ nav li .toor {
 
 /*responsive styles for card header*/
 
-@media (max-width: 800px) {
+@media (max-width: 850px) {
   .card_header {
     margin-top: 0rem;
     margin-left: 2rem;
@@ -1022,9 +1022,11 @@ nav li .toor {
 /*card-slider*/
 .wrapper {
   margin-top: 5rem;
-  margin-left: 20rem;
+  margin-left: 14rem;
+  display: flex;
+  justify-content: center;
   margin-bottom: 10rem;
-  max-width: 1300px;
+  max-width: 80vw;
   width: 100vw;
   position: relative;
 }
@@ -1054,7 +1056,7 @@ nav li .toor {
   left: -22px;
 }
 .wrapper i:last-child {
-  right: -22px;
+  right: 22px;
 }
 .wrapper .carousel {
   display: grid;
@@ -1193,7 +1195,7 @@ nav li .toor {
 
 /*responsive styles for card slider*/
 
-@media (max-width: 800px) {
+@media (max-width: 850px) {
   .wrapper {
     margin-top: 0rem;
     margin-left: 5rem;
@@ -1475,7 +1477,7 @@ nav li .toor {
 }
 
 /*responsive styles for description section*/
-@media (max-width: 800px) {
+@media (max-width: 850px) {
   .description {
     margin-top: 2rem;
   }
@@ -1766,7 +1768,7 @@ nav li .toor {
 
 /*responsive style for review header*/
 
-@media (max-width: 800px) {
+@media (max-width: 850px) {
   .review_header {
     width: 80%;
     margin-top: 3rem;
@@ -1974,7 +1976,7 @@ nav li .toor {
 
 /*responsive style for review section*/
 
-@media (max-width: 800px) {
+@media (max-width: 850px) {
   .review_section {
     margin-top: -5rem;
     height: 60vh;
@@ -2179,7 +2181,7 @@ nav li .toor {
 
 /*responsive styles for newsletter*/
 
-@media (max-width: 800px) {
+@media (max-width: 850px) {
   .newsletter {
     height: 40vh;
     margin-top: 3rem;
@@ -2608,6 +2610,7 @@ nav li .toor {
     margin-top: 3rem;
     margin-left: 8rem;
     margin-bottom: 10rem;
+    max-width: 80vw;
   }
 
   .wrapper i {
@@ -2619,7 +2622,7 @@ nav li .toor {
   }
 
   .wrapper i:last-child {
-    margin-right: -2rem;
+    margin-right: -8rem;
   }
 
   .description {
@@ -2713,6 +2716,8 @@ nav li .toor {
   }
 
   .review_plane img {
+    position: relative;
+    z-index: -1;
     margin-left: -20rem;
   }
 
@@ -2734,22 +2739,20 @@ nav li .toor {
   }
 
   .newsletter .planeimg1 img {
-    margin-left: -2rem;
-    width: 400px;
-    height: 300px;
+    margin-left: 1rem;
+    width: 340px;
+    height: 250px;
   }
 
   .newsletter .planeimg2 img {
-    width: 400px;
+    width: 350px;
     position: relative;
     z-index: -1;
-    height: 300px;
-    margin-left: -1.5rem;
+    height: 250px;
+    margin-left: -5rem;
   }
 
   .content {
-    display: block;
-    justify-content: space-evenly;
     margin-left: -3rem;
   }
 
