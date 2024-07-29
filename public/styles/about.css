@@ -3,30 +3,40 @@
     padding: 0;
 }
 .hero{
-    background-image: url(https://cdn.wallpapersafari.com/4/53/GDrQIT.jpg);
-    height: 65rem;
-    text-align: end;
-    padding: 8rem 5rem 0;
+    height: 50rem;
+    padding: 5rem 5rem 0;
     font-size: 2.5rem;
 }
 .hero p{
+    width: 54.5rem;
     font-family: 'Times New Roman', Times, serif;
     font-size: 2rem;
-    padding: 2rem 5rem 0 50rem;
+    padding-top: 2rem;
+    text-align: right;
     text-align: justify;
     position: absolute;
     float: right;
 }
+.hikeimg{
+    height: 30rem;
+    width: 21rem;
+    object-fit: cover;
+    text-align: center;
+    border: 0.2rem;
+    border-radius: 1rem;
+    transform:translateX(60rem);
+    margin-right: 5rem;
+}
 .members{
     display: flex;
     align-items: center;
+    text-align: center;
     justify-content: space-evenly;
     margin-bottom: 5rem;
 }
 .teamcard{
     height: 30rem;
     width: 25rem;
-    padding: 1rem;
     text-align: center;
     border: 0.2rem solid #555;
     border-radius: 1rem;
@@ -42,4 +52,28 @@
 }
 .teamcard i{
     font-size: 3rem;
+}
+@media (max-width: 1230px)
+{
+    .hero{
+        justify-content: center;
+        height: 40rem;
+    }
+    .hero div{
+        visibility: hidden;
+    }
+    .hikeimg{
+        visibility: hidden;
+    }
+    .members{
+        display: block;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .teamcard{
+        margin-bottom: 3rem;
+    }
 }

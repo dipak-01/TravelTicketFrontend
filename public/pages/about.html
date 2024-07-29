@@ -23,26 +23,50 @@
     <title>About Us</title>
 </head>
 <body>
-    <nav class="nav">
-        <div class="logo">
-          <a>Travel</a>
-          <a class="toor">Toor</a>
-        </div>
-        <div class="navigation">
-          <a href="/index.html">Home</a>
-          <a href="about.html">About</a>
-          <a>Packages</a>
-          <a href="contact.html">Contact</a>
-          <a><i class="fa-solid fa-magnifying-glass"></i></a>
-        </div>
-        <div class="menu">
-          <a><i class="fa-solid fa-bars-staggered"></i></a>
-        </div>
-    </nav>
+  <nav class="nav">
+    <ul class="sidebar">
+      <li onclick="hideSidebar()">
+        <a><i class="fa-solid fa-xmark"></i></a>
+      </li>
+      <li>
+        <a href="/TravelTicketFrontend/public/pages/about.html">About</a>
+      </li>
+      <li><a href="#">Packages</a></li>
+      <li>
+        <a href="/TravelTicketFrontend/public/pages/contact.html">Contact</a>
+      </li>
+      <li>
+        <a href="/TravelTicketFrontend/public/pages/login.html">Login</a>
+      </li>
+    </ul>
+    <ul>
+      <li>
+        <a href="#">Travel<span class="toor">Toor</span></a>
+      </li>
+      <li class="hideonMobile">
+        <a href="/TravelTicketFrontend/public/pages/about.html">About</a>
+      </li>
+      <li class="hideonMobile"><a href="#">Packages</a></li>
+      <li class="hideonMobile">
+        <a href="/TravelTicketFrontend/public/pages/contact.html">Contact</a>
+      </li>
+      <li class="hideonMobile">
+        <a href="/TravelTicketFrontend/public/pages/login.html">Login</a>
+      </li>
+      <li class="menu-btn" onclick="showSidebar()">
+        <a><i class="fa-solid fa-bars-staggered"></i></a>
+      </li>
+      <li>
+        <div></div>
+      </li>
+    </ul>
+  </nav>
     <div class="hero">
-        <h1 style="text-decoration: underline #ffa03f;">About Us</h1>
-        <p>Welcome to Travel Toor, your ultimate gateway to unforgettable journeys around the globe. At Travel Toor, we believe that every trip should be an adventure filled with discovery, relaxation, and cultural immersion. Whether you're dreaming of relaxing on a pristine beach, exploring ancient ruins, or tasting exotic cuisines, we are here to make your travel dreams a reality. Our expert team curates the best destinations and experiences, ensuring that each journey with us is unique and enriching. Join us at Travel Toor and embark on a journey that will leave you with memories to cherish for a lifetime. Discover the world with us, one destination at a time.</p>
-    </div>
+        <h1>About Us</h1>
+        <p style="opacity: 0.75;">Welcome to Travel Toor, your ultimate gateway to unforgettable journeys around the globe. At Travel Toor, we believe that every trip should be an adventure filled with discovery, relaxation, and cultural immersion. Whether you're dreaming of relaxing on a pristine beach, exploring ancient ruins, or tasting exotic cuisines, we are here to make your travel dreams a reality. Our expert team curates the best destinations and experiences, ensuring that each journey with us is unique and enriching. Join us at Travel Toor and embark on a journey that will leave you with memories to cherish for a lifetime. Discover the world with us, one destination at a time.</p>
+        <img class="hikeimg" src="../../assets/Hiking.jpg""></img>
+        <div><img src="../../assets/plane.jpg" style="height: 10rem;"></div>
+      </div>
     <div>
         <h1 style="text-align: center; padding: 3rem; font-size: 3rem;">Our Team</h1>
         <div class="members">
@@ -73,47 +97,44 @@
         </div>
     </div>
     <footer>
-        <div class="foot">
-          <div class="foot-el">
-            <h3>Travel</h3>
-            <p style="margin-bottom: 3rem">Lorem ipsum</p>
-            <div class="follow-on">
-                <i class="fa-brands fa-facebook-f" style="margin-right: 1rem;"></i>
-                <i class="fa-brands fa-linkedin-in" style="margin-right: 1rem;"></i>
-                <i class="fa-brands fa-instagram" style="margin-right: 1rem;"></i>
-                <a href="https://github.com/akashtripathi12/TravelTicketFrontend"><i class="fa-brands fa-github"></i></a>
-              </div>
-          </div>
-          <div class="foot-el">
-            <h3>Services</h3>
-            <p><a href="about.html">About Us</a></p>
-            <p>Destinations</p>
-            <p>Services</p>
-            <p>Our Blog</p>
-            <p><a href="contact.html">Contact Us</a></p>
-          </div>
-          <div class="foot-el">
-            <h3>Instagram</h3>
-            <div></div>
-            <div></div>
-          </div>
-          <div class="foot-el">
-            <a href="contact.html"><h3>Contact</h3></a>
-            <p style="margin-bottom: 2rem">
-              <i class="fa-solid fa-location-dot"></i> IIIT Gwalior, India
+      <div class="footer" id="footer">
+        <div class="footer-content">
+          <div class="footer-content-left">
+            <h1>TravelToor</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Voluptatum, tenetur reprehenderit suscipit a sit ad ullam, debitis
+              inventore iure totam corrupti optio adipisci accusantium nostrum
+              perferendis vitae soluta asperiores? Sapiente.
             </p>
-            <p style="margin-bottom: 2rem">
-              <i class="fa-solid fa-phone"></i> +91 9876543210
-            </p>
-            <p style="margin-bottom: 2rem">
-              <i class="fa-regular fa-envelope"></i> traveltoor@gmail.com
-            </p>
+            <div class="footer-social-icons">
+              <img src="assets/facebook_icon.png" alt="" />
+              <img src="assets/linkedin_icon.png" alt="" />
+              <img src="assets/twitter_icon.png" alt="" />
+            </div>
+          </div>
+          <div class="footer-content-center">
+            <h2>COMPANY</h2>
+            <ul>
+              <li>Home</li>
+              <li>About us</li>
+              <li>Packages</li>
+              <li>Privacy Policy</li>
+            </ul>
+          </div>
+          <div class="footer-content-right">
+            <h2>GET IN TOUCH</h2>
+            <ul>
+              <li>+1-212-456-7890</li>
+              <li>contact@TravelToor.com</li>
+            </ul>
           </div>
         </div>
-        <div class="copyright">
-          TravelToor<i class="fa-regular fa-copyright"></i>2024: All Rights
-          Reserved
-        </div>
+        <hr />
+        <p class="footer-copyright">
+          Copyright © 2024 TravelToor. All rights reserved
+        </p>
+      </div>
     </footer>
 </body>
 </html>
