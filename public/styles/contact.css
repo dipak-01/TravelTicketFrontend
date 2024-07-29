@@ -3,10 +3,7 @@
     padding: 0;
 }
 .hero{
-    background-image: url(https://th.bing.com/th/id/R.733c353922726881b3421e6616061c1a?rik=1yRsTFMXubKu6Q&riu=http%3a%2f%2fwww.lifecoach.com.mx%2fwp-content%2fuploads%2f2010%2f06%2fCool-Wallpapers-Beautiful-Nature-HD-Wallpaper-e1393084208773.jpg&ehk=FxNu3Ron7%2brF0uIzXKw28Uw0MQ0jVx6PNg%2bzAZoqHjo%3d&risl=&pid=ImgRaw&r=0);
-    background-size: contain;
     height: 23rem;
-    color: beige;
     font-size: 2rem;
     align-content:flex-end;
 }
@@ -45,4 +42,22 @@
     color: rgb(37, 113, 235);
     height: 1rem;
     font-size: 1.25rem;
+}
+@media (max-width: 1375px)
+{
+    .cnt{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .teamcard{
+        margin-bottom: 3rem;
+    }
+}
+@media (max-width: 680px)
+{
+    p{
+        font-size: 6vw;
+    }
 }
