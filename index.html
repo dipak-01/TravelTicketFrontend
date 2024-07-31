@@ -25,6 +25,8 @@
     <title>Travel</title>
   </head>
   <body class="body">
+    <div class="child">
+    <main>
     <nav class="newNav">
       <div class="offer">
         <h3 class="offer-heading">On your first booking</h3>
@@ -65,7 +67,7 @@
           <a href="/TravelTicketFrontend/public/pages/contact.html">Contact</a>
         </li>
         <li class="hideonMobile">
-          <a href="/TravelTicketFrontend/public/pages/login.html">Login</a>
+          <button class="login-btn"><a href="/TravelTicketFrontend/public/pages/login.html">Login</a></button>
         </li>
         <li class="menu-btn" onclick="showSidebar()">
           <a><i class="fa-solid fa-bars-staggered"></i></a>
@@ -169,8 +171,10 @@
             <div class="card2"></div>
           </div>
           <div class="column2">
-            <div class="plane"></div>
-            <div class="card3"></div>
+         <!--   <div class="plane"></div>  -->
+            <div class="card3">
+              <img src="../TravelTicketFrontend/assets/img3.jpg">
+            </div>
           </div>
         </div>
       </div>
@@ -195,20 +199,17 @@
         <div class="trip_content1">
           <i class="fa-solid fa-plane-departure"></i>
           <h3>Easy Booking</h3>
-          <p>Book your trip with us and get the best deals</p>
+          <p>Get the best deals</p>
         </div>
         <div class="trip_content2">
           <i class="fa-solid fa-people-group"></i>
           <h3>Best Deals</h3>
-          <p>Get the best deals on your trip with us</p>
+          <p>Get the best deals on your trip</p>
         </div>
         <div class="trip_content3">
           <i class="fa-solid fa-globe"></i>
           <h3>Great Places</h3>
           <p>Places that will win your hearts</p>
-        </div>
-        <div class="image">
-          <img src="/TravelTicketFrontend/assets/plane1.png" alt="" />
         </div>
       </div>
     </div>
@@ -428,13 +429,11 @@
     <div class="description">
       <div class="desc_content">
         <p style="color: #ffa03f" class="way">Way Choose Us?</p>
-        <h1>Choose Dream Dictation For Explore World</h1>
+        <h1 id="head">Choose Dream Dictation For Explore World</h1>
         <div class="desc_content1">
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae
             quas quod ad repellendus sequi ab recusandae velit necessitatibus?
-            Cumque atque aspernatur reiciendis excepturi voluptatem quisquam!
-            Alias tempore ex ipsa neque!
           </p>
         </div>
         <div class="btn">
@@ -494,25 +493,20 @@
     <div class="review_header">
       <div class="review_heading">
         <p>What Our Client Say's</p>
-        <h1>Our customer are our priority</h1>
-      </div>
-      <div class="review_plane">
-        <img src="/TravelTicketFrontend/assets/plane4.jpg" alt="" />
-        <i id="leftarrow" class="fa-solid fa-arrow-left"></i>
-        <i id="rightarrow" class="fa-solid fa-arrow-right"></i>
+        <h1>Our Customer Are Our Priority</h1>
       </div>
     </div>
 
     <!-- review section -->
-    <div class="review_section">
+   <!-- <div class="review_section">
       <div class="slide">
         <li class="review">
           <div class="photo client1">
             <div class="photo-back"></div>
           </div>
           <div class="comment">
-            <div class="orangeStrip"></div>
-            <div class="comments">
+          <div class="orangeStrip"></div>
+          <div class="comments">
               <h1>Akash Tripathi</h1>
               <h3>CEO of Xyz Company</h3>
               <p>
@@ -523,6 +517,7 @@
               </p>
             </div>
           </div>
+          
         </li>
         <li class="review">
           <div class="photo client2">
@@ -579,13 +574,31 @@
           </div>
         </li>
       </div>
+    </div>-->
+    <div class="wrapper review-wrapper">
+      <i id="left" class="fa-solid fa-angle-left"></i>
+      <ul class="carousel review-carousel">
+        <li class="card review-card">
+          1
+        </li>
+        <li class="card review-card">
+          2
+        </li>
+        <li class="card review-card">
+         3
+        </li>
+        <li class="card review-card">
+          4
+        </li>
+      
+      </ul>
+      <i id="right" class="fa-solid fa-angle-right"></i>
     </div>
-
     <!-- newsletter section -->
     <div class="newsletter">
-      <div class="planeimg1">
+      <!-- <div class="planeimg1">
         <img src="/TravelTicketFrontend/assets/plane4.jpg" alt="" />
-      </div>
+      </div>-->
       <div class="content">
         <h1 class="content_head">Subscribe To Get The Latest</h1>
         <h1 class="news">News About Us</h1>
@@ -605,13 +618,13 @@
           </button>
         </form>
       </div>
-      <div class="planeimg2">
+     <!-- <div class="planeimg2">
         <img src="/TravelTicketFrontend/assets/plane2.jpg" alt="" />
-      </div>
+      </div>-->
     </div>
 
     <!-- footer section -->
-    <div class="footer" id="footer">
+   <!-- <div class="footer" id="footer">
       <div class="footer-content">
         <div class="footer-content-left">
           <h1>TravelToor</h1>
@@ -648,8 +661,47 @@
       <p class="footer-copyright">
         Copyright © 2024 TravelToor. All rights reserved
       </p>
+    </div>-->
+  </main>
+  <div class="footer" id="footer">
+    <div class="footer-content">
+      <div class="footer-content-left">
+        <h1>TravelToor</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+          Voluptatum, tenetur reprehenderit suscipit a sit ad ullam, debitis
+          inventore iure totam corrupti optio adipisci accusantium nostrum
+          perferendis vitae soluta asperiores? Sapiente.
+        </p>
+        <div class="footer-social-icons">
+          <img src="assets/facebook_icon.png" alt="" />
+          <img src="assets/linkedin_icon.png" alt="" />
+          <img src="assets/twitter_icon.png" alt="" />
+        </div>
+      </div>
+      <div class="footer-content-center">
+        <h2>COMPANY</h2>
+        <ul>
+          <li>Home</li>
+          <li>About us</li>
+          <li>Packages</li>
+          <li>Privacy Policy</li>
+        </ul>
+      </div>
+      <div class="footer-content-right">
+        <h2>GET IN TOUCH</h2>
+        <ul>
+          <li>+1-212-456-7890</li>
+          <li>contact@TravelToor.com</li>
+        </ul>
+      </div>
     </div>
-
+    <hr />
+    <p class="footer-copyright">
+      Copyright © 2024 TravelToor. All rights reserved
+    </p>
+  </div>
+</div>
     <script src="/TravelTicketFrontend/public/scripts/script.js"></script>
   </body>
 </html>
