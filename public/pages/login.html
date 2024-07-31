@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../styles/login.css" />
+    <link rel="stylesheet" href="../styles/style.css">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
@@ -26,21 +27,45 @@
     <title>login</title>
   </head>
   <body>
-    <nav class="nav">
-      <div class="logo">
-        <a>Travel</a>
-        <a class="toor">Toor</a>
-      </div>
-      <div class="navigation">
-        <a href="/index.html">Home</a>
-        <a href="about.html">About</a>
-        <a>Packages</a>
-        <a href="contact.html">Contact</a>
-      </div>
-      <div class="menu">
-        <a><i class="fa-solid fa-bars-staggered"></i></a>
-      </div>
-    </nav>
+        <!-- navbar -->
+        <nav class="nav">
+          <ul class="sidebar">
+            <li onclick="hideSidebar()">
+              <a><i class="fa-solid fa-xmark"></i></a>
+            </li>
+            <li>
+              <a href="/TravelTicketFrontend/public/pages/about.html">About</a>
+            </li>
+            <li><a href="#">Packages</a></li>
+            <li>
+              <a href="/TravelTicketFrontend/public/pages/contact.html">Contact</a>
+            </li>
+            <li>
+              <a href="/TravelTicketFrontend/public/pages/login.html">Login</a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="#">Travel<span class="toor">Toor</span></a>
+            </li>
+            <li class="hideonMobile">
+              <a href="/TravelTicketFrontend/public/pages/about.html">About</a>
+            </li>
+            <li class="hideonMobile"><a href="#">Packages</a></li>
+            <li class="hideonMobile">
+              <a href="/TravelTicketFrontend/public/pages/contact.html">Contact</a>
+            </li>
+            <li class="hideonMobile">
+              <button class="login-btn"><a href="/TravelTicketFrontend/public/pages/login.html">Login</a></button>
+            </li>
+            <li class="menu-btn" onclick="showSidebar()">
+              <a><i class="fa-solid fa-bars-staggered"></i></a>
+            </li>
+            <li>
+              <div></div>
+            </li>
+          </ul>
+        </nav>
     <div class="container" id="container">
       <div class="form-container sign-up-container">
         <div class="image"></div>

@@ -153,17 +153,16 @@ wrapper.addEventListener("mouseenter", () => clearTimeout(timeoutId));
 wrapper.addEventListener("mouseleave", autoPlay);
 
 //slider for review section
-const slide = document.querySelector(".slide");
-const firstDivWidth = slide.querySelector(".review").offsetWidth;
-const container = document.querySelector(".review_section");
-const arrowRight = document.getElementById("rightarrow");
-const arrowLeft = document.getElementById("leftarrow");
+// const slide = document.querySelector(".slide");
+// const firstDivWidth = slide.querySelector(".review").offsetWidth;
+// const container = document.querySelector(".review_section");
+// const arrowRight = document.getElementById("rightarrow");
+// const arrowLeft = document.getElementById("leftarrow");
 
-let scrollWidth = container.scrollWidth - container.clientWidth;
+// arrowRight.onclick = () => {
+//   container.scrollLeft += firstDivWidth;
 
-arrowRight.onclick = () => {
-  container.scrollLeft += firstDivWidth;
-};
-arrowLeft.onclick = () => {
-  container.scrollLeft -= firstDivWidth;
-};
+// };
+// arrowLeft.onclick = () => {
+//   container.scrollLeft -= firstDivWidth;
+// };
