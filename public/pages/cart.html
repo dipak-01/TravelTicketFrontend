@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart</title>
+    <link
+      rel="stylesheet"
+      href="/TravelTicketFrontend/public/styles/cart.css"
+    />
+  </head>
+  <body>
+    <div class="cart">
+      <div class="cart-items">
+        <!-- Cart item details -->
+        <div class="cart-item">
+          <h2>Place Details</h2>
+          <img id="package-image" src="" alt="img" />
+          <p>Destination: <span id="destination"></span></p>
+          <p>Location: <span id="location"></span></p>
+          <p>Country: <span id="country"></span></p>
+          <p>Price: <span id="price"></span> / night Per Person*</p>
+        </div>
+        <!-- Select number of people -->
+        <div class="cart-item">
+          <h2>Number of People</h2>
+          <select id="num-people"></select>
+        </div>
+        <!-- Select journey date -->
+        <div class="cart-item">
+          <h2>Journey Date</h2>
+          <input type="date" id="journey-date" />
+        </div>
+        <!-- Select journey duration -->
+        <div class="cart-item">
+          <h2>Journey Duration</h2>
+          <select id="journey-duration"></select>
+        </div>
+      </div>
+      <div class="cart-bottom">
+        <div class="cart-total">
+          <h2>Cart Total</h2>
+          <div>
+            <div class="cart-total-details">
+              <p>Sub-Total*</p>
+              <p id="sub-total">0</p>
+            </div>
+            <hr />
+            <div class="cart-total-details">
+              <p>Platform Fees</p>
+              <p id="platform-fees">&#8377; 300</p>
+            </div>
+            <hr />
+            <div class="cart-total-details">
+              <p>Travel Expenses</p>
+              <p id="travel-expenses">&#8377; 2000 / Per Person*</p>
+            </div>
+            <hr />
+            <div class="cart-total-details">
+              <b>Total</b>
+              <b id="total-amount">0</b>
+            </div>
+          </div>
+          <button id="proceed-to-checkout">PROCEED TO CHECKOUT</button>
+        </div>
+        <div class="cart-promocode">
+          <div>
+            <p>If you have a promo code, Enter it here</p>
+            <div class="cart-promocode-input">
+              <input
+                type="text"
+                id="promo-code"
+                placeholder="Enter Promo Code"
+              />
+              <button id="apply-promo">Apply</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+    <script src="/TravelTicketFrontend/public/scripts/cart.js"></script>
+  </body>
+</html>

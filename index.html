@@ -26,479 +26,507 @@
   </head>
   <body class="body">
     <div class="child">
-    <main>
-    <nav class="newNav">
-      <div class="offer">
-        <h3 class="offer-heading">On your first booking</h3>
-        <p class="offer-content">Take a discount of more than 30%</p>
-        <p class="offer-content">Use Promo Code - <b>HAPPY30</b></p>
-        <h3 class="offer-heading">Existing users</h3>
-        <p class="offer-content">Take a discount of more than 25%</p>
-        <p class="offer-content">Use Promo Code - <b>HAPPY25</b></p>
-      </div>
-    </nav>
-
-    <!-- navbar -->
-    <nav class="nav">
-      <ul class="sidebar">
-        <li onclick="hideSidebar()">
-          <a><i class="fa-solid fa-xmark"></i></a>
-        </li>
-        <li>
-          <a href="/TravelTicketFrontend/public/pages/about.html">About</a>
-        </li>
-        <li><a href="#">Packages</a></li>
-        <li>
-          <a href="/TravelTicketFrontend/public/pages/contact.html">Contact</a>
-        </li>
-        <li>
-          <a href="/TravelTicketFrontend/public/pages/login.html">Login</a>
-        </li>
-      </ul>
-      <ul>
-        <li>
-          <a href="#">Travel<span class="toor">Toor</span></a>
-        </li>
-        <li class="hideonMobile">
-          <a href="/TravelTicketFrontend/public/pages/about.html">About</a>
-        </li>
-        <li class="hideonMobile"><a href="#">Packages</a></li>
-        <li class="hideonMobile">
-          <a href="/TravelTicketFrontend/public/pages/contact.html">Contact</a>
-        </li>
-        <li class="hideonMobile">
-          <button class="login-btn"><a href="/TravelTicketFrontend/public/pages/login.html">Login</a></button>
-        </li>
-        <li class="menu-btn" onclick="showSidebar()">
-          <a><i class="fa-solid fa-bars-staggered"></i></a>
-        </li>
-        <li>
-          <div></div>
-        </li>
-      </ul>
-    </nav>
-
-    <!-- home -->
-    <div class="home article">
-      <div class="main_content">
-        <div class="left">
-          <div class="firstline">
-            <h1 class="let">Let’s</h1>
-            <h1>Create</h1>
+      <main>
+        <nav class="newNav">
+          <div class="offer">
+            <h3 class="offer-heading">On your first booking</h3>
+            <p class="offer-content">Take a discount of more than 30%</p>
+            <p class="offer-content">Use Promo Code - <b>HAPPY30</b></p>
+            <h3 class="offer-heading">Existing users</h3>
+            <p class="offer-content">Take a discount of more than 25%</p>
+            <p class="offer-content">Use Promo Code - <b>HAPPY25</b></p>
           </div>
-          <h1>Memorable</h1>
-          <h1>Journey</h1>
-          <p class="para_content">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum ea
-            quam commodi amet tenetur qui accusamus
-          </p>
-          <div class="location_search">
-            <form action="">
-              <div class="search-box">
-                <p>
-                  Location
-                  <i
-                    class="fa-solid fa-caret-down"
-                    style="margin-left: 0.2rem"
-                  ></i>
-                </p>
-                <input
-                  type="search"
-                  id="searchBar"
-                  name="searchBar"
-                  placeholder="Lakshadweep"
-                />
-              </div>
-              <div class="check-in">
-                <p>
-                  Check-In
-                  <i
-                    class="fa-solid fa-caret-down"
-                    style="margin-left: 0.2rem"
-                  ></i>
-                </p>
-                <input
-                  type="date"
-                  name="checkInDate"
-                  id="checkInDate"
-                  class="date"
-                />
-              </div>
-              <div class="check-out">
-                <p>
-                  Check-Out
-                  <i
-                    class="fa-solid fa-caret-down"
-                    style="margin-left: 0.2rem"
-                  ></i>
-                </p>
-                <input
-                  type="date"
-                  name="checkOutDate"
-                  id="checkOutDate"
-                  class="date"
-                />
-              </div>
-              <div class="price">
-                <p>
-                  Price
-                  <i
-                    class="fa-solid fa-caret-down"
-                    style="margin-left: 0.2rem"
-                  ></i>
-                </p>
-                <input
-                  type="range"
-                  min="2000"
-                  max="50000"
-                  value="2000"
-                  id="priceRange"
-                  class="range"
-                />
-                <p style="color: rgba(0, 0, 0, 0.65)">
-                  &#8377; <span id="priceDisplay"></span>
-                </p>
-              </div>
-              <button class="search_icon" type="submit">
-                <i class="fa-solid fa-magnifying-glass"></i>
+        </nav>
+
+        <!-- navbar -->
+        <nav class="nav">
+          <ul class="sidebar">
+            <li onclick="hideSidebar()">
+              <a><i class="fa-solid fa-xmark"></i></a>
+            </li>
+            <li>
+              <a href="/TravelTicketFrontend/public/pages/about.html">About</a>
+            </li>
+            <li>
+              <a href="/TravelTicketFrontend/public/pages/packages.html"
+                >Packages</a
+              >
+            </li>
+            <li>
+              <a href="/TravelTicketFrontend/public/pages/contact.html"
+                >Contact</a
+              >
+            </li>
+            <li>
+              <a href="/TravelTicketFrontend/public/pages/login.html">Login</a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="#">Travel<span class="toor">Toor</span></a>
+            </li>
+            <li class="hideonMobile">
+              <a href="/TravelTicketFrontend/public/pages/about.html">About</a>
+            </li>
+            <li class="hideonMobile"><a href="#">Packages</a></li>
+            <li class="hideonMobile">
+              <a href="/TravelTicketFrontend/public/pages/contact.html"
+                >Contact</a
+              >
+            </li>
+            <li class="hideonMobile">
+              <button class="login-btn">
+                <a href="/TravelTicketFrontend/public/pages/login.html"
+                  >Login</a
+                >
               </button>
-            </form>
-          </div>
-        </div>
-        <div class="right">
-          <div class="column1">
-            <div class="card1"></div>
-            <div class="card2"></div>
-          </div>
-          <div class="column2">
-         <!--   <div class="plane"></div>  -->
-            <div class="card3">
-              <img src="../TravelTicketFrontend/assets/img3.jpg">
+            </li>
+            <li class="menu-btn" onclick="showSidebar()">
+              <a><i class="fa-solid fa-bars-staggered"></i></a>
+            </li>
+            <li>
+              <div></div>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- home -->
+        <div class="home article">
+          <div class="main_content">
+            <div class="left">
+              <div class="firstline">
+                <h1 class="let">Let’s</h1>
+                <h1>Create</h1>
+              </div>
+              <h1>Memorable</h1>
+              <h1>Journey</h1>
+              <p class="para_content">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum ea
+                quam commodi amet tenetur qui accusamus
+              </p>
+              <div class="location_search">
+                <form action="">
+                  <div class="search-box">
+                    <p>
+                      Location
+                      <i
+                        class="fa-solid fa-caret-down"
+                        style="margin-left: 0.2rem"
+                      ></i>
+                    </p>
+                    <input
+                      type="search"
+                      id="searchBar"
+                      name="searchBar"
+                      placeholder="Lakshadweep"
+                    />
+                  </div>
+                  <div class="check-in">
+                    <p>
+                      Check-In
+                      <i
+                        class="fa-solid fa-caret-down"
+                        style="margin-left: 0.2rem"
+                      ></i>
+                    </p>
+                    <input
+                      type="date"
+                      name="checkInDate"
+                      id="checkInDate"
+                      class="date"
+                    />
+                  </div>
+                  <div class="check-out">
+                    <p>
+                      Check-Out
+                      <i
+                        class="fa-solid fa-caret-down"
+                        style="margin-left: 0.2rem"
+                      ></i>
+                    </p>
+                    <input
+                      type="date"
+                      name="checkOutDate"
+                      id="checkOutDate"
+                      class="date"
+                    />
+                  </div>
+                  <div class="price">
+                    <p>
+                      Price
+                      <i
+                        class="fa-solid fa-caret-down"
+                        style="margin-left: 0.2rem"
+                      ></i>
+                    </p>
+                    <input
+                      type="range"
+                      min="2000"
+                      max="50000"
+                      value="2000"
+                      id="priceRange"
+                      class="range"
+                    />
+                    <p style="color: rgba(0, 0, 0, 0.65)">
+                      &#8377; <span id="priceDisplay"></span>
+                    </p>
+                  </div>
+                  <button class="search_icon" type="submit">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                  </button>
+                </form>
+              </div>
+            </div>
+            <div class="right">
+              <div class="column1">
+                <div class="card1"></div>
+                <div class="card2"></div>
+              </div>
+              <div class="column2">
+                <!--   <div class="plane"></div>  -->
+                <div class="card3">
+                  <img src="../TravelTicketFrontend/assets/img3.jpg" />
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
 
-    <!-- trip-section -->
-    <div class="trip">
-      <div class="column3">
-        <div class="card4">
-          <div class="card5"></div>
-          <div class="tour">
-            <div class="bookmark">
-              <i class="fa-solid fa-book-bookmark"></i>
+        <!-- trip-section -->
+        <div class="trip">
+          <div class="column3">
+            <div class="card4">
+              <div class="card5"></div>
+              <div class="tour">
+                <div class="bookmark">
+                  <i class="fa-solid fa-book-bookmark"></i>
+                </div>
+                <p>Professional Tour Guide</p>
+              </div>
             </div>
-            <p>Professional Tour Guide</p>
+          </div>
+          <div class="trip_content">
+            <p class="header" style="color: #ffa03f">Way Choose Us?</p>
+            <h1>Plan Your Trip With Us</h1>
+            <div class="trip_content1">
+              <i class="fa-solid fa-plane-departure"></i>
+              <h3>Easy Booking</h3>
+              <p>Get the best deals</p>
+            </div>
+            <div class="trip_content2">
+              <i class="fa-solid fa-people-group"></i>
+              <h3>Best Deals</h3>
+              <p>Get the best deals on your trip</p>
+            </div>
+            <div class="trip_content3">
+              <i class="fa-solid fa-globe"></i>
+              <h3>Great Places</h3>
+              <p>Places that will win your hearts</p>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="trip_content">
-        <p class="header" style="color: #ffa03f">Way Choose Us?</p>
-        <h1>Plan Your Trip With Us</h1>
-        <div class="trip_content1">
-          <i class="fa-solid fa-plane-departure"></i>
-          <h3>Easy Booking</h3>
-          <p>Get the best deals</p>
-        </div>
-        <div class="trip_content2">
-          <i class="fa-solid fa-people-group"></i>
-          <h3>Best Deals</h3>
-          <p>Get the best deals on your trip</p>
-        </div>
-        <div class="trip_content3">
-          <i class="fa-solid fa-globe"></i>
-          <h3>Great Places</h3>
-          <p>Places that will win your hearts</p>
-        </div>
-      </div>
-    </div>
 
-    <!-- card header -->
-    <div class="card_header">
-      <div>
-        <p>Famous Dictation!</p>
-        <h1>Our Popular <span>Dictation's</span></h1>
-      </div>
-    </div>
-
-    <!-- card slider -->
-    <div class="wrapper">
-      <i id="left" class="fa-solid fa-angle-left"></i>
-      <ul class="carousel">
-        <li class="card">
-          <div class="img">
-            <img
-              src="/TravelTicketFrontend/assets/card1.jpg"
-              draggable="false"
-            />
-          </div>
-          <div class="rating">
-            <p class="ratings">
-              <img src="/TravelTicketFrontend/assets/star.png" alt="" />4.0
-              <span class="users">(23)</span>
-            </p>
-            <img
-              src="/TravelTicketFrontend/assets/normal_face.png"
-              alt=""
-              class="userEmoji"
-            />
-          </div>
-          <h2>Manarola</h2>
-          <p>Rs. 45,000/- <span>Per person</span></p>
-          <div class="icons">
-            <p class="icon">
-              <img src="/TravelTicketFrontend/assets/time.png" alt="" /> 4 Day's
-            </p>
-            <p class="icon">
-              <img src="/TravelTicketFrontend/assets/people.png" alt="" /> 2+
-            </p>
-            <p class="icon">
-              <img src="/TravelTicketFrontend/assets/maps.png" alt="" /> Italy
-            </p>
-          </div>
-        </li>
-        <li class="card">
-          <div class="img">
-            <img
-              src="/TravelTicketFrontend/assets/card2.jpg"
-              draggable="false"
-            />
-          </div>
-          <div class="rating">
-            <p class="ratings">
-              <img src="/TravelTicketFrontend/assets/star.png" alt="" />4.5
-              <span class="users">(41)</span>
-            </p>
-            <img
-              src="/TravelTicketFrontend/assets/kiss_face.png"
-              alt=""
-              class="userEmoji"
-            />
-          </div>
-          <h2>Maldives</h2>
-          <p>Rs. 30,000/- <span>Per person</span></p>
-          <div class="icons">
-            <p class="icon">
-              <img src="/TravelTicketFrontend/assets/time.png" alt="" /> 10
-              Day's
-            </p>
-            <p class="icon">
-              <img src="/TravelTicketFrontend/assets/people.png" alt="" /> 3+
-            </p>
-            <p class="icon">
-              <img src="/TravelTicketFrontend/assets/maps.png" alt="" /> India
-            </p>
-          </div>
-        </li>
-        <li class="card">
-          <div class="img">
-            <img
-              src="/TravelTicketFrontend/assets/card3.jpg"
-              draggable="false"
-            />
-          </div>
-          <div class="rating">
-            <p class="ratings">
-              <img src="/TravelTicketFrontend/assets/star.png" alt="" />4.2
-              <span class="users">(97)</span>
-            </p>
-            <img
-              src="/TravelTicketFrontend/assets/normal_face.png"
-              alt=""
-              class="userEmoji"
-            />
-          </div>
-          <h2>Oia</h2>
-          <p>Rs. 60,000/- <span>Per person</span></p>
-          <div class="icons">
-            <p class="icon">
-              <img src="/TravelTicketFrontend/assets/time.png" alt="" /> 10
-              Day's
-            </p>
-            <p class="icon">
-              <img src="/TravelTicketFrontend/assets/people.png" alt="" /> 13+
-            </p>
-            <p class="icon">
-              <img src="/TravelTicketFrontend/assets/maps.png" alt="" /> Greece
-            </p>
-          </div>
-        </li>
-        <li class="card">
-          <div class="img">
-            <img
-              src="/TravelTicketFrontend/assets/card4.jpg"
-              draggable="false"
-            />
-          </div>
-          <div class="rating">
-            <p class="ratings">
-              <img src="/TravelTicketFrontend/assets/star.png" alt="" />4.8
-              <span class="users">(67)</span>
-            </p>
-            <img
-              src="/TravelTicketFrontend/assets/heart_face.png"
-              alt=""
-              class="userEmoji"
-            />
-          </div>
-          <h2>Paris</h2>
-          <p>Rs. 50,000/- <span>Per person</span></p>
-          <div class="icons">
-            <p class="icon">
-              <img src="/TravelTicketFrontend/assets/time.png" alt="" /> 3 Day's
-            </p>
-            <p class="icon">
-              <img src="/TravelTicketFrontend/assets/people.png" alt="" /> 2+
-            </p>
-            <p class="icon">
-              <img src="/TravelTicketFrontend/assets/maps.png" alt="" /> France
-            </p>
-          </div>
-        </li>
-        <li class="card">
-          <div class="img">
-            <img
-              src="/TravelTicketFrontend/assets/card5.jpg"
-              draggable="false"
-            />
-          </div>
-          <div class="rating">
-            <p class="ratings">
-              <img src="/TravelTicketFrontend/assets/star.png" alt="" />4.3
-              <span class="users">(124)</span>
-            </p>
-            <img
-              src="/TravelTicketFrontend/assets/normal_face.png"
-              alt=""
-              class="userEmoji"
-            />
-          </div>
-          <h2>Abu Dhabi</h2>
-          <p>Rs. 50,000/- <span>Per person</span></p>
-          <div class="icons">
-            <p class="icon">
-              <img src="/TravelTicketFrontend/assets/time.png" alt="" /> 6 Day's
-            </p>
-            <p class="icon">
-              <img src="/TravelTicketFrontend/assets/people.png" alt="" /> 5+
-            </p>
-            <p class="icon">
-              <img src="/TravelTicketFrontend/assets/maps.png" alt="" /> UAE
-            </p>
-          </div>
-        </li>
-        <li class="card">
-          <div class="img">
-            <img
-              src="/TravelTicketFrontend/assets/card6.jpg"
-              alt="img"
-              draggable="false"
-            />
-          </div>
-          <div class="rating">
-            <p class="ratings">
-              <img src="/TravelTicketFrontend/assets/star.png" alt="" />4.7
-              <span class="users">(323)</span>
-            </p>
-            <img
-              src="/TravelTicketFrontend/assets/heart_face.png"
-              alt=""
-              class="userEmoji"
-            />
-          </div>
-          <h2>Hong Kong</h2>
-          <p>Rs. 25,000/- <span>Per person</span></p>
-          <div class="icons">
-            <p class="icon">
-              <img src="/TravelTicketFrontend/assets/time.png" alt="" /> 7 Day's
-            </p>
-            <p class="icon">
-              <img src="/TravelTicketFrontend/assets/people.png" alt="" /> 8+
-            </p>
-            <p class="icon">
-              <img src="/TravelTicketFrontend/assets/maps.png" alt="" /> China
-            </p>
-          </div>
-        </li>
-      </ul>
-      <i id="right" class="fa-solid fa-angle-right"></i>
-    </div>
-
-    <!-- description section -->
-    <div class="description">
-      <div class="desc_content">
-        <p style="color: #ffa03f" class="way">Way Choose Us?</p>
-        <h1 id="head">Choose Dream Dictation For Explore World</h1>
-        <div class="desc_content1">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae
-            quas quod ad repellendus sequi ab recusandae velit necessitatibus?
-          </p>
-        </div>
-        <div class="btn">
-          <button class="about-btn">About Us</button>
-        </div>
-        <div class="desc_content2">
+        <!-- card header -->
+        <div class="card_header">
           <div>
-            <h1>14</h1>
-            <p>Years Experience</p>
-          </div>
-          <div>
-            <h1>320+</h1>
-            <p>Distention Collabration</p>
-          </div>
-          <div>
-            <h1>67+</h1>
-            <p>Satisfied CUstomer</p>
+            <p>Famous Dictation!</p>
+            <h1>Our Popular <span>Dictation's</span></h1>
           </div>
         </div>
-      </div>
-      <div class="right_part">
-        <div class="box">
-          <div class="back_box"></div>
-          <div class="tour experience">
-            <p>How Your Experience?</p>
-            <img
-              src="/TravelTicketFrontend/assets/angry_face.png"
-              alt=""
-              class="emoji first"
-            />
-            <img
-              src="/TravelTicketFrontend/assets/sad_face.png"
-              alt=""
-              class="emoji"
-            />
-            <img
-              src="/TravelTicketFrontend/assets/normal_face.png"
-              alt=""
-              class="emoji"
-            />
-            <img
-              src="/TravelTicketFrontend/assets/kiss_face.png"
-              alt=""
-              class="emoji"
-            />
-            <img
-              src="/TravelTicketFrontend/assets/heart_face.png"
-              alt=""
-              class="emoji"
-            />
+
+        <!-- card slider -->
+        <div class="wrapper">
+          <i id="left" class="fa-solid fa-angle-left"></i>
+          <ul class="carousel">
+            <li class="card">
+              <div class="img">
+                <img
+                  src="/TravelTicketFrontend/assets/card1.jpg"
+                  draggable="false"
+                />
+              </div>
+              <div class="rating">
+                <p class="ratings">
+                  <img src="/TravelTicketFrontend/assets/star.png" alt="" />4.0
+                  <span class="users">(23)</span>
+                </p>
+                <img
+                  src="/TravelTicketFrontend/assets/normal_face.png"
+                  alt=""
+                  class="userEmoji"
+                />
+              </div>
+              <h2>Manarola</h2>
+              <p>Rs. 45,000/- <span>Per person</span></p>
+              <div class="icons">
+                <p class="icon">
+                  <img src="/TravelTicketFrontend/assets/time.png" alt="" /> 4
+                  Day's
+                </p>
+                <p class="icon">
+                  <img src="/TravelTicketFrontend/assets/people.png" alt="" />
+                  2+
+                </p>
+                <p class="icon">
+                  <img src="/TravelTicketFrontend/assets/maps.png" alt="" />
+                  Italy
+                </p>
+              </div>
+            </li>
+            <li class="card">
+              <div class="img">
+                <img
+                  src="/TravelTicketFrontend/assets/card2.jpg"
+                  draggable="false"
+                />
+              </div>
+              <div class="rating">
+                <p class="ratings">
+                  <img src="/TravelTicketFrontend/assets/star.png" alt="" />4.5
+                  <span class="users">(41)</span>
+                </p>
+                <img
+                  src="/TravelTicketFrontend/assets/kiss_face.png"
+                  alt=""
+                  class="userEmoji"
+                />
+              </div>
+              <h2>Maldives</h2>
+              <p>Rs. 30,000/- <span>Per person</span></p>
+              <div class="icons">
+                <p class="icon">
+                  <img src="/TravelTicketFrontend/assets/time.png" alt="" /> 10
+                  Day's
+                </p>
+                <p class="icon">
+                  <img src="/TravelTicketFrontend/assets/people.png" alt="" />
+                  3+
+                </p>
+                <p class="icon">
+                  <img src="/TravelTicketFrontend/assets/maps.png" alt="" />
+                  India
+                </p>
+              </div>
+            </li>
+            <li class="card">
+              <div class="img">
+                <img
+                  src="/TravelTicketFrontend/assets/card3.jpg"
+                  draggable="false"
+                />
+              </div>
+              <div class="rating">
+                <p class="ratings">
+                  <img src="/TravelTicketFrontend/assets/star.png" alt="" />4.2
+                  <span class="users">(97)</span>
+                </p>
+                <img
+                  src="/TravelTicketFrontend/assets/normal_face.png"
+                  alt=""
+                  class="userEmoji"
+                />
+              </div>
+              <h2>Oia</h2>
+              <p>Rs. 60,000/- <span>Per person</span></p>
+              <div class="icons">
+                <p class="icon">
+                  <img src="/TravelTicketFrontend/assets/time.png" alt="" /> 10
+                  Day's
+                </p>
+                <p class="icon">
+                  <img src="/TravelTicketFrontend/assets/people.png" alt="" />
+                  13+
+                </p>
+                <p class="icon">
+                  <img src="/TravelTicketFrontend/assets/maps.png" alt="" />
+                  Greece
+                </p>
+              </div>
+            </li>
+            <li class="card">
+              <div class="img">
+                <img
+                  src="/TravelTicketFrontend/assets/card4.jpg"
+                  draggable="false"
+                />
+              </div>
+              <div class="rating">
+                <p class="ratings">
+                  <img src="/TravelTicketFrontend/assets/star.png" alt="" />4.8
+                  <span class="users">(67)</span>
+                </p>
+                <img
+                  src="/TravelTicketFrontend/assets/heart_face.png"
+                  alt=""
+                  class="userEmoji"
+                />
+              </div>
+              <h2>Paris</h2>
+              <p>Rs. 50,000/- <span>Per person</span></p>
+              <div class="icons">
+                <p class="icon">
+                  <img src="/TravelTicketFrontend/assets/time.png" alt="" /> 3
+                  Day's
+                </p>
+                <p class="icon">
+                  <img src="/TravelTicketFrontend/assets/people.png" alt="" />
+                  2+
+                </p>
+                <p class="icon">
+                  <img src="/TravelTicketFrontend/assets/maps.png" alt="" />
+                  France
+                </p>
+              </div>
+            </li>
+            <li class="card">
+              <div class="img">
+                <img
+                  src="/TravelTicketFrontend/assets/card5.jpg"
+                  draggable="false"
+                />
+              </div>
+              <div class="rating">
+                <p class="ratings">
+                  <img src="/TravelTicketFrontend/assets/star.png" alt="" />4.3
+                  <span class="users">(124)</span>
+                </p>
+                <img
+                  src="/TravelTicketFrontend/assets/normal_face.png"
+                  alt=""
+                  class="userEmoji"
+                />
+              </div>
+              <h2>Abu Dhabi</h2>
+              <p>Rs. 50,000/- <span>Per person</span></p>
+              <div class="icons">
+                <p class="icon">
+                  <img src="/TravelTicketFrontend/assets/time.png" alt="" /> 6
+                  Day's
+                </p>
+                <p class="icon">
+                  <img src="/TravelTicketFrontend/assets/people.png" alt="" />
+                  5+
+                </p>
+                <p class="icon">
+                  <img src="/TravelTicketFrontend/assets/maps.png" alt="" /> UAE
+                </p>
+              </div>
+            </li>
+            <li class="card">
+              <div class="img">
+                <img
+                  src="/TravelTicketFrontend/assets/card6.jpg"
+                  alt="img"
+                  draggable="false"
+                />
+              </div>
+              <div class="rating">
+                <p class="ratings">
+                  <img src="/TravelTicketFrontend/assets/star.png" alt="" />4.7
+                  <span class="users">(323)</span>
+                </p>
+                <img
+                  src="/TravelTicketFrontend/assets/heart_face.png"
+                  alt=""
+                  class="userEmoji"
+                />
+              </div>
+              <h2>Hong Kong</h2>
+              <p>Rs. 25,000/- <span>Per person</span></p>
+              <div class="icons">
+                <p class="icon">
+                  <img src="/TravelTicketFrontend/assets/time.png" alt="" /> 7
+                  Day's
+                </p>
+                <p class="icon">
+                  <img src="/TravelTicketFrontend/assets/people.png" alt="" />
+                  8+
+                </p>
+                <p class="icon">
+                  <img src="/TravelTicketFrontend/assets/maps.png" alt="" />
+                  China
+                </p>
+              </div>
+            </li>
+          </ul>
+          <i id="right" class="fa-solid fa-angle-right"></i>
+        </div>
+
+        <!-- description section -->
+        <div class="description">
+          <div class="desc_content">
+            <p style="color: #ffa03f" class="way">Way Choose Us?</p>
+            <h1 id="head">Choose Dream Dictation For Explore World</h1>
+            <div class="desc_content1">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Molestiae quas quod ad repellendus sequi ab recusandae velit
+                necessitatibus?
+              </p>
+            </div>
+            <div class="btn">
+              <button class="about-btn">About Us</button>
+            </div>
+            <div class="desc_content2">
+              <div>
+                <h1>14</h1>
+                <p>Years Experience</p>
+              </div>
+              <div>
+                <h1>320+</h1>
+                <p>Distention Collabration</p>
+              </div>
+              <div>
+                <h1>67+</h1>
+                <p>Satisfied CUstomer</p>
+              </div>
+            </div>
+          </div>
+          <div class="right_part">
+            <div class="box">
+              <div class="back_box"></div>
+              <div class="tour experience">
+                <p>How Your Experience?</p>
+                <img
+                  src="/TravelTicketFrontend/assets/angry_face.png"
+                  alt=""
+                  class="emoji first"
+                />
+                <img
+                  src="/TravelTicketFrontend/assets/sad_face.png"
+                  alt=""
+                  class="emoji"
+                />
+                <img
+                  src="/TravelTicketFrontend/assets/normal_face.png"
+                  alt=""
+                  class="emoji"
+                />
+                <img
+                  src="/TravelTicketFrontend/assets/kiss_face.png"
+                  alt=""
+                  class="emoji"
+                />
+                <img
+                  src="/TravelTicketFrontend/assets/heart_face.png"
+                  alt=""
+                  class="emoji"
+                />
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
 
-    <!-- review heading -->
-    <div class="review_header">
-      <div class="review_heading">
-        <p>What Our Client Say's</p>
-        <h1>Our Customer Are Our Priority</h1>
-      </div>
-    </div>
+        <!-- review heading -->
+        <div class="review_header">
+          <div class="review_heading">
+            <p>What Our Client Say's</p>
+            <h1>Our Customer Are Our Priority</h1>
+          </div>
+        </div>
 
-    <!-- review section -->
-   <!-- <div class="review_section">
+        <!-- review section -->
+        <!-- <div class="review_section">
       <div class="slide">
         <li class="review">
           <div class="photo client1">
@@ -575,56 +603,48 @@
         </li>
       </div>
     </div>-->
-    <div class="wrapper review-wrapper">
-      <i id="left" class="fa-solid fa-angle-left"></i>
-      <ul class="carousel review-carousel">
-        <li class="card review-card">
-          1
-        </li>
-        <li class="card review-card">
-          2
-        </li>
-        <li class="card review-card">
-         3
-        </li>
-        <li class="card review-card">
-          4
-        </li>
-      
-      </ul>
-      <i id="right" class="fa-solid fa-angle-right"></i>
-    </div>
-    <!-- newsletter section -->
-    <div class="newsletter">
-      <!-- <div class="planeimg1">
+        <div class="wrapper review-wrapper">
+          <i id="left" class="fa-solid fa-angle-left"></i>
+          <ul class="carousel review-carousel">
+            <li class="card review-card">1</li>
+            <li class="card review-card">2</li>
+            <li class="card review-card">3</li>
+            <li class="card review-card">4</li>
+          </ul>
+          <i id="right" class="fa-solid fa-angle-right"></i>
+        </div>
+        <!-- newsletter section -->
+        <div class="newsletter">
+          <!-- <div class="planeimg1">
         <img src="/TravelTicketFrontend/assets/plane4.jpg" alt="" />
       </div>-->
-      <div class="content">
-        <h1 class="content_head">Subscribe To Get The Latest</h1>
-        <h1 class="news">News About Us</h1>
-        <p class="text">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate
-          optio nulla vitae eos necessitatibus nesciunt quaerat temporibus aut
-        </p>
-        <form action="" method="post" class="mail">
-          <input
-            type="email"
-            name="email"
-            placeholder="Enter Your Email"
-            class="mailbox"
-          />
-          <button class="submit-btn" type="submit" name="submit">
-            Subscribe
-          </button>
-        </form>
-      </div>
-     <!-- <div class="planeimg2">
+          <div class="content">
+            <h1 class="content_head">Subscribe To Get The Latest</h1>
+            <h1 class="news">News About Us</h1>
+            <p class="text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Cupiditate optio nulla vitae eos necessitatibus nesciunt quaerat
+              temporibus aut
+            </p>
+            <form action="" method="post" class="mail">
+              <input
+                type="email"
+                name="email"
+                placeholder="Enter Your Email"
+                class="mailbox"
+              />
+              <button class="submit-btn" type="submit" name="submit">
+                Subscribe
+              </button>
+            </form>
+          </div>
+          <!-- <div class="planeimg2">
         <img src="/TravelTicketFrontend/assets/plane2.jpg" alt="" />
       </div>-->
-    </div>
+        </div>
 
-    <!-- footer section -->
-   <!-- <div class="footer" id="footer">
+        <!-- footer section -->
+        <!-- <div class="footer" id="footer">
       <div class="footer-content">
         <div class="footer-content-left">
           <h1>TravelToor</h1>
@@ -662,46 +682,46 @@
         Copyright © 2024 TravelToor. All rights reserved
       </p>
     </div>-->
-  </main>
-  <div class="footer" id="footer">
-    <div class="footer-content">
-      <div class="footer-content-left">
-        <h1>TravelToor</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-          Voluptatum, tenetur reprehenderit suscipit a sit ad ullam, debitis
-          inventore iure totam corrupti optio adipisci accusantium nostrum
-          perferendis vitae soluta asperiores? Sapiente.
-        </p>
-        <div class="footer-social-icons">
-          <img src="assets/facebook_icon.png" alt="" />
-          <img src="assets/linkedin_icon.png" alt="" />
-          <img src="assets/twitter_icon.png" alt="" />
+      </main>
+      <div class="footer" id="footer">
+        <div class="footer-content">
+          <div class="footer-content-left">
+            <h1>TravelToor</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Voluptatum, tenetur reprehenderit suscipit a sit ad ullam, debitis
+              inventore iure totam corrupti optio adipisci accusantium nostrum
+              perferendis vitae soluta asperiores? Sapiente.
+            </p>
+            <div class="footer-social-icons">
+              <img src="assets/facebook_icon.png" alt="" />
+              <img src="assets/linkedin_icon.png" alt="" />
+              <img src="assets/twitter_icon.png" alt="" />
+            </div>
+          </div>
+          <div class="footer-content-center">
+            <h2>COMPANY</h2>
+            <ul>
+              <li>Home</li>
+              <li>About us</li>
+              <li>Packages</li>
+              <li>Privacy Policy</li>
+            </ul>
+          </div>
+          <div class="footer-content-right">
+            <h2>GET IN TOUCH</h2>
+            <ul>
+              <li>+1-212-456-7890</li>
+              <li>contact@TravelToor.com</li>
+            </ul>
+          </div>
         </div>
-      </div>
-      <div class="footer-content-center">
-        <h2>COMPANY</h2>
-        <ul>
-          <li>Home</li>
-          <li>About us</li>
-          <li>Packages</li>
-          <li>Privacy Policy</li>
-        </ul>
-      </div>
-      <div class="footer-content-right">
-        <h2>GET IN TOUCH</h2>
-        <ul>
-          <li>+1-212-456-7890</li>
-          <li>contact@TravelToor.com</li>
-        </ul>
+        <hr />
+        <p class="footer-copyright">
+          Copyright © 2024 TravelToor. All rights reserved
+        </p>
       </div>
     </div>
-    <hr />
-    <p class="footer-copyright">
-      Copyright © 2024 TravelToor. All rights reserved
-    </p>
-  </div>
-</div>
     <script src="/TravelTicketFrontend/public/scripts/script.js"></script>
   </body>
 </html>

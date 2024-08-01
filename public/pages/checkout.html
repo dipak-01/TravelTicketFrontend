@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="/TravelTicketFrontend/public/styles/checkout.css"
+    />
+  </head>
+  <body>
+    <h1>checkout page</h1>
+    <form method="POST" class="place-order">
+      <div class="place-order-left">
+        <p class="title">Delivery Information</p>
+        <div class="multi-fields">
+          <input
+            required
+            name="firstName"
+            id="firstName"
+            type="text"
+            placeholder="First Name"
+          />
+          <input
+            required
+            name="lastName"
+            id="lastName"
+            type="text"
+            placeholder="Last Name"
+          />
+        </div>
+        <div class="long">
+          <input
+            required
+            name="email"
+            id="email"
+            type="email"
+            placeholder="Email Address"
+          />
+        </div>
+        <div class="long">
+          <input
+            required
+            name="street"
+            id="street"
+            type="text"
+            placeholder="Street/Lane"
+          />
+        </div>
+        <div class="multi-fields">
+          <input
+            required
+            name="city"
+            id="city"
+            type="text"
+            placeholder="City"
+          />
+          <input
+            required
+            name="state"
+            id="state"
+            type="text"
+            placeholder="State"
+          />
+        </div>
+        <div class="multi-fields">
+          <input
+            required
+            name="zipcode"
+            id="zipcode"
+            type="text"
+            placeholder="Postal Code"
+          />
+          <input
+            required
+            name="country"
+            id="country"
+            type="text"
+            placeholder="Country"
+          />
+        </div>
+        <div class="long">
+          <input
+            required
+            name="phone"
+            id="phone"
+            type="text"
+            placeholder="Phone"
+          />
+        </div>
+      </div>
+      <div class="place-order-right">
+        <div class="cart-total">
+          <h2>Cart Total</h2>
+          <div>
+            <div class="cart-total-details">
+              <p>Sub-Total (including Expenses)*</p>
+              <p id="sub-total">0</p>
+            </div>
+            <hr />
+            <div class="cart-total-details">
+              <p>Platform Charges</p>
+              <p id="platform-fees">&#8377; 300</p>
+            </div>
+            <hr />
+            <div class="cart-total-details">
+              <b>Total</b>
+              <b id="total-amount">0</b>
+            </div>
+          </div>
+          <button class="payment" type="submit">PROCEED TO PAYMENT</button>
+        </div>
+      </div>
+    </form>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+    <script src="/TravelTicketFrontend/public/scripts/checkout.js"></script>
+  </body>
+</html>
