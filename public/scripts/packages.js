@@ -9,9 +9,9 @@ axios
       const packageHtml = `
         <a href="/TravelTicketFrontend/public/pages/package-detail.html?id=${packageItem._id}" class="listing-link">
           <div class="card">
-            <img src="${packageItem.image.url}" class="card-img" alt="..." style="height: 20rem" />
+            <img src="${packageItem.image.url}" class="card-img" alt="..." />
             <div class="card-body">
-              <h5 class="card-title">${packageItem.title}</h5>
+              <h2 class="card-title">${packageItem.title}</h2>
               <p class="card-text">${packageItem.location}</p>
               <p class="card-text">${packageItem.country}</p>
               <p>Price: &#8377;<span class="card-text1">${packageItem.price}</span>/ night</p>
