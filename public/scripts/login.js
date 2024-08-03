@@ -34,6 +34,8 @@ async function handleSubmitLogin(event) {
   if (response.data.success) {
     alert(response.data.message);
     window.location.href = "http://127.0.0.1:5500/TravelTicketFrontend/";
+    const token = response.data.token;
+    Cookies.set("token", token, { expires: 1 });
   } else {
     alert(response.data.message);
   }
@@ -54,12 +56,12 @@ async function handleSubmitRegister(event) {
   });
   if (response.data.success) {
     alert(response.data.message);
+    localStorage.setItem("token", response.data.token);
     window.location.href = "http://127.0.0.1:5500/TravelTicketFrontend/";
   } else {
     alert(response.data.message);
   }
 }
-
 
 function showSidebar() {
   const sidebar = document.querySelector(".sidebar");

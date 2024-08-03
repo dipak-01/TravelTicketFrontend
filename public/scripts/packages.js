@@ -2,7 +2,6 @@ axios
   .get("http://localhost:4000/api/package/listings")
   .then((response) => {
     const packages = response.data;
-    console.log(packages);
     const packageList = document.querySelector(".row");
 
     packages.forEach((packageItem) => {

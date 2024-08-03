@@ -57,7 +57,18 @@
                 >Contact</a
               >
             </li>
-            <li>
+            <li id="sideCart">
+              <a href="/TravelTicketFrontend/public/pages/cart.html">Cart</a>
+            </li>
+            <li id="sideProfile">
+              <a href="/TravelTicketFrontend/public/pages/profile.html"
+                >Profile</a
+              >
+            </li>
+            <li id="sideLogout">
+              <a href="/TravelTicketFrontend/index.html">Logout</a>
+            </li>
+            <li id="sideLogin">
               <a href="/TravelTicketFrontend/public/pages/login.html">Login</a>
             </li>
           </ul>
@@ -68,24 +79,32 @@
             <li class="hideonMobile">
               <a href="/TravelTicketFrontend/public/pages/about.html">About</a>
             </li>
-            <li class="hideonMobile"><a href="#">Packages</a></li>
+            <li class="hideonMobile">
+              <a href="/TravelTicketFrontend/public/pages/packages.html"
+                >Packages</a
+              >
+            </li>
             <li class="hideonMobile">
               <a href="/TravelTicketFrontend/public/pages/contact.html"
                 >Contact</a
               >
             </li>
-            <li class="hideonMobile">
-              <button class="login-btn">
-                <a href="/TravelTicketFrontend/public/pages/login.html"
-                  >Login</a
-                >
-              </button>
+            <li class="hideonMobile" id="cart">
+              <a href="/TravelTicketFrontend/public/pages/cart.html">Cart</a>
+            </li>
+            <li class="hideonMobile" id="profile">
+              <a href="/TravelTicketFrontend/public/pages/profile.html"
+                >Profile</a
+              >
+            </li>
+            <li class="hideonMobile" id="logout">
+              <a href="/TravelTicketFrontend/index.html">Logout</a>
+            </li>
+            <li class="hideonMobile" id="login">
+              <a href="/TravelTicketFrontend/public/pages/login.html">Login</a>
             </li>
             <li class="menu-btn" onclick="showSidebar()">
               <a><i class="fa-solid fa-bars-staggered"></i></a>
-            </li>
-            <li>
-              <div></div>
             </li>
           </ul>
         </nav>
@@ -722,6 +741,7 @@
         </p>
       </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
     <script src="/TravelTicketFrontend/public/scripts/script.js"></script>
   </body>
 </html>

@@ -1,31 +1,41 @@
-const totalAmount = localStorage.getItem("totalAmount");
-const subTotal = localStorage.getItem("subTotal");
+// Fetch token from cookies
+const token = Cookies.get("token");
 
-document.getElementById("total-amount").innerHTML = `&#8377;${totalAmount}`;
-document.getElementById("sub-total").innerHTML = `&#8377;${subTotal}`;
+if (token) {
+  const totalAmount = localStorage.getItem("totalAmount");
+  const subTotal = localStorage.getItem("subTotal");
 
-const form = document.querySelector(".place-order");
-const btn = document.querySelector(".payment");
+  document.getElementById("total-amount").innerHTML = `&#8377;${totalAmount}`;
+  document.getElementById("sub-total").innerHTML = `&#8377;${subTotal}`;
 
-btn.addEventListener("click", async (event) => {
-  event.preventDefault();
-  const formData = new FormData(form);
-  const jsonData = Object.fromEntries(formData.entries());
-  jsonData.amount = totalAmount;
+  const form = document.querySelector(".place-order");
 
-  try {
-    const response = await axios.post(
-      "http://localhost:4000/api/checkout/payment",
-      jsonData
-    );
-    console.log(response.data);
-    if (response.data.success) {
-      const { session_url } = response.data;
-      window.location.replace(session_url);
-    } else {
-      alert("Error occurred");
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const formData = new FormData(form);
+    const jsonData = Object.fromEntries(formData.entries());
+    jsonData.amount = totalAmount;
+
+    try {
+      const response = await axios.post(
+        "http://localhost:4000/api/checkout/payment",
+        jsonData,
+        {
+          headers: { token },
+        }
+      );
+      console.log(response.data);
+      if (response.data.success) {
+        const { session_url } = response.data;
+        window.location.replace(session_url);
+      } else {
+        alert(response.data.message);
+      }
+    } catch (error) {
+      console.log(error);
     }
-  } catch (error) {
-    console.error(error);
-  }
-});
+  });
+} else {
+  //alert("Not Authorized")
+  window.location.href = "/TravelTicketFrontend/public/pages/login.html";
+}

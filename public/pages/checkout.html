@@ -11,7 +11,7 @@
   </head>
   <body>
     <h1>checkout page</h1>
-    <form method="POST" class="place-order">
+    <form method="POST" class="place-order" action="#">
       <div class="place-order-left">
         <p class="title">Delivery Information</p>
         <div class="multi-fields">
@@ -109,10 +109,11 @@
               <b id="total-amount">0</b>
             </div>
           </div>
-          <button class="payment" type="submit">PROCEED TO PAYMENT</button>
+          <button type="submit">PROCEED TO PAYMENT</button>
         </div>
       </div>
     </form>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
     <script src="/TravelTicketFrontend/public/scripts/checkout.js"></script>
   </body>
