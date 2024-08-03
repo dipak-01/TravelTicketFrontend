@@ -32,7 +32,6 @@ main{
   height: 400;
   border-radius: 30px;
   margin-bottom: 4rem;
-  overflow: hidden;
   box-shadow: rgba(10, 20, 43, 0.25) 0px 20px 20px -20px, rgba(0, 0, 0, 0.3) 0px 20px 20px -20px;
 }
 
@@ -77,18 +76,18 @@ nav{
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
-ul{
+.ul{
   display: flex;
   justify-content: space-between;
   list-style-type:none;
   align-items: center;
   padding: auto 3rem;
 }
-ul li a{
+.ul li a{
   text-decoration: none;
 }
 
-ul button{
+.ul button{
   margin-right: 3rem;
   color: white;
   font-weight: 400;
@@ -111,4 +110,61 @@ nav li:first-child {
   line-height: 137%;
   cursor: pointer;
   margin-right: auto;
+}
+
+/*Pagination*/
+.page-container{
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+.pagination{
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+  align-items:center ;
+}
+.pagination button{
+  width:60px;
+  cursor: pointer;
+  border: none;
+  background: none;
+  height: 30px;
+  text-align: center;
+  border-radius: 15px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  background-color: black;
+  color: white;
+}
+.pagination ul{
+  margin-right: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 2rem;
+}
+.pagination li{
+  cursor: pointer;
+  outline: none;
+  display: flex;
+  font-size: 10px;
+  font-weight: 750;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color:#ccc;
+  justify-content: center;
+  align-items: center;
+  padding: none ;
+}
+
+.pagination .active{
+  background-color: #ffa03f;
+  color:white ;
+}
+.remove-btn{
+  opacity: 0;
+  transition: all 0.3s;
 }
