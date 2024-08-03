@@ -8,12 +8,19 @@
       rel="stylesheet"
       href="/TravelTicketFrontend/public/styles/packages.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
     <div class="child">
       <main id="main">
         <nav>
-          <ul>
+          <ul class="ul">
             <li>
               <a href="#">Travel<span class="toor">Toor</span></a>
             </li>
@@ -27,6 +34,19 @@
           </ul>
         </nav>
        <div class="row"></div>
+       <!--pagination-->
+       <div class="page-container">
+       <div class="pagination">
+        <button class="prev-btn">PREV</button>
+        <ul>
+          <li class="link active" value="1">1</li>
+          <li class="link" value="2">2</li>
+          <li class="link" value="3">3</li>
+          <li class="link" value="4">4</li>
+        </ul>
+        <button class="next-btn">NEXT</button>
+       </div>
+      </div>
       </main>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
