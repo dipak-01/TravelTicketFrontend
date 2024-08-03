@@ -2,8 +2,10 @@
 const token = Cookies.get("token");
 
 if (token) {
-  const totalAmount = localStorage.getItem("totalAmount");
-  const subTotal = localStorage.getItem("subTotal");
+  const totalAmount = Cookies.get("totalAmount");
+  const subTotal = Cookies.get("subTotal");
+  const details = JSON.parse(Cookies.get("journeyDetails"));
+  console.log(details);
 
   document.getElementById("total-amount").innerHTML = `&#8377;${totalAmount}`;
   document.getElementById("sub-total").innerHTML = `&#8377;${subTotal}`;
@@ -15,6 +17,9 @@ if (token) {
     const formData = new FormData(form);
     const jsonData = Object.fromEntries(formData.entries());
     jsonData.amount = totalAmount;
+    jsonData.startDate = details.startDate;
+    jsonData.location = details.location;
+    jsonData.journeyDuration = details.journeyDuration;
 
     try {
       const response = await axios.post(

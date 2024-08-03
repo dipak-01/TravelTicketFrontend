@@ -223,18 +223,3 @@ document.addEventListener("mouseup", dragStop);
 carousel.addEventListener("scroll", infiniteScroll);
 wrapper.addEventListener("mouseenter", () => clearTimeout(timeoutId));
 wrapper.addEventListener("mouseleave", autoPlay);
-
-//slider for review section
-// const slide = document.querySelector(".slide");
-// const firstDivWidth = slide.querySelector(".review").offsetWidth;
-// const container = document.querySelector(".review_section");
-// const arrowRight = document.getElementById("rightarrow");
-// const arrowLeft = document.getElementById("leftarrow");
-
-// arrowRight.onclick = () => {
-//   container.scrollLeft += firstDivWidth;
-
-// };
-// arrowLeft.onclick = () => {
-//   container.scrollLeft -= firstDivWidth;
-// };

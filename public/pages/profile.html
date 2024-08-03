@@ -4,9 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="/TravelTicketFrontend/public/styles/profile.css"
+    />
   </head>
   <body>
-    <h1>hello user</h1>
+    <div class="container">
+      <div class="card">
+        <h2>User Profile</h2>
+        <div class="user-details">
+          <p><strong>Name:</strong> <span id="user-name"></span></p>
+          <p><strong>Email:</strong> <span id="user-email"></span></p>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Order Details</h2>
+        <div class="order-details-container"></div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
     <script src="/TravelTicketFrontend/public/scripts/profile.js"></script>

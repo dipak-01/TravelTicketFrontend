@@ -56,7 +56,7 @@ async function handleSubmitRegister(event) {
   });
   if (response.data.success) {
     alert(response.data.message);
-    localStorage.setItem("token", response.data.token);
+    Cookies.set("token", response.data.token, { expires: 1 });
     window.location.href = "http://127.0.0.1:5500/TravelTicketFrontend/";
   } else {
     alert(response.data.message);

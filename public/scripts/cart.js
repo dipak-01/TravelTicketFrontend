@@ -11,6 +11,7 @@ if (!token) {
     document.getElementById("body").style.display = "block";
     const numPeopleSelect = document.getElementById("num-people");
     const journeySelect = document.getElementById("journey-duration");
+    const journeyDateInput = document.getElementById("journey-date");
 
     for (let i = 1; i <= 15; i++) {
       const option = document.createElement("option");
@@ -38,8 +39,9 @@ if (!token) {
         const cartItem = response.data;
         document.getElementById("package-image").src = cartItem.image.url;
         document.getElementById("destination").innerHTML = cartItem.title;
-        document.getElementById("location").innerHTML = cartItem.location;
-        document.getElementById("country").innerHTML = cartItem.country;
+        document.getElementById(
+          "location"
+        ).innerHTML = `${cartItem.location}, ${cartItem.country}`;
         document.getElementById("price").innerHTML = cartItem.price;
         basePrice = cartItem.price;
         const numPeople = parseInt(document.getElementById("num-people").value);
@@ -71,8 +73,8 @@ if (!token) {
       ).innerHTML = `&#8377;${totalAmount}`;
 
       //store them in local storage
-      localStorage.setItem("totalAmount", totalAmount);
-      localStorage.setItem("subTotal", subTotal + travelExpenses);
+      Cookies.set("totalAmount", totalAmount);
+      Cookies.set("subTotal", subTotal + travelExpenses);
     }
 
     document
@@ -84,6 +86,12 @@ if (!token) {
 
     const btn = document.getElementById("proceed-to-checkout");
     btn.addEventListener("click", () => {
+      const journeyDetails = {
+        startDate: new Date(journeyDateInput.value),
+        journeyDuration: journeySelect.value,
+        location: document.getElementById("location").innerHTML,
+      };
+      Cookies.set("journeyDetails", JSON.stringify(journeyDetails));
       const url = "/TravelTicketFrontend/public/pages/checkout.html";
       window.location.href = url;
     });
