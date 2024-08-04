@@ -1,23 +1,29 @@
 const token = Cookies.get("token");
-document.getElementById("body").style.display = "none";
 
 const urlParams = new URLSearchParams(window.location.search);
 const packageId = urlParams.get("id");
 
 if (packageId) {
-  document.getElementById("body").style.display = "block";
   axios
     .get(`http://localhost:4000/api/package/${packageId}`)
     .then((response) => {
       const packageData = response.data;
 
       const packageDetailsHtml = `
-      <h2>${packageData.title}</h2>
-      <p>${packageData.description}</p>
-      <p>Location: ${packageData.location}</p>
-      <p>Country: ${packageData.country}</p>
-      <p>Price: &#8377;${packageData.price}/ night</p>
-      <img src="${packageData.image.url}" alt="img" />
+      <div class="img">
+        <img src="${packageData.image.url}" alt="img" />
+      </div>
+      <div class="details">
+      <div>
+        <h2>${packageData.title}</h2>
+        
+        <p><span>Location:</span> ${packageData.location}</p>
+        <p><span>Country:</span> ${packageData.country}</p>
+        <p><span>Price:</span> &#8377;${packageData.price}/ night</p>
+        <p class="des">${packageData.description}</p>
+        </div>
+      </div>
+      
     `;
 
       const packageDetailsContainer =
@@ -25,7 +31,7 @@ if (packageId) {
       packageDetailsContainer.innerHTML = packageDetailsHtml;
     })
     .catch((error) => {
-      console.log(error);
+      console.error(error);
     });
 
   const btn = document.getElementById("proceed-to-checkout");
@@ -34,9 +40,8 @@ if (packageId) {
       const url = `/TravelTicketFrontend/public/pages/cart.html?id=${packageId}`;
       window.location.href = url;
     } else {
-      alert("Please login to proceed");
-      const url = "/TravelTicketFrontend/public/pages/login.html";
-      window.location.href = url;
+      alert("Please Login to proceed");
+      window.location.href = "/TravelTicketFrontend/public/pages/login.html";
     }
   });
 } else {

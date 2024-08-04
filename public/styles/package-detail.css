@@ -1,0 +1,72 @@
+.container {
+  font-family: "Inter";
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.package-details {
+  width: 100%;
+  max-width: 1420px;
+  height: auto;
+  display: flex;
+  margin-top: 2rem;
+  justify-content: center;
+  border-radius: 30px;
+  overflow: hidden;
+}
+.img {
+  width: 60%;
+  height: 600px;
+  border-radius: 30px;
+  overflow: hidden;
+}
+.img img {
+  width: 100%;
+  height: 600px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.details {
+  width: 40%;
+  padding: 2rem 5rem;
+  display: flex;
+}
+h2 {
+  font-size: 2rem;
+  text-transform: uppercase;
+  word-spacing: 10px;
+  letter-spacing: 2px;
+}
+p {
+  font-size: 1rem;
+  word-spacing: 10px;
+  letter-spacing: 2px;
+  margin-top: 2rem;
+}
+p span {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #ffa03f;
+}
+.des {
+  font-size: 0.8rem;
+  margin-top: 4rem;
+  line-height: 167%;
+}
+button {
+  margin-top: 1rem;
+  width: 200px;
+  height: 50px;
+  border-radius: 20px;
+  outline: none;
+  border: none;
+  color: aliceblue;
+  background-color: #ffa03f;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
