@@ -1,7 +1,7 @@
 const token = Cookies.get("token");
-//document.getElementById("body").style.display = "none";
+
 if (!token) {
-  // alert("Not Authorzied");
+  alert("Not Authorzied");
   window.location.href = "/TravelTicketFrontend/public/pages/login.html";
 } else {
   const urlParams = new URLSearchParams(window.location.search);
@@ -9,16 +9,8 @@ if (!token) {
 
   if (packageId) {
     document.getElementById("body").style.display = "block";
-    const numPeopleSelect = document.getElementById("num-people");
     const journeySelect = document.getElementById("journey-duration");
     const journeyDateInput = document.getElementById("journey-date");
-
-    for (let i = 1; i <= 15; i++) {
-      const option = document.createElement("option");
-      option.value = i;
-      option.text = i;
-      numPeopleSelect.appendChild(option);
-    }
 
     for (let i = 1; i <= 15; i++) {
       const option = document.createElement("option");
@@ -32,11 +24,13 @@ if (!token) {
     }
 
     let basePrice = 0;
+    let totalAmount = 0;
 
     axios
       .get(`http://localhost:4000/api/package/${packageId}`)
       .then((response) => {
         const cartItem = response.data;
+
         document.getElementById("package-image").src = cartItem.image.url;
         document.getElementById("destination").innerHTML = cartItem.title;
         document.getElementById(
@@ -44,10 +38,9 @@ if (!token) {
         ).innerHTML = `${cartItem.location}, ${cartItem.country}`;
         document.getElementById("price").innerHTML = cartItem.price;
         basePrice = cartItem.price;
-        const numPeople = parseInt(document.getElementById("num-people").value);
-        const subTotal = numPeople * basePrice;
+        const subTotal = basePrice;
         document.getElementById("sub-total").innerHTML = `&#8377;${subTotal}`;
-        const totalAmount = subTotal + 2000 + 300;
+        totalAmount = subTotal + 2000 + 300;
         document.getElementById(
           "total-amount"
         ).innerHTML = `&#8377;${totalAmount}`;
@@ -57,13 +50,12 @@ if (!token) {
       });
 
     function updateTotal() {
-      const numPeople = parseInt(document.getElementById("num-people").value);
       const journeyDuration = parseInt(
         document.getElementById("journey-duration").value
       );
-      const subTotal = numPeople * journeyDuration * basePrice;
-      const travelExpenses = numPeople * 2000;
-      const totalAmount = subTotal + travelExpenses + 300;
+      const subTotal = journeyDuration * basePrice;
+      const travelExpenses = 2000;
+      totalAmount = subTotal + travelExpenses + 300;
       document.getElementById("sub-total").innerHTML = `&#8377;${subTotal}`;
       document.getElementById(
         "travel-expenses"
@@ -71,29 +63,41 @@ if (!token) {
       document.getElementById(
         "total-amount"
       ).innerHTML = `&#8377;${totalAmount}`;
-
-      //store them in local storage
-      Cookies.set("totalAmount", totalAmount);
-      Cookies.set("subTotal", subTotal + travelExpenses);
     }
 
-    document
-      .getElementById("num-people")
-      .addEventListener("change", updateTotal);
     document
       .getElementById("journey-duration")
       .addEventListener("change", updateTotal);
 
-    const btn = document.getElementById("proceed-to-checkout");
-    btn.addEventListener("click", () => {
-      const journeyDetails = {
-        startDate: new Date(journeyDateInput.value),
-        journeyDuration: journeySelect.value,
-        location: document.getElementById("location").innerHTML,
-      };
-      Cookies.set("journeyDetails", JSON.stringify(journeyDetails));
-      const url = "/TravelTicketFrontend/public/pages/checkout.html";
-      window.location.href = url;
+    const form = document.querySelector(".place-order");
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const formData = new FormData(form);
+      const jsonData = Object.fromEntries(formData.entries());
+      jsonData.amount = totalAmount;
+      jsonData.startDate = new Date(journeyDateInput.value);
+      jsonData.location = document.getElementById("location").textContent;
+      jsonData.journeyDuration = parseInt(journeySelect.value);
+
+      try {
+        const response = await axios.post(
+          "http://localhost:4000/api/checkout/payment",
+          jsonData,
+          {
+            headers: { token },
+          }
+        );
+        console.log(response.data);
+        if (response.data.success) {
+          const { session_url } = response.data;
+          window.location.replace(session_url);
+        } else {
+          alert(response.data.message);
+        }
+      } catch (error) {
+        console.log(error);
+      }
     });
   } else {
     alert("no cart item found");
