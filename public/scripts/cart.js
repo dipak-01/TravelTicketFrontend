@@ -1,5 +1,5 @@
 const token = Cookies.get("token");
-document.getElementById("body").style.display = "none";
+//document.getElementById("body").style.display = "none";
 if (!token) {
   // alert("Not Authorzied");
   window.location.href = "/TravelTicketFrontend/public/pages/login.html";
