@@ -1,10 +1,14 @@
- body {
+body {
   font-family: Inter;
   margin: 0;
   padding: 0;
   background-color: #f7f7f7;
   color: #333;
   background-image: linear-gradient(to bottom, #f7f7f7, #fff);
+}
+
+#cont {
+  display: none;
 }
 
 .container {
@@ -33,7 +37,7 @@
 .card h2 {
   margin-top: 0;
   font-size: 1.6rem;
-  color: #201E43;
+  color: #201e43;
   font-weight: bold;
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
@@ -54,16 +58,16 @@
 
 .order-details h2 {
   margin-top: 0;
-  color: #201E43;
+  color: #201e43;
   font-weight: bold;
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
-.order-details p{
+.order-details p {
   font-size: 12px;
 }
 
 .download-btn {
-  background-color:#201E43; /* Changed button color to green */
+  background-color: #201e43; /* Changed button color to green */
   color: #fff;
   padding: 10px 20px;
   border: none;
@@ -91,7 +95,6 @@
   color: white;
   z-index: 10000;
   animation: fadeIn 0.5s ease;
-
 }
 
 .download-confirmation::after {
@@ -114,7 +117,7 @@
   }
 }
 
-h2 span{
+h2 span {
   margin-right: 20px;
   font-size: 1.6rem;
 }

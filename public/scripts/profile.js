@@ -5,6 +5,7 @@ if (!token) {
   alert("Please Login First");
   window.location.href = "/TravelTicketFrontend/public/pages/login.html";
 } else {
+  document.getElementById("cont").style.display = "block";
   const fetchUserDetails = async () => {
     try {
       const response = await axios.post(
