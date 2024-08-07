@@ -8,15 +8,36 @@
       rel="stylesheet"
       href="/TravelTicketFrontend/public/styles/cart.css"
     />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome cdn -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body id="body">
+    <div class="child">
+    <main>
     <form method="POST" class="place-order" action="#">
       <div class="cart">
         <div class="cart-items">
           <!-- Cart item details -->
           <div class="cart-item">
             <h2>Place Details</h2>
-            <img id="package-image" src="" alt="img" />
+            <div class="img">
+              <img id="package-image" src="" alt="img" />
+            </div>
+            
             <p>Destination: <span id="destination"></span></p>
             <p>Location: <span id="location"></span></p>
             <p>Country: <span id="country"></span></p>
@@ -33,23 +54,7 @@
             <select id="journey-duration" required></select>
           </div>
         </div>
-        <div class="cart-bottom">
-          <div class="cart-promocode">
-            <div>
-              <p>If you have a promo code, Enter it here</p>
-              <div class="cart-promocode-input">
-                <input
-                  type="text"
-                  id="promo-code"
-                  placeholder="Enter Promo Code"
-                />
-                <button id="apply-promo">Apply</button>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
-
       <div class="place-order-left">
         <p class="title">Delivery Information</p>
         <div class="multi-fields">
@@ -150,10 +155,27 @@
             <b>Total</b>
             <b id="total-amount">0</b>
           </div>
-          <button type="submit">PROCEED TO PAYMENT</button>
+          <div class="cart-bottom">
+          <div class="cart-promocode">
+            <div>
+              <p>If you have a promo code, Enter it here</p>
+              <div class="cart-promocode-input">
+                <input
+                  type="text"
+                  id="promo-code"
+                  placeholder="Enter Promo Code"
+                />
+                <button id="apply-promo">Apply</button>
+              </div>
+            </div>
+          </div>
+        </div >
+          <button class="submit" type="submit">PROCEED TO PAYMENT</button>
         </div>
       </div>
     </form>
+  </main>
+</div>
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
     <script src="/TravelTicketFrontend/public/scripts/cart.js"></script>
