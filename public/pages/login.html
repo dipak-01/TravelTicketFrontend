@@ -48,7 +48,7 @@
         <li class="hideonMobile">
           <a href="/TravelTicketFrontend/public/pages/about.html">About</a>
         </li>
-        <li class="hideonMobile"><a href="#">Packages</a></li>
+        <li class="hideonMobile"><a href="/TravelTicketFrontend/public/pages/packages.html">Packages</a></li>
         <li class="hideonMobile">
           <a href="/TravelTicketFrontend/public/pages/contact.html">Contact</a>
         </li>
@@ -96,6 +96,7 @@
             <div class="infield">
               <input
                 id="password"
+                class="password"
                 type="password"
                 placeholder="Password"
                 name="password"
@@ -104,6 +105,21 @@
                 title="Password must be 8 characters"
               />
               <i class="fa-solid fa-lock"></i>
+              <img src="/TravelTicketFrontend/assets/eye-close.png" class="toggle-password" data-target="password">
+            </div>
+            <div class="infield">
+              <input
+                id="confirm-password"
+                class="password"
+                type="password"
+                placeholder="Confirm Password"
+                name="confirm-password"
+                required
+                pattern="[a-zA-Z0-9]{8,}"
+                title="Password must be 8 characters"
+              />
+              <i class="fa-solid fa-lock"></i>
+              <img src="/TravelTicketFrontend/assets/eye-close.png" class="toggle-password" data-target="confirm-password">
             </div>
             <button class="signup" type="submit">Sign Up</button>
             <div class="have_account">
