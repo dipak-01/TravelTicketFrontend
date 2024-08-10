@@ -53,27 +53,125 @@
 .teamcard i{
     font-size: 3rem;
 }
-@media (max-width: 1230px)
-{
-    .hero{
-        justify-content: center;
+
+/* Responsive Styles */
+@media (max-width: 1230px) {
+    /* Ensure all elements use border-box model */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Basic Reset */
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+.hero {
+    height: 50rem;
+    padding: 5rem;
+    font-size: 2rem;
+    position: relative; /* Ensure absolutely positioned children align relative to this */
+}
+
+.hero p {
+    width: 100%; /* Adjust to full width */
+    max-width: 54.5rem; /* Maximum width */
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2rem;
+    padding-top: 2rem;
+    text-align: justify; /* Text justify */
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 0;
+}
+
+.hikeimg {
+    height: 30rem;
+    width: auto; /* Maintain aspect ratio */
+    max-width: 100%; /* Responsive image width */
+    object-fit: cover;
+    border: 0.2rem solid #000; /* Adjust border color */
+    border-radius: 1rem;
+    position: absolute;
+    right: 0;
+    top: 5rem; /* Adjust top position if needed */
+}
+
+.members {
+    display: flex;
+    flex-wrap: wrap; /* Wrap items on smaller screens */
+    justify-content: center;
+    gap: 2rem; /* Add spacing between team cards */
+    padding: 1rem;
+}
+
+.teamcard {
+    height: auto; /* Auto height for better responsiveness */
+    width: 25rem;
+    text-align: center;
+    border: 0.2rem solid #555;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1); /* Optional shadow for better visibility */
+}
+
+.teamcard img {
+    height: 10rem;
+    width: 10rem;
+    border-radius: 50%;
+}
+
+.teamcard p {
+    font-size: 1.5rem;
+}
+
+.teamcard i {
+    font-size: 3rem;
+}
+    .hero {
         height: 40rem;
+        padding: 3rem;
     }
-    .hero div{
+
+    .hero p {
+        width: 100%;
+        max-width: 100%;
+        position: static; /* Remove absolute positioning */
+        text-align: center; /* Center text */
+        margin: 0 auto;
+        text-align: justify;
+    }
+
+    .hikeimg {
+        visibility: hidden;
+    }.hero img{
         visibility: hidden;
     }
-    .hikeimg{
-        visibility: hidden;
-    }
-    .members{
-        display: block;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+
+    .members {
+        flex-direction: column; /* Stack team cards vertically */
         align-items: center;
     }
-    .teamcard{
-        margin-bottom: 3rem;
+
+    .teamcard {
+        width: 80%; /* Responsive width */
+        max-width: 25rem; /* Optional max width */
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 2rem;
+    }
+
+    .teamcard {
+        width: 90%; /* Full width on very small screens */
+        max-width: 22rem;
     }
 }
