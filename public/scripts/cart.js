@@ -27,7 +27,9 @@ if (!token) {
     let totalAmount = 0;
 
     axios
-      .get(`http://localhost:4000/api/package/${packageId}`)
+      .get(
+        `https://travel-ticket-backend.onrender.com/api/package/${packageId}`
+      )
       .then((response) => {
         const cartItem = response.data;
 
@@ -82,7 +84,7 @@ if (!token) {
 
       try {
         const response = await axios.post(
-          "http://localhost:4000/api/checkout/payment",
+          "https://travel-ticket-backend.onrender.com/api/checkout/payment",
           jsonData,
           {
             headers: { token },

@@ -85,8 +85,6 @@
 //   body.style.overflow = "";
 // }
 
-
-
 // Get the forms and buttons
 const loginForm = document.querySelector(".log-in");
 const registerForm = document.querySelector(".register");
@@ -98,7 +96,7 @@ document.querySelectorAll(".toggle-password").forEach((icon) => {
   icon.addEventListener("click", function () {
     const targetId = this.getAttribute("data-target");
     const input = document.getElementById(targetId);
-    
+
     if (input.type === "password") {
       input.type = "text";
       this.src = "/TravelTicketFrontend/assets/eye-open.png";
@@ -136,13 +134,13 @@ async function handleSubmitLogin(event) {
   const data = Object.fromEntries(formData);
   const response = await axios({
     method: "POST",
-    url: "http://localhost:4000/api/user/login",
+    url: "https://travel-ticket-backend.onrender.com/api/user/login",
     data: data,
   });
 
   if (response.data.success) {
     alert(response.data.message);
-    window.location.href = "http://127.0.0.1:5500/TravelTicketFrontend/";
+    window.location.href = "/TravelTicketFrontend/index.html";
     const token = response.data.token;
     Cookies.set("token", token, { expires: 1 });
   } else {
@@ -165,14 +163,14 @@ async function handleSubmitRegister(event) {
 
   const response = await axios({
     method: "POST",
-    url: "http://localhost:4000/api/user/register",
+    url: "https://travel-ticket-backend.onrender.com/api/user/register",
     data: data,
   });
 
   if (response.data.success) {
     alert(response.data.message);
     Cookies.set("token", response.data.token, { expires: 1 });
-    window.location.href = "http://127.0.0.1:5500/TravelTicketFrontend/";
+    window.location.href = "/TravelTicketFrontend/index.html";
   } else {
     alert(response.data.message);
   }
