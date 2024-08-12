@@ -28,6 +28,67 @@
 //     console.error(error);
 //   });
 
+//seach bar functionality
+const searchBar = document.getElementById("searchLocation");
+const searchPrice = document.getElementById("searchPrice");
+const searchButton = document.getElementById("search-btn");
+let locationSearch = "";
+let price = 0;
+
+searchBar.addEventListener("keyup", (event) => {
+  locationSearch = event.target.value;
+});
+
+searchPrice.addEventListener("keyup", (event) => {
+  price = event.target.value;
+});
+
+searchButton.addEventListener("click", async (event) => {
+  event.preventDefault();
+  console.log(`Search parameters: location=${locationSearch}, price=${price}`);
+  try {
+    const response = await axios.get(
+      "https://travel-ticket-backend.onrender.com/api/package/filter",
+      {
+        params: {
+          location: locationSearch,
+          price: price,
+        },
+      }
+    );
+    console.log(`API response:`, response);
+    renderSearchData(response.data);
+  } catch (error) {
+    console.error(`Error searching packages:`, error);
+  }
+});
+
+function renderSearchData(packages) {
+  cconsole.log(`Packages:`, packages);
+  const packageList = document.querySelector(".row");
+  packageList.innerHTML = "";
+
+  packages.forEach((packageItem) => {
+    const packageHtml = `
+        <a href="/TravelTicketFrontend/public/pages/package-detail.html?id=${packageItem._id}" class="listing-link">
+          <div class="card">
+            <img src="${packageItem.image.url}" class="card-img" alt="..." />
+            <div class="card-body">
+              <h2 class="card-title">${packageItem.title}</h2>
+              <p class="card-text">${packageItem.location}</p>
+              <p class="card-text">${packageItem.country}</p>
+              <p>Price: &#8377;<span class="card-text1">${packageItem.price}</span>/ night</p>
+            </div>
+          </div>
+        </a>
+      `;
+
+    const packageElement = document.createElement("div");
+    packageElement.innerHTML = packageHtml;
+    packageList.appendChild(packageElement);
+  });
+}
+
 //pagination
 
 let link = document.querySelectorAll(".link");
@@ -95,7 +156,7 @@ function renderData() {
   const endIndex = page * limit;
 
   const packageList = document.querySelector(".row");
-  packageList.innerHTML = ""; // clearing the previous data
+  packageList.innerHTML = "";
 
   const result = packages.slice(startIndex, endIndex);
 

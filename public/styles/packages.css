@@ -4,8 +4,9 @@
 body {
   width: 100%;
   font-family: Arial, sans-serif;
+  overflow-x: hidden;
 }
-.child{
+.child {
   width: 100%;
   height: auto;
   display: flex;
@@ -13,11 +14,10 @@ body {
   align-items: center;
   flex-direction: column;
 }
-main{
+main {
   width: 100%;
   height: auto;
   max-width: 1420px;
-  
 }
 .row {
   width: 100%;
@@ -27,78 +27,78 @@ main{
   gap: 2rem;
   padding-top: 3rem;
 }
-.row > div{
-  width:400px;
+.row > div {
+  width: 400px;
   height: 400;
   border-radius: 30px;
   margin-bottom: 4rem;
-  box-shadow: rgba(10, 20, 43, 0.25) 0px 20px 20px -20px, rgba(0, 0, 0, 0.3) 0px 20px 20px -20px;
+  box-shadow: rgba(10, 20, 43, 0.25) 0px 20px 20px -20px,
+    rgba(0, 0, 0, 0.3) 0px 20px 20px -20px;
 }
 
-.listing-link{
+.listing-link {
   width: 100%;
   height: 100%;
   text-decoration: none;
   border-radius: 20px;
 }
 
-.card{
+.card {
   width: 100%;
   height: 100%;
   border-radius: 30px;
   overflow: hidden;
-  
 }
-.card img{
+.card img {
   object-fit: cover;
   width: 400px;
-  height:300px;
+  height: 300px;
   border-radius: 10px;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-.card-body{
+.card-body {
   width: 100%;
   margin-top: -10px;
   height: auto;
   padding: 0 2rem;
 }
-.card-body h2{
+.card-body h2 {
   color: #ffa03f;
   font-weight: 600;
 }
-.card-body p{
+.card-body p {
   color: black;
   font-size: 16px;
 }
-nav{
+nav {
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
-.ul{
+.ul {
   display: flex;
   justify-content: space-between;
-  list-style-type:none;
+  list-style-type: none;
   align-items: center;
   padding: auto 3rem;
 }
-.ul li a{
+.ul li a {
   text-decoration: none;
 }
 
-.ul button{
+.ul button {
   margin-right: 3rem;
   color: white;
   font-weight: 400;
-  background-color:#ffa03f;
+  background-color: #ffa03f;
   border: none;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 15px;
   width: 78px;
-  height:36px;
+  height: 36px;
 }
 nav li .toor {
   color: #ffa03f;
@@ -112,20 +112,54 @@ nav li:first-child {
   margin-right: auto;
 }
 
+/*search bar*/
+.searchbar {
+  margin-top: 20px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.searchbar input {
+  padding-left: 15px;
+  border: 2px solid #ffa03f;
+  padding: 15px;
+  font-size: 16px;
+  color: black;
+  margin-left: 15px;
+  border-radius: 20px;
+}
+#searchLocation {
+  width: 40%;
+}
+#searchPrice {
+  width: 10%;
+}
+
+#search-btn {
+  margin-left: 10px;
+  width: 8%;
+  border-radius: 50%;
+  background-color: #ffa03f;
+  color: whitesmoke;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+}
+
 /*Pagination*/
-.page-container{
+.page-container {
   margin-top: 20px;
   display: flex;
   justify-content: center;
 }
-.pagination{
+.pagination {
   width: 30%;
   display: flex;
   justify-content: space-between;
-  align-items:center ;
+  align-items: center;
 }
-.pagination button{
-  width:60px;
+.pagination button {
+  width: 60px;
   cursor: pointer;
   border: none;
   background: none;
@@ -138,14 +172,14 @@ nav li:first-child {
   background-color: black;
   color: white;
 }
-.pagination ul{
+.pagination ul {
   margin-right: 2rem;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   gap: 2rem;
 }
-.pagination li{
+.pagination li {
   cursor: pointer;
   outline: none;
   display: flex;
@@ -154,17 +188,17 @@ nav li:first-child {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background-color:#ccc;
+  background-color: #ccc;
   justify-content: center;
   align-items: center;
-  padding: none ;
+  padding: none;
 }
 
-.pagination .active{
+.pagination .active {
   background-color: #ffa03f;
-  color:white ;
+  color: white;
 }
-.remove-btn{
+.remove-btn {
   opacity: 0;
   transition: all 0.3s;
 }
