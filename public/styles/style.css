@@ -2677,7 +2677,6 @@ nav li .toor {
   #mobile-view{
     display: block;
     position: relative;
-    z-index: -1;
     margin-top: -5rem;
   }
   .main_content {
