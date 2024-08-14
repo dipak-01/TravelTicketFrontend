@@ -46,9 +46,10 @@ searchPrice.addEventListener("keyup", (event) => {
 searchButton.addEventListener("click", async (event) => {
   event.preventDefault();
   console.log(`Search parameters: location=${locationSearch}, price=${price}`);
+
   try {
     const response = await axios.get(
-      "https://travel-ticket-backend.onrender.com/api/package/filter",
+      `http://localhost:4000/api/package/filter`,
       {
         params: {
           location: locationSearch,
@@ -64,7 +65,7 @@ searchButton.addEventListener("click", async (event) => {
 });
 
 function renderSearchData(packages) {
-  cconsole.log(`Packages:`, packages);
+  console.log(`Packages:`, packages);
   const packageList = document.querySelector(".row");
   packageList.innerHTML = "";
 
@@ -128,21 +129,27 @@ function nextactive() {
   link[page - 1].classList.remove("active");
   page++;
   link[page - 1].classList.add("active");
-  renderData();
+  fetchData();
 }
 
 function prevactive() {
   link[page - 1].classList.remove("active");
   page--;
   link[page - 1].classList.add("active");
-  renderData();
+  fetchData();
 }
 
 function fetchData() {
   axios
-    .get("https://travel-ticket-backend.onrender.com/api/package/listings")
+    .get("http://localhost:4000/api/package/listings", {
+      params: {
+        page: page,
+        limit: 9,
+      },
+    })
     .then((response) => {
-      packages = response.data;
+      packages = response.data.results;
+      totalPages = response.data.totalPages;
       renderData();
     })
     .catch((error) => {
@@ -151,16 +158,10 @@ function fetchData() {
 }
 
 function renderData() {
-  const limit = 6;
-  const startIndex = (page - 1) * limit;
-  const endIndex = page * limit;
-
   const packageList = document.querySelector(".row");
   packageList.innerHTML = "";
 
-  const result = packages.slice(startIndex, endIndex);
-
-  result.forEach((packageItem) => {
+  packages.forEach((packageItem) => {
     const packageHtml = `
         <a href="/TravelTicketFrontend/public/pages/package-detail.html?id=${packageItem._id}" class="listing-link">
           <div class="card">
@@ -180,10 +181,25 @@ function renderData() {
     packageList.appendChild(packageElement);
   });
 
+  // Update the pagination links
+  const paginationLinks = document.querySelector(".pagination ul");
+  paginationLinks.innerHTML = "";
+
+  for (let i = 1; i <= totalPages; i++) {
+    const linkHtml = `<li><a href="#" class="link" value="${i}">${i}</a></li>`;
+    const linkElement = document.createElement("li");
+    linkElement.innerHTML = linkHtml;
+    paginationLinks.appendChild(linkElement);
+  }
+
+  // Update the active link
+  const activeLink = document.querySelector(`.link[value="${page}"]`);
+  activeLink.classList.add("active");
+
   // Check if there are more pages to navigate to
   const nextPage = page + 1;
   const prevPage = page - 1;
-  const hasNextPage = nextPage * limit <= packages.length;
+  const hasNextPage = nextPage <= totalPages;
   const hasPrevPage = prevPage >= 1;
 
   // Hide or show the next and previous buttons
@@ -191,6 +207,7 @@ function renderData() {
   const prevBtn = document.querySelector(".prev-btn");
   nextBtn.style.display = hasNextPage ? "block" : "none";
   prevBtn.style.display = hasPrevPage ? "block" : "none";
+
   // Scroll to the top of the page
   window.scrollTo({ top: 0, behavior: "smooth" });
 }

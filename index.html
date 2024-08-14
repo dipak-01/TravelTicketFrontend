@@ -57,22 +57,25 @@
                 >Contact</a
               >
             </li>
-            <li id="sideProfile">
+            <li id="profile">
               <a href="/TravelTicketFrontend/public/pages/profile.html"
                 >Profile</a
               >
             </li>
-            <li id="sideLogout">
+            <li id="logout-btn">
               <a href="/TravelTicketFrontend/index.html">Logout</a>
             </li>
-            <li id="sideLogin">
+            <li id="login-btn">
               <a href="/TravelTicketFrontend/public/pages/login.html">Login</a>
             </li>
           </ul>
           <ul class="main-nav">
             <li>
               <a href="../TravelTicketFrontend/index.html" class="navbar-logo">
-                <img src="../TravelTicketFrontend/assets/Travel-toor-logo-black.png" alt="Travel Tour Logo">
+                <img
+                  src="../TravelTicketFrontend/assets/Travel-toor-logo-black.png"
+                  alt="Travel Tour Logo"
+                />
               </a>
             </li>
             <li class="hideonMobile">
@@ -88,14 +91,14 @@
                 >Contact</a
               >
             </li>
-            <!-- <li class="hideonMobile" id="profile">
+            <li class="hideonMobile" id="profile">
               <a href="/TravelTicketFrontend/public/pages/profile.html"
                 ><i class="fa-solid fa-user"></i
               ></a>
             </li>
-            <li class="hideonMobile" id="logout">
+            <li class="hideonMobile" id="logout-btn">
               <a href="/TravelTicketFrontend/index.html">Logout</a>
-            </li> -->
+            </li>
             <li class="hideonMobile" id="login">
               <a href="/TravelTicketFrontend/public/pages/login.html">Login</a>
             </li>
@@ -119,7 +122,10 @@
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum ea
                 quam commodi amet tenetur qui accusamus
               </p>
-              <a href="/TravelTicketFrontend/public/pages/packages.html" class="explore-a">
+              <a
+                href="/TravelTicketFrontend/public/pages/packages.html"
+                class="explore-a"
+              >
                 <div id="explore">
                   <button class="learn-more" id="button">
                     <span class="circle" aria-hidden="true">
@@ -129,7 +135,7 @@
                   </button>
                 </div>
               </a>
-              
+
               <!-- <div class="location_search">
                 <form action="">
                   <div class="search-box">
@@ -221,23 +227,29 @@
         <div class="mobile-view" id="mobile-view">
           <section class="section-landing">
             <div class="bg">
-                <video autoplay loop muted plays-inline class="back-video">
-                    <source src="/TravelTicketFrontend/assets/video.mp4" type="video/mp4">
-                </video>
+              <video autoplay loop muted plays-inline class="back-video">
+                <source
+                  src="/TravelTicketFrontend/assets/video.mp4"
+                  type="video/mp4"
+                />
+              </video>
             </div>
             <div class="container" id="contain">
-                <h1 id="h1">
-                    <span>Let’s</span>
-                    <span id="sec">Create</span>
-                </h1>
-                <h1 id="h1" class="sec-line">
-                    <span>Memorable</span>
-                </h1>
-                <h1 id="h1" class="sec-line">
-                    <span id="">Journey</span>
-                </h1>
+              <h1 id="h1">
+                <span>Let’s</span>
+                <span id="sec">Create</span>
+              </h1>
+              <h1 id="h1" class="sec-line">
+                <span>Memorable</span>
+              </h1>
+              <h1 id="h1" class="sec-line">
+                <span id="">Journey</span>
+              </h1>
             </div>
-            <a href="/TravelTicketFrontend/public/pages/packages.html" class="explore-a">
+            <a
+              href="/TravelTicketFrontend/public/pages/packages.html"
+              class="explore-a"
+            >
               <div id="explore">
                 <button class="learn-more" id="button">
                   <span class="circle" aria-hidden="true">
@@ -247,8 +259,7 @@
                 </button>
               </div>
             </a>
-          </section >
-          
+          </section>
         </div>
 
         <!-- trip-section -->
@@ -297,7 +308,11 @@
         <div class="wrapper">
           <i id="left" class="fa-solid fa-angle-left"></i>
           <ul class="carousel">
-            <li class="card">
+            <li
+              class="card"
+              id="card-1"
+              onclick="redirectToPackageDetail('66bb894f8ecd9f890dd9d4e8')"
+            >
               <div class="img">
                 <img
                   src="/TravelTicketFrontend/assets/card1.jpg"
@@ -332,7 +347,11 @@
                 </p>
               </div>
             </li>
-            <li class="card">
+            <li
+              class="card"
+              id="card-2"
+              onclick="redirectToPackageDetail('66bb894f8ecd9f890dd9d4e9')"
+            >
               <div class="img">
                 <img
                   src="/TravelTicketFrontend/assets/card2.jpg"
@@ -367,7 +386,11 @@
                 </p>
               </div>
             </li>
-            <li class="card">
+            <li
+              class="card"
+              id="card-3"
+              onclick="redirectToPackageDetail('66bb894f8ecd9f890dd9d4ea')"
+            >
               <div class="img">
                 <img
                   src="/TravelTicketFrontend/assets/card3.jpg"
@@ -402,7 +425,11 @@
                 </p>
               </div>
             </li>
-            <li class="card">
+            <li
+              class="card"
+              id="card-4"
+              onclick="redirectToPackageDetail('66bb894f8ecd9f890dd9d4eb')"
+            >
               <div class="img">
                 <img
                   src="/TravelTicketFrontend/assets/card4.jpg"
@@ -437,7 +464,11 @@
                 </p>
               </div>
             </li>
-            <li class="card">
+            <li
+              class="card"
+              id="card-5"
+              onclick="redirectToPackageDetail('66bb894f8ecd9f890dd9d4ec')"
+            >
               <div class="img">
                 <img
                   src="/TravelTicketFrontend/assets/card5.jpg"
@@ -471,7 +502,11 @@
                 </p>
               </div>
             </li>
-            <li class="card">
+            <li
+              class="card"
+              id="card-6"
+              onclick="redirectToPackageDetail('66bb894f8ecd9f890dd9d4ed')"
+            >
               <div class="img">
                 <img
                   src="/TravelTicketFrontend/assets/card6.jpg"
@@ -668,7 +703,7 @@
       </div>
     </div>-->
 
-    <!-- TESTIMONIAL -->
+        <!-- TESTIMONIAL -->
         <!-- <div class="wrapper review-wrapper">
           <i id="left" class="fa-solid fa-angle-left"></i>
           <ul class="carousel review-carousel">
@@ -697,12 +732,14 @@
                 type="email"
                 name="email"
                 placeholder="Enter Your Email"
+                id="newsletter-email"
                 class="mailbox"
               />
               <button class="submit-btn" type="submit" name="submit">
                 Subscribe
               </button>
             </form>
+            <div id="newsletter-response"></div>
           </div>
           <!-- <div class="planeimg2">
         <img src="/TravelTicketFrontend/assets/plane2.jpg" alt="" />
@@ -748,7 +785,6 @@
         Copyright © 2024 TravelToor. All rights reserved
       </p>
     </div>-->
-    
       </main>
       <div class="footer" id="footer">
         <div class="footer-content">
@@ -805,7 +841,9 @@
         </p>
       </div>
     </div>
+
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
     <script src="/TravelTicketFrontend/public/scripts/script.js"></script>
   </body>
 </html>

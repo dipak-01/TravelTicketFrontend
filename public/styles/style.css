@@ -1079,6 +1079,29 @@ nav li .toor {
   height: 80%;
   border-radius: 20px;
   color: #fff;
+  cursor: pointer;
+}
+
+.success-message {
+  color: #34c759;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f7f7f7;
+}
+
+.error-message {
+  color: #f6292d;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f7f7f7;
+}
+
+.fa-check-circle,
+.fa-exclamation-circle {
+  font-size: 18px;
+  margin-right: 10px;
 }
 
 /* footer */
@@ -1151,7 +1174,7 @@ nav li .toor {
     cursor: pointer;
   }
   .hideonMobile {
-    display: none;
+    display: none !important;
   }
   .menu-btn {
     display: block;

@@ -28,7 +28,7 @@
 //   let data = Object.fromEntries(formData);
 //   const response = await axios({
 //     method: "POST",
-//     url: "http://localhost:4000/api/user/login",
+//     url: "https://travel-ticket-backend.onrender.com/api/user/login",
 //     data: data,
 //   });
 //   if (response.data.success) {
@@ -59,7 +59,7 @@
 
 //   const response = await axios({
 //     method: "POST",
-//     url: "http://localhost:4000/api/user/register",
+//     url: "https://travel-ticket-backend.onrender.com/api/user/register",
 //     data: data,
 //   });
 //   if (response.data.success) {

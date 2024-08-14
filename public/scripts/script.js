@@ -1,74 +1,76 @@
 // Fetch token from cookies
 const token = Cookies.get("token");
 
-// side bar icons display and hiding feature as user logged in
-// const sideCart = document.getElementById("sideCart");
-// const sideProfile = document.getElementById("sideProfile");
-// const sideLogout = document.getElementById("sideLogout");
-// const sideLogin = document.getElementById("sideLogin");
+//checking user logged in or not
+async function checkLoggedIn() {
+  try {
+    const response = await axios.get(
+      "https://travel-ticket-backend.onrender.com/api/verifytoken",
+      {
+        headers: {
+          token,
+        },
+      }
+    );
 
-// if (token) {
-//   sideCart.style.display = "block";
-//   sideProfile.style.display = "block";
-//   sideLogout.style.display = "block";
-//   sideLogin.style.display = "none";
-//   sideLogout.addEventListener("click", (e) => {
-//     e.preventDefault();
-//     Cookies.remove("token");
-//     window.location.reload();
-//   });
-// } else {
-//   sideCart.style.display = "none";
-//   sideProfile.style.display = "none";
-//   sideLogout.style.display = "none";
-//   sideLogin.style.display = "block";
-// }
+    if (response.data.loggedIn) {
+      // Show logged in UI elements
+      document.querySelectorAll("[id='logout-btn']").forEach((element) => {
+        element.style.display = "block";
+      });
+      document.querySelectorAll("[id='profile']").forEach((element) => {
+        element.style.display = "block";
+      });
+      document.querySelectorAll("[id='login-btn']").forEach((element) => {
+        element.style.display = "none";
+      });
+    } else {
+      // Show logged out UI elements
+      document.querySelectorAll("[id='logout-btn']").forEach((element) => {
+        element.style.display = "none";
+      });
+      document.querySelectorAll("[id='profile']").forEach((element) => {
+        element.style.display = "none";
+      });
+      document.querySelectorAll("[id='login-btn']").forEach((element) => {
+        element.style.display = "block";
+      });
+    }
+  } catch (error) {
+    console.log(error);
+    // Show error message or logged out UI elements
+    document.querySelectorAll("[id='logout-btn']").forEach((element) => {
+      element.style.display = "none";
+    });
+    document.querySelectorAll("[id='profile']").forEach((element) => {
+      element.style.display = "none";
+    });
+    document.querySelectorAll("[id='login-btn']").forEach((element) => {
+      element.style.display = "block";
+    });
+  }
+}
 
-//navbar icons display and hiding feature as user logged in
-// const mediaQuery = window.matchMedia("(max-width: 850px)");
-// mediaQuery.addEventListener(
-//   "change",
-//   () => {
-//     window.location.reload;
-//   },
-//   { passive: true }
-// );
+checkLoggedIn();
 
-const cart = document.getElementById("cart");
-const profile = document.getElementById("profile");
-const logout = document.getElementById("logout");
-const login = document.getElementById("login");
-
-// if (token) {
-//   if (innerWidth < 850) {
-//     cart.style.display = "none";
-//     profile.style.display = "none";
-//     logout.style.display = "none";
-//     login.style.display = "none";
-//   } else {
-//     cart.style.display = "block";
-//     profile.style.display = "block";
-//     logout.style.display = "block";
-//     login.style.display = "none";
-//   }
-//   logout.addEventListener("click", (e) => {
-//     e.preventDefault();
-//     Cookies.remove("token");
-//     window.location.reload();
-//   });
-// } else {
-//   if (innerWidth < 850) {
-//     cart.style.display = "none";
-//     profile.style.display = "none";
-//     logout.style.display = "none";
-//     login.style.display = "none";
-//   } else {
-//     cart.style.display = "none";
-//     profile.style.display = "none";
-//     logout.style.display = "none";
-//     login.style.display = "block";
-//   }
-// }
+document.querySelectorAll("[id='logout-btn']").forEach((element) => {
+  element.addEventListener("click", () => {
+    if (Cookies.get("token")) {
+      Cookies.remove("token");
+      console.log("removed");
+    }
+    window.location.href = "/TravelTicketFrontend/public/index.html";
+    document.querySelectorAll("[id='logout-btn']").forEach((element) => {
+      element.style.display = "none";
+    });
+    document.querySelectorAll("[id='profile']").forEach((element) => {
+      element.style.display = "none";
+    });
+    document.querySelectorAll("[id='login-btn']").forEach((element) => {
+      element.style.display = "block";
+    });
+  });
+});
 
 //navbar
 function showSidebar() {
@@ -76,6 +78,9 @@ function showSidebar() {
   sidebar.classList.add("show");
   const body = document.querySelector(".body");
   body.style.overflow = "hidden";
+  document.querySelectorAll("hideonMobile").forEach((element) => {
+    element.style.display = "none";
+  });
 }
 
 function hideSidebar() {
@@ -85,47 +90,9 @@ function hideSidebar() {
   body.style.overflow = "";
 }
 
-//landing page
-var config = {
-  cUrl: "https://api.api-ninjas.com/v1/city?name=",
-  cKey: "IL9rJUN5pdFp1SAz8T7h3A==zsZkE8LwblsFdzLE",
-};
-
-const searchBar = document.getElementById("searchBar");
-
-searchBar.addEventListener("keyup", (e) => {
-  console.log(e);
-  const city = e.target.value;
-  if (city) {
-    fetch(config.cUrl + city, {
-      headers: {
-        "X-Api-Key": config.cKey,
-      },
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-      });
-  }
-});
-
-//price selector
-var slider = document.getElementById("priceRange");
-var output = document.getElementById("priceDisplay");
-output.innerHTML = slider.value;
-
-slider.oninput = function () {
-  output.innerHTML = this.value;
-};
-
-//default date value
-document.getElementById("checkInDate").defaultValue = "2024-07-21";
-document.getElementById("checkOutDate").defaultValue = "2024-07-21";
-
-//price change from range to input
-function smallDevices() {
-  const priceConvertor = document.getElementById(".convertor");
-  priceConvertor.type = "number";
+//redirect to details
+function redirectToPackageDetail(id) {
+  window.location.href = `/TravelTicketFrontend/public/pages/package-detail.html?id=${id}`;
 }
 
 //swiper for cards
@@ -223,3 +190,67 @@ document.addEventListener("mouseup", dragStop);
 carousel.addEventListener("scroll", infiniteScroll);
 wrapper.addEventListener("mouseenter", () => clearTimeout(timeoutId));
 wrapper.addEventListener("mouseleave", autoPlay);
+
+const newsletterForm = document.querySelector(".mail");
+const newsletterEmailInput = document.querySelector("#newsletter-email");
+const newsletterResponseDiv = document.querySelector("#newsletter-response");
+
+newsletterForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const email = newsletterEmailInput.value.trim();
+  if (email) {
+    axios
+      .post("https://travel-ticket-backend.onrender.com/api/subscribe", {
+        email,
+      })
+      .then((response) => {
+        if (response.data.success) {
+          newsletterResponseDiv.innerHTML = `
+            <div class="success-message">
+              <i class="fas fa-check-circle"></i>
+              Thank you for subscribing!
+            </div>
+          `;
+          setTimeout(() => {
+            newsletterResponseDiv.innerHTML = "";
+            newsletterEmailInput.value = "";
+          }, 5000);
+        } else {
+          newsletterResponseDiv.innerHTML = `
+            <div class="error-message">
+              <i class="fas fa-exclamation-circle"></i>
+              Error subscribing. Please try again.
+            </div>
+          `;
+          setTimeout(() => {
+            newsletterResponseDiv.innerHTML = "";
+            newsletterEmailInput.value = "";
+          }, 5000);
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+        newsletterResponseDiv.innerHTML = `
+          <div class="error-message">
+            <i class="fas fa-exclamation-circle"></i>
+            Error subscribing. Please try again.
+          </div>
+        `;
+        setTimeout(() => {
+          newsletterResponseDiv.innerHTML = "";
+          newsletterEmailInput.value = "";
+        }, 5000);
+      });
+  } else {
+    newsletterResponseDiv.innerHTML = `
+      <div class="error-message">
+        <i class="fas fa-exclamation-circle"></i>
+        Please enter a valid email address.
+      </div>
+    `;
+    setTimeout(() => {
+      newsletterResponseDiv.innerHTML = "";
+      newsletterEmailInput.value = "";
+    }, 5000);
+  }
+});

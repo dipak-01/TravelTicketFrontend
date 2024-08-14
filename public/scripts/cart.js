@@ -27,7 +27,9 @@ if (!token) {
 
     //getting the package through api
     axios
-      .get(`http://localhost:4000/api/package/${packageId}`)
+      .get(
+        `https://travel-ticket-backend.onrender.com/api/package/details/${packageId}`
+      )
       .then((response) => {
         const cartItem = response.data;
 
@@ -74,7 +76,7 @@ if (!token) {
       if (inputPromoCode && inputPromoCode !== promoCode) {
         try {
           const response = await axios.post(
-            "http://localhost:4000/api/checkout/promovalidate",
+            "https://travel-ticket-backend.onrender.com/api/checkout/promovalidate",
             { promoCode: inputPromoCode },
             {
               headers: { token },
@@ -82,11 +84,12 @@ if (!token) {
           );
           if (response.data.success) {
             promoCode = inputPromoCode;
-            let sub = totalAmount;
             const discountPercentage = response.data.discountPercentage;
             discountAmount = (totalAmount * discountPercentage) / 100;
-            sub -= discountAmount;
-            document.getElementById("total-amount").innerHTML = `&#8377;${sub}`;
+            totalAmount -= discountAmount;
+            document.getElementById(
+              "total-amount"
+            ).innerHTML = `&#8377;${totalAmount}`;
 
             // Add effects to show promo code is added
             promoCodeInput.style.border = "1px green";
@@ -106,7 +109,6 @@ if (!token) {
           resetPromoCodeDiv();
         }
       } else if (inputPromoCode === promoCode) {
-        // If the new promo code is the same as the previous one, do nothing
         return;
       }
     });
@@ -150,13 +152,12 @@ if (!token) {
 
       try {
         const response = await axios.post(
-          "http://localhost:4000/api/checkout/payment",
+          "https://travel-ticket-backend.onrender.com/api/checkout/payment",
           jsonData,
           {
             headers: { token },
           }
         );
-        console.log(response.data);
         if (response.data.success) {
           const { session_url } = response.data;
           window.location.replace(session_url);

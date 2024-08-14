@@ -9,7 +9,7 @@ if (!token) {
   const fetchUserDetails = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:4000/api/user/details",
+        "https://travel-ticket-backend.onrender.com/api/user/details",
         {},
         { headers: { token } }
       );
@@ -24,7 +24,7 @@ if (!token) {
   const fetchTickets = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:4000/api/checkout/booked",
+        "https://travel-ticket-backend.onrender.com/api/checkout/booked",
         {},
         { headers: { token } }
       );
