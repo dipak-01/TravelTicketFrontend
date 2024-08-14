@@ -388,3 +388,15 @@
   color: #ff3f6c; 
   transition: color 0.3s ease;
 }
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+}
+
+/* Styling for the logo image */
+.navbar-logo img {
+  height: auto;
+  width: 70px; 
+  max-width: 100%;
+}

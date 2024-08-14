@@ -69,9 +69,11 @@
               <a href="/TravelTicketFrontend/public/pages/login.html">Login</a>
             </li>
           </ul>
-          <ul>
+          <ul class="main-nav">
             <li>
-              <a href="#">Travel<span class="toor">Toor</span></a>
+              <a href="../TravelTicketFrontend/index.html" class="navbar-logo">
+                <img src="../TravelTicketFrontend/assets/Travel-toor-logo-black.png" alt="Travel Tour Logo">
+              </a>
             </li>
             <li class="hideonMobile">
               <a href="/TravelTicketFrontend/public/pages/about.html">About</a>
@@ -86,14 +88,14 @@
                 >Contact</a
               >
             </li>
-            <li class="hideonMobile" id="profile">
+            <!-- <li class="hideonMobile" id="profile">
               <a href="/TravelTicketFrontend/public/pages/profile.html"
                 ><i class="fa-solid fa-user"></i
               ></a>
             </li>
             <li class="hideonMobile" id="logout">
               <a href="/TravelTicketFrontend/index.html">Logout</a>
-            </li>
+            </li> -->
             <li class="hideonMobile" id="login">
               <a href="/TravelTicketFrontend/public/pages/login.html">Login</a>
             </li>
@@ -117,7 +119,18 @@
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum ea
                 quam commodi amet tenetur qui accusamus
               </p>
-              <div class="location_search">
+              <a href="/TravelTicketFrontend/public/pages/packages.html" class="explore-a">
+                <div id="explore">
+                  <button class="learn-more" id="button">
+                    <span class="circle" aria-hidden="true">
+                      <span class="icon arrow"></span>
+                    </span>
+                    <span class="button-text">Explore</span>
+                  </button>
+                </div>
+              </a>
+              
+              <!-- <div class="location_search">
                 <form action="">
                   <div class="search-box">
                     <p>
@@ -188,7 +201,7 @@
                     <i class="fa-solid fa-magnifying-glass"></i>
                   </button>
                 </form>
-              </div>
+              </div> -->
             </div>
             <div class="right">
               <div class="column1">
@@ -203,6 +216,39 @@
               </div>
             </div>
           </div>
+        </div>
+        <!-- home-mobile -->
+        <div class="mobile-view" id="mobile-view">
+          <section class="section-landing">
+            <div class="bg">
+                <video autoplay loop muted plays-inline class="back-video">
+                    <source src="/TravelTicketFrontend/assets/video.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="container" id="contain">
+                <h1 id="h1">
+                    <span>Let’s</span>
+                    <span id="sec">Create</span>
+                </h1>
+                <h1 id="h1" class="sec-line">
+                    <span>Memorable</span>
+                </h1>
+                <h1 id="h1" class="sec-line">
+                    <span id="">Journey</span>
+                </h1>
+            </div>
+            <a href="/TravelTicketFrontend/public/pages/packages.html" class="explore-a">
+              <div id="explore">
+                <button class="learn-more" id="button">
+                  <span class="circle" aria-hidden="true">
+                    <span class="icon arrow"></span>
+                  </span>
+                  <span class="button-text">Explore</span>
+                </button>
+              </div>
+            </a>
+          </section >
+          
         </div>
 
         <!-- trip-section -->
@@ -536,12 +582,12 @@
         </div>
 
         <!-- review heading -->
-        <div class="review_header">
+        <!-- <div class="review_header">
           <div class="review_heading">
             <p>What Our Client Say's</p>
             <h1>Our Customer Are Our Priority</h1>
           </div>
-        </div>
+        </div> -->
 
         <!-- review section -->
         <!-- <div class="review_section">
@@ -621,7 +667,9 @@
         </li>
       </div>
     </div>-->
-        <div class="wrapper review-wrapper">
+
+    <!-- TESTIMONIAL -->
+        <!-- <div class="wrapper review-wrapper">
           <i id="left" class="fa-solid fa-angle-left"></i>
           <ul class="carousel review-carousel">
             <li class="card review-card">1</li>
@@ -630,7 +678,7 @@
             <li class="card review-card">4</li>
           </ul>
           <i id="right" class="fa-solid fa-angle-right"></i>
-        </div>
+        </div> -->
         <!-- newsletter section -->
         <div class="newsletter">
           <!-- <div class="planeimg1">
@@ -700,6 +748,7 @@
         Copyright © 2024 TravelToor. All rights reserved
       </p>
     </div>-->
+    
       </main>
       <div class="footer" id="footer">
         <div class="footer-content">
