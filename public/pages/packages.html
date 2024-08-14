@@ -19,22 +19,42 @@
   <body>
     <div class="child">
       <main id="main">
-        <nav>
-          <ul class="ul">
-            <li>
-              <a href="/TravelTicketFrontend/index.html"
-                >Travel<span class="toor">Toor</span></a
-              >
-            </li>
-            <li>
-              <button class="login-btn">
-                <a href="/TravelTicketFrontend/public/pages/login.html"
-                  >Login</a
-                >
-              </button>
-            </li>
-          </ul>
-        </nav>
+        <!-- navbar -->
+    <nav class="nav">
+      <ul class="sidebar">
+        <li onclick="hideSidebar()">
+          <a><i class="fa-solid fa-xmark"></i></a>
+        </li>
+        <li>
+          <a href="/TravelTicketFrontend/public/pages/about.html">About</a>
+        </li>
+        <li><a href="/TravelTicketFrontend/public/pages/packages.html">Packages</a></li>
+        <li>
+          <a href="/TravelTicketFrontend/public/pages/contact.html">Contact</a>
+        </li>
+      </ul>
+      <ul class="main-nav">
+        <li>
+          <a href="/TravelTicketFrontend/index.html" class="navbar-logo">
+            <img src="/TravelTicketFrontend/assets/Travel-toor-logo-black.png" alt="Travel Tour Logo">
+          </a>
+        </li>
+        <li class="hideonMobile">
+          <a href="/TravelTicketFrontend/public/pages/about.html">About</a>
+        </li>
+        <li class="hideonMobile"><a href="/TravelTicketFrontend/public/pages/packages.html">Packages</a></li>
+        <li class="hideonMobile">
+          <a href="/TravelTicketFrontend/public/pages/contact.html">Contact</a>
+        </li>
+        <li class="menu-btn" onclick="showSidebar()">
+          <a><i class="fa-solid fa-bars-staggered"></i></a>
+        </li>
+        <li>
+          <div></div>
+        </li>
+      </ul>
+    </nav>
+    <hr>
         <form class="searchbar">
           <input type="text" id="searchLocation" placeholder="Gwalior" />
           <input type="number" id="searchPrice" placeholder="&#8377; 2000" />
@@ -42,6 +62,7 @@
             <i class="fa-solid fa-magnifying-glass"></i>
           </button>
         </form>
+        
         <div class="row"></div>
         <!--pagination-->
         <div class="page-container">
@@ -57,6 +78,60 @@
           </div>
         </div>
       </main>
+      <div class="footer" id="footer">
+        <div class="footer-content">
+          <div class="footer-content-left">
+            <h1>TravelToor</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Voluptatum, tenetur reprehenderit suscipit a sit ad ullam, debitis
+              inventore iure totam corrupti optio adipisci accusantium nostrum
+              perferendis vitae soluta asperiores? Sapiente.
+            </p>
+            <div class="footer-social-icons">
+              <img src="assets/facebook_icon.png" alt="" />
+              <img src="assets/linkedin_icon.png" alt="" />
+              <img src="assets/twitter_icon.png" alt="" />
+            </div>
+          </div>
+          <div class="footer-content-center">
+            <h2>COMPANY</h2>
+            <ul>
+              <li>
+                <a href="/TravelTicketFrontend/public/pages/about.html"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a href="/TravelTicketFrontend/public/pages/contact.html"
+                  >Contact Us</a
+                >
+              </li>
+              <li>
+                <a href="/TravelTicketFrontend/public/pages/packages.html"
+                  >Packages</a
+                >
+              </li>
+              <li>
+                <a href="/TravelTicketFrontend/public/pages/privacypolicy.html"
+                  >Privacy Policy</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer-content-right">
+            <h2>GET IN TOUCH</h2>
+            <ul>
+              <li>+1-212-456-7890</li>
+              <li>contact@TravelToor.com</li>
+            </ul>
+          </div>
+        </div>
+        <hr />
+        <p class="footer-copyright">
+          Copyright © 2024 TravelToor. All rights reserved
+        </p>
+      </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
     <script src="/TravelTicketFrontend/public/scripts/packages.js"></script>
