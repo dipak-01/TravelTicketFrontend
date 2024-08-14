@@ -4,7 +4,7 @@ const orderId = urlParams.get("orderId");
 
 const verifyPayment = async () => {
   const response = await axios.post(
-    "http://localhost:4000/api/checkout/verify",
+    "https://travel-ticket-backend.onrender.com/api/checkout/verify",
     {
       success,
       orderId,
