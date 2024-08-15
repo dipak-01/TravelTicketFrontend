@@ -1,4 +1,96 @@
+document.addEventListener("DOMContentLoaded", function () {
+  checkLoggedIn();
+});
+
+// Fetch token from cookies
 const token = Cookies.get("token");
+
+//checking user logged in or not
+async function checkLoggedIn() {
+  try {
+    const response = await axios.get(
+      "https://travel-ticket-backend.onrender.com/api/verifytoken",
+      {
+        headers: {
+          token,
+        },
+      }
+    );
+
+    if (response.data.loggedIn) {
+      // Show logged in UI elements
+      document.querySelectorAll("[id='logout-btn']").forEach((element) => {
+        element.style.display = "block";
+      });
+      document.querySelectorAll("[id='profile']").forEach((element) => {
+        element.style.display = "block";
+      });
+      document.querySelectorAll("[id='login-btn']").forEach((element) => {
+        element.style.display = "none";
+      });
+    } else {
+      // Show logged out UI elements
+      document.querySelectorAll("[id='logout-btn']").forEach((element) => {
+        element.style.display = "none";
+      });
+      document.querySelectorAll("[id='profile']").forEach((element) => {
+        element.style.display = "none";
+      });
+      document.querySelectorAll("[id='login-btn']").forEach((element) => {
+        element.style.display = "block";
+      });
+    }
+  } catch (error) {
+    console.log(error);
+    // Show error message or logged out UI elements
+    document.querySelectorAll("[id='logout-btn']").forEach((element) => {
+      element.style.display = "none";
+    });
+    document.querySelectorAll("[id='profile']").forEach((element) => {
+      element.style.display = "none";
+    });
+    document.querySelectorAll("[id='login-btn']").forEach((element) => {
+      element.style.display = "block";
+    });
+  }
+}
+
+document.querySelectorAll("[id='logout-btn']").forEach((element) => {
+  element.addEventListener("click", () => {
+    if (Cookies.get("token")) {
+      Cookies.remove("token");
+      console.log("removed");
+    }
+    window.location.href = "/TravelTicketFrontend/public/index.html";
+    document.querySelectorAll("[id='logout-btn']").forEach((element) => {
+      element.style.display = "none";
+    });
+    document.querySelectorAll("[id='profile']").forEach((element) => {
+      element.style.display = "none";
+    });
+    document.querySelectorAll("[id='login-btn']").forEach((element) => {
+      element.style.display = "block";
+    });
+  });
+});
+
+//navbar
+function showSidebar() {
+  const sidebar = document.querySelector(".sidebar");
+  sidebar.classList.add("show");
+  const body = document.querySelector(".body");
+  body.style.overflow = "hidden";
+  document.querySelectorAll("hideonMobile").forEach((element) => {
+    element.style.display = "none";
+  });
+}
+
+function hideSidebar() {
+  const sidebar = document.querySelector(".sidebar");
+  sidebar.classList.remove("show");
+  const body = document.querySelector(".body");
+  body.style.overflow = "";
+}
 
 if (!token) {
   // redirect to login page
