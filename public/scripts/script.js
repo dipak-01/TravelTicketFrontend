@@ -1,3 +1,7 @@
+document.addEventListener("DOMContentLoaded", function () {
+  checkLoggedIn();
+});
+
 // Fetch token from cookies
 const token = Cookies.get("token");
 
@@ -50,8 +54,6 @@ async function checkLoggedIn() {
     });
   }
 }
-
-checkLoggedIn();
 
 document.querySelectorAll("[id='logout-btn']").forEach((element) => {
   element.addEventListener("click", () => {
