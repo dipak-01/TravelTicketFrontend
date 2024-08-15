@@ -49,7 +49,7 @@ searchButton.addEventListener("click", async (event) => {
 
   try {
     const response = await axios.get(
-      `http://localhost:4000/api/package/filter`,
+      `https://travel-ticket-backend.onrender.com/api/package/filter`,
       {
         params: {
           location: locationSearch,
@@ -141,7 +141,7 @@ function prevactive() {
 
 function fetchData() {
   axios
-    .get("http://localhost:4000/api/package/listings", {
+    .get("https://travel-ticket-backend.onrender.com/api/package/listings", {
       params: {
         page: page,
         limit: 9,
@@ -213,7 +213,6 @@ function renderData() {
 }
 
 fetchData(); // call the function initially to fetch the data
-
 
 //navbar
 function showSidebar() {

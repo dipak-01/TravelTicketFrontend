@@ -5,7 +5,9 @@ const packageId = urlParams.get("id");
 
 if (packageId) {
   axios
-    .get(`http://localhost:4000/api/package/details/${packageId}`)
+    .get(
+      `https://travel-ticket-backend.onrender.com/api/package/details/${packageId}`
+    )
     .then((response) => {
       const packageData = response.data;
 
