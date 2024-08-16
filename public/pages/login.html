@@ -36,7 +36,11 @@
         <li>
           <a href="/TravelTicketFrontend/public/pages/about.html">About</a>
         </li>
-        <li><a href="/TravelTicketFrontend/public/pages/packages.html">Packages</a></li>
+        <li>
+          <a href="/TravelTicketFrontend/public/pages/packages.html"
+            >Packages</a
+          >
+        </li>
         <li>
           <a href="/TravelTicketFrontend/public/pages/contact.html">Contact</a>
         </li>
@@ -44,13 +48,20 @@
       <ul>
         <li>
           <a href="/TravelTicketFrontend/index.html" class="navbar-logo">
-            <img src="/TravelTicketFrontend/assets/Travel-toor-logo-black.png" alt="Travel Tour Logo">
+            <img
+              src="/TravelTicketFrontend/assets/Travel-toor-logo-black.png"
+              alt="Travel Tour Logo"
+            />
           </a>
         </li>
         <li class="hideonMobile">
           <a href="/TravelTicketFrontend/public/pages/about.html">About</a>
         </li>
-        <li class="hideonMobile"><a href="/TravelTicketFrontend/public/pages/packages.html">Packages</a></li>
+        <li class="hideonMobile">
+          <a href="/TravelTicketFrontend/public/pages/packages.html"
+            >Packages</a
+          >
+        </li>
         <li class="hideonMobile">
           <a href="/TravelTicketFrontend/public/pages/contact.html">Contact</a>
         </li>
@@ -103,11 +114,15 @@
                 placeholder="Password"
                 name="password"
                 required
-                pattern="[a-zA-Z0-9]{8,}"
-                title="Password must be 8 characters"
+                pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_+=\-]).{8,}$"
+                title="Password must be 8-32 characters, including uppercase, lowercase, digit, and special character"
               />
               <i class="fa-solid fa-lock"></i>
-              <img src="/TravelTicketFrontend/assets/eye-close.png" class="toggle-password" data-target="password">
+              <img
+                src="/TravelTicketFrontend/assets/eye-close.png"
+                class="toggle-password"
+                data-target="password"
+              />
             </div>
             <div class="infield">
               <input
@@ -117,11 +132,15 @@
                 placeholder="Confirm Password"
                 name="confirm-password"
                 required
-                pattern="[a-zA-Z0-9]{8,}"
-                title="Password must be 8 characters"
+                pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_+=\-]).{8,}$"
+                title="Password must be 8-32 characters, including uppercase, lowercase, digit, and special character"
               />
               <i class="fa-solid fa-lock"></i>
-              <img src="/TravelTicketFrontend/assets/eye-close.png" class="toggle-password" data-target="confirm-password">
+              <img
+                src="/TravelTicketFrontend/assets/eye-close.png"
+                class="toggle-password"
+                data-target="confirm-password"
+              />
             </div>
             <button class="signup" type="submit">Sign Up</button>
             <div class="have_account">
@@ -149,12 +168,18 @@
             </div>
             <div class="infield">
               <input
+                id="password-signin"
                 type="password"
                 placeholder="Password"
                 name="password"
                 required
               />
               <i class="fa-solid fa-lock"></i>
+              <img
+                src="/TravelTicketFrontend/assets/eye-close.png"
+                class="toggle-password"
+                data-target="password-signin"
+              />
             </div>
             <a href="#" class="forgot">Forgot your password?</a>
             <button type="submit" class="signin">Sign In</button>
@@ -164,9 +189,8 @@
           </form>
         </div>
       </div>
-      
     </div>
-    
+
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
     <script src="../scripts/login.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
