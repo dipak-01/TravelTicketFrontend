@@ -1,21 +1,64 @@
+document.addEventListener("DOMContentLoaded", function () {
+  checkLoggedIn();
+});
+
+// Fetch token from cookies
+const token = Cookies.get("token");
+
+//checking user logged in or not
+async function checkLoggedIn() {
+  try {
+    const response = await axios.get(
+      "https://travel-ticket-backend.onrender.com/api/verifytoken",
+      {
+        headers: {
+          token,
+        },
+      }
+    );
+
+    if (response.data.loggedIn) {
+      document.querySelectorAll("[id='profile']").forEach((element) => {
+        element.style.display = "block";
+      });
+    } else {
+      document.querySelectorAll("[id='profile']").forEach((element) => {
+        element.style.display = "none";
+      });
+    }
+  } catch (error) {
+    document.querySelectorAll("[id='profile']").forEach((element) => {
+      element.style.display = "none";
+    });
+  }
+}
+
+//navbar
+function showSidebar() {
+  const sidebar = document.querySelector(".sidebar");
+  sidebar.classList.add("show");
+  const body = document.querySelector(".body");
+  body.style.overflow = "hidden";
+}
+
+function hideSidebar() {
+  const sidebar = document.querySelector(".sidebar");
+  sidebar.classList.remove("show");
+  const body = document.querySelector(".body");
+  body.style.overflow = "";
+}
+
 //seach bar functionality
 const searchBar = document.getElementById("searchLocation");
-const searchPrice = document.getElementById("searchPrice");
 const searchButton = document.getElementById("search-btn");
 let locationSearch = "";
-let price = 0;
 
 searchBar.addEventListener("keyup", (event) => {
   locationSearch = event.target.value;
 });
 
-searchPrice.addEventListener("keyup", (event) => {
-  price = event.target.value;
-});
-
 searchButton.addEventListener("click", async (event) => {
   event.preventDefault();
-  console.log(`Search parameters: location=${locationSearch}, price=${price}`);
 
   try {
     const response = await axios.get(
@@ -23,11 +66,9 @@ searchButton.addEventListener("click", async (event) => {
       {
         params: {
           location: locationSearch,
-          price: price,
         },
       }
     );
-    console.log(`API response:`, response);
     renderSearchData(response.data);
   } catch (error) {
     console.error(`Error searching packages:`, error);
@@ -35,7 +76,6 @@ searchButton.addEventListener("click", async (event) => {
 });
 
 function renderSearchData(packages) {
-  console.log(`Packages:`, packages);
   const packageList = document.querySelector(".row");
   packageList.innerHTML = "";
 
@@ -175,8 +215,8 @@ function renderData() {
   // Hide or show the next and previous buttons
   const nextBtn = document.querySelector(".next-btn");
   const prevBtn = document.querySelector(".prev-btn");
-  nextBtn.style.display = hasNextPage ? "block" : "none";
-  prevBtn.style.display = hasPrevPage ? "block" : "none";
+  nextBtn.style.visibility = hasNextPage ? "visible" : "hidden";
+  prevBtn.style.visibility = hasPrevPage ? "visible" : "hidden";
 
   // Scroll to the top of the page
   window.scrollTo({ top: 0, behavior: "smooth" });
@@ -184,17 +224,34 @@ function renderData() {
 
 fetchData(); // call the function initially to fetch the data
 
-//navbar
-function showSidebar() {
-  const sidebar = document.querySelector(".sidebar");
-  sidebar.classList.add("show");
-  const body = document.querySelector(".body");
-  body.style.overflow = "hidden";
-}
+//carousel
+const pageCarousel = document.getElementById("pagination-list");
+const linkWidth = pageCarousel.querySelector(".link").scrollWidth;
+const prevButton = document.querySelector(".prev-btn");
+const nextButton = document.querySelector(".next-btn");
 
-function hideSidebar() {
-  const sidebar = document.querySelector(".sidebar");
-  sidebar.classList.remove("show");
-  const body = document.querySelector(".body");
-  body.style.overflow = "";
-}
+prevButton.addEventListener("click", () => {
+  if (window.innerWidth < 370) {
+    pageCarousel.scrollLeft -= linkWidth * 1.8;
+  } else if (window.innerWidth < 768) {
+    pageCarousel.scrollLeft -= linkWidth * 2;
+  } else if (window.innerWidth < 992) {
+    pageCarousel.scrollLeft -= linkWidth * 1.8;
+  } else {
+    pageCarousel.scrollLeft -= linkWidth * 2;
+  }
+});
+
+nextButton.addEventListener("click", () => {
+  if (window.innerWidth < 370) {
+    pageCarousel.scrollLeft += linkWidth * 1.8;
+  } else if (window.innerWidth < 600) {
+    pageCarousel.scrollLeft += linkWidth * 2;
+  } else if (window.innerWidth < 768) {
+    pageCarousel.scrollLeft += linkWidth * 2;
+  } else if (window.innerWidth < 992) {
+    pageCarousel.scrollLeft += linkWidth * 1.8;
+  } else {
+    pageCarousel.scrollLeft += linkWidth * 2;
+  }
+});

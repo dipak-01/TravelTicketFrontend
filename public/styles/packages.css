@@ -51,7 +51,7 @@ main {
   width: 100%;
   height: 100%;
   border-radius: 30px;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 .card img {
   object-fit: cover;
@@ -124,9 +124,9 @@ main {
   justify-content: center;
 }
 .pagination {
-  width: 30%;
+  width: 40%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
 }
 .pagination button {
@@ -147,8 +147,7 @@ main {
   margin-right: 2rem;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
-  gap: 2rem;
+  justify-content: space-between;
 }
 .pagination li {
   cursor: pointer;
@@ -166,7 +165,9 @@ main {
 }
 
 .pagination .active {
-  background-color: #ffa03f;
+  /* background-color: #ffa03f; */
+  border-radius: 50%;
+  font-size: 16px;
   color: white;
 }
 .remove-btn {
@@ -174,6 +175,19 @@ main {
   transition: all 0.3s;
 }
 
+/* carousel */
+#pagination-list {
+  display: grid;
+  margin-left: 30px;
+  width: 200px;
+  justify-content: space-evenly;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% / 3));
+  overflow-x: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
 
 @media only screen and (min-width: 1030px) and (max-width: 1350px) {
   .row {
@@ -207,7 +221,7 @@ main {
     background-repeat: no-repeat;
     background-size: cover;
   }
-  
+
   .card-body {
     width: 100%;
     margin-top: -10px;
@@ -245,7 +259,7 @@ main {
       rgba(0, 0, 0, 0.3) 0px 20px 20px -20px;
   }
 }
-@media only screen and (min-width: 760px) and (max-width: 882px){
+@media only screen and (min-width: 760px) and (max-width: 882px) {
   .row {
     width: 100%;
     display: flex;
@@ -263,7 +277,40 @@ main {
       rgba(0, 0, 0, 0.3) 0px 20px 20px -20px;
   }
 }
-@media(max-width: 480px){
+
+@media (max-width: 768px) {
+  .pagination {
+    width: 60%;
+  }
+  #pagination-list {
+    grid-auto-columns: calc((100% / 3));
+    margin-left: 40px;
+  }
+  .prev-btn,
+  .next-btn {
+    display: block;
+    width: 80px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    cursor: pointer;
+  }
+  .prev-btn {
+    float: left;
+  }
+  .next-btn {
+    float: right;
+  }
+}
+
+@media (max-width: 600px) {
+  .pagination {
+    width: 75%;
+  }
+}
+
+@media (max-width: 480px) {
   .row {
     width: 100%;
     display: flex;
@@ -288,7 +335,7 @@ main {
     background-repeat: no-repeat;
     background-size: cover;
   }
-  
+
   .card-body {
     width: 100%;
     margin-top: -10px;
@@ -307,9 +354,12 @@ main {
     font-size: 12px;
     margin-bottom: 15px;
   }
+  .pagination {
+    width: 90%;
+  }
 }
 
-@media(max-width: 370px){
+@media (max-width: 370px) {
   .row {
     width: 100%;
     display: flex;
@@ -334,7 +384,7 @@ main {
     background-repeat: no-repeat;
     background-size: cover;
   }
-  
+
   .card-body {
     width: 100%;
     margin-top: -10px;
@@ -353,8 +403,10 @@ main {
     font-size: 8px;
     margin-bottom: 10px;
   }
+  #pagination-list {
+    grid-template-columns: calc(100% / 3);
+  }
 }
-
 
 /* nav */
 .navbar-logo {
@@ -365,7 +417,7 @@ main {
 /* Styling for the logo image */
 .navbar-logo img {
   height: auto;
-  width: 70px; 
+  width: 70px;
   max-width: 100%;
 }
 
@@ -391,7 +443,7 @@ nav ul {
 }
 
 nav li {
-  height: auto
+  height: auto;
 }
 
 nav a {
@@ -460,60 +512,12 @@ nav li .toor {
   width: 100%;
 }
 /* navigation */
-ul.main-nav{
+ul.main-nav {
   margin-left: 0rem;
 }
-.main-nav{
+.main-nav {
   width: 100%;
-margin-left: -1rem;
-}
-.newNav {
-  border-radius: 0 20px 20px 0;
-  height: 600px;
-  position: fixed;
-  left: -29rem;
-  top: 10rem;
-  bottom: 0;
-  background-color: #ffa03f;
-  border-right: 50px solid #ffa03f;
-  box-shadow: 4px 0 5px rgba(0, 0, 0, 0.2);
-  z-index: 10000000;
-}
-
-.newNav:after {
-  position: absolute;
-  content: " ";
-  width: 0;
-  height: 0;
-  right: -70px;
-  top: 50%;
-  border-width: 15px 10px;
-  border-style: solid;
-  border-color: transparent transparent transparent #ffa03f;
-}
-
-.newNav .offer {
-  display: block;
-  justify-content: flex-end;
-  width: 100%;
-  list-style-type: none;
-  margin: 0;
-  padding: 1rem;
-}
-
-.offer-heading {
-  margin-top: 2rem;
-  font-size: 2rem;
-  padding: 2rem;
-}
-
-.offer-content {
-  font-size: 1.2rem;
-  padding: 1rem;
-}
-
-.offer-content b {
-  font-size: 2rem;
+  margin-left: -1rem;
 }
 
 .menu-btn {
@@ -526,9 +530,11 @@ margin-left: -1rem;
   cursor: pointer;
 }
 
-
 /*responsive*/
 @media (max-width: 850px) {
+  .hideonMobile {
+    display: none !important;
+  }
   nav li:first-child {
     font-size: 1.55rem;
     font-weight: 700;
@@ -577,12 +583,7 @@ margin-left: -1rem;
     padding: 0 1rem;
     width: 100%;
   }
-  .newNav {
-    display: none;
-  }
 }
-
-
 
 /* footer */
 .footer {
@@ -638,7 +639,7 @@ margin-left: -1rem;
   background-color: white;
   border: none;
 }
-.footer-copyright{
+.footer-copyright {
   margin-bottom: 40px;
 }
 
@@ -700,24 +701,22 @@ margin-left: -1rem;
     text-align: center;
   }
 }
-@media (max-width: 765px){
-  .para_content{
+@media (max-width: 765px) {
+  .para_content {
     display: none;
   }
-  
-  
 }
 a {
   text-decoration: none;
   color: inherit;
 }
-.footer-content-center ul{
+.footer-content-center ul {
   padding-inline-start: 0;
 }
-.footer-content-right ul{
+.footer-content-right ul {
   padding-inline-start: 0;
 }
-hr{
+hr {
   margin-bottom: 30px;
   margin-top: 5px;
   width: 100%;

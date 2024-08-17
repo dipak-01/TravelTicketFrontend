@@ -16,7 +16,7 @@
       referrerpolicy="no-referrer"
     />
   </head>
-  <body>
+  <body class="body">
     <div class="child">
       <main id="main">
         <!-- navbar -->
@@ -36,6 +36,11 @@
             <li>
               <a href="/TravelTicketFrontend/public/pages/contact.html"
                 >Contact</a
+              >
+            </li>
+            <li id="profile">
+              <a href="/TravelTicketFrontend/public/pages/profile.html"
+                >Profile</a
               >
             </li>
           </ul>
@@ -61,6 +66,11 @@
                 >Contact</a
               >
             </li>
+            <li class="hideonMobile" id="profile">
+              <a href="/TravelTicketFrontend/public/pages/profile.html"
+                ><i class="fa-solid fa-user"></i
+              ></a>
+            </li>
             <li class="menu-btn" onclick="showSidebar()">
               <a><i class="fa-solid fa-bars-staggered"></i></a>
             </li>
@@ -72,10 +82,10 @@
         <hr />
         <form class="searchbar">
           <input type="text" id="searchLocation" placeholder="Gwalior" />
-          <input type="number" id="searchPrice" placeholder="&#8377; 2000" />
           <button id="search-btn" type="submit">
             <i class="fa-solid fa-magnifying-glass"></i>
           </button>
+          <button id="cross-btn"></button>
         </form>
 
         <div class="row"></div>
@@ -152,6 +162,7 @@
         </p>
       </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
     <script src="/TravelTicketFrontend/public/scripts/packages.js"></script>
   </body>
