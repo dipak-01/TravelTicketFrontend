@@ -7,8 +7,9 @@
 /* General Styles */
 body {
   width: 100%;
-  font-family: Arial, sans-serif;
+  font-family: Inter !important;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 .child {
   width: 100%;
@@ -30,6 +31,8 @@ main {
   justify-content: center;
   gap: 2rem;
   padding-top: 3rem;
+  /* Add animation for content loading */
+  animation: fadeIn 1s ease-in-out;
 }
 .row > div {
   width: 400px;
@@ -79,7 +82,30 @@ main {
   font-size: 16px;
   margin-bottom: 15px;
 }
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 10px 10px 20px rgb(255, 160, 63, 0.8);
+  cursor: pointer;
+}
 
+.card:hover .card-body {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 10px 10px 20px rgb(255, 160, 63, 0.8);
+}
+
+.card:hover .card-body h2 {
+  color: #ffa03f;
+}
+
+.card:hover .card-body p {
+  color: #333;
+}
+
+.card {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
 /*search bar*/
 .searchbar {
   margin-top: 20px;
@@ -116,7 +142,27 @@ main {
   border: none;
   cursor: pointer;
 }
+#cross-btn {
+  background-color: transparent;
+  border: none;
+  padding: 10px;
+  margin-left: 10px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background-color 0.3s ease-in-out;
+}
 
+#cross-btn:hover {
+  background-color: #ccc;
+  transition: background-color 0.3s ease-in-out;
+}
+
+#cross-btn i {
+  font-size: 18px;
+  color: #666;
+}
 /*Pagination*/
 .page-container {
   margin-top: 20px;
@@ -187,6 +233,50 @@ main {
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   scrollbar-width: none;
+}
+
+/* Loader */
+.loader {
+  height: 100%;
+  width: 100%;
+  background-color: #000;
+  position: fixed;
+  z-index: 100000000;
+  top: 0;
+  transition: all ease 0.7s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 0;
+}
+
+.loader h1 {
+  font-size: 4vw;
+  color: transparent;
+  background: linear-gradient(to right, orange, orangered);
+  background-clip: text;
+  -webkit-background-clip: text;
+  position: absolute;
+  opacity: 0;
+  animation-name: pulse;
+  animation-duration: 3s;
+  animation-delay: 0.5s;
+  animation-timing-function: linear;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 @media only screen and (min-width: 1030px) and (max-width: 1350px) {
@@ -613,9 +703,13 @@ ul.main-nav {
 }
 
 .footer-content-left p {
+  margin-top: 0px;
   font-size: 16px;
+  line-height: 24px;
 }
-
+.footer h1 {
+  font-size: 24px;
+}
 .footer-content-left li,
 .footer-content-right li,
 .footer-content-center li {
@@ -627,10 +721,28 @@ ul.main-nav {
 .footer-content-right h2,
 .footer-content-center h2 {
   color: white;
+  font-size: 24px;
 }
-.footer-social-icons img {
-  width: 50px;
-  margin-right: 25px;
+.footer-social-icons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.icon-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.icon-container img {
+  width: 30px;
+  height: 30px;
+  margin-bottom: 5px;
+}
+
+.icon-container span {
+  font-size: 14px;
 }
 .footer hr {
   width: 100%;
@@ -680,7 +792,6 @@ ul.main-nav {
     font-size: 20px;
   }
   .footer-social-icons img {
-    width: 50px;
     margin-right: 25px;
   }
   .footer hr {
@@ -717,8 +828,7 @@ a {
   padding-inline-start: 0;
 }
 hr {
-  margin-bottom: 30px;
-  margin-top: 5px;
+  margin-bottom: 10px;
   width: 100%;
   opacity: 0.5;
 }

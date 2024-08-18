@@ -13,7 +13,7 @@ if (packageId) {
 
       const packageDetailsHtml = `
       <div class="img">
-        <img src="${packageData.image.url}" alt="img" />
+            <img src="${packageData.image.url}" alt="img" />
       </div>
       <div class="details">
       <div>
@@ -22,7 +22,7 @@ if (packageId) {
         <p><span>Location:</span> ${packageData.location}</p>
         <p><span>Country:</span> ${packageData.country}</p>
         <p><span>Price:</span> &#8377;${packageData.price}/ night</p>
-        <p class="des">${packageData.description}</p>
+        <p class="des"><i>${packageData.description}</i></p>
         </div>
       </div>
       
@@ -50,7 +50,6 @@ if (packageId) {
   alert("Invalid Package selected");
   window.location.href = "/TravelTicketFrontend/public/pages/packages.html";
 }
-
 
 //navbar
 function showSidebar() {

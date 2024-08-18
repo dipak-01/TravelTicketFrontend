@@ -195,6 +195,11 @@ main {
   border-radius: 8px;
   cursor: pointer;
 }
+#remove-promo-code {
+  width: 60px;
+  margin: 10px;
+  border-radius: 50%;
+}
 
 .cart-items {
   display: flex;
@@ -300,6 +305,7 @@ main {
 }
 .place-order-left .title {
   font-size: 25px;
+  margin-bottom: 15px;
   font-weight: 700;
 }
 .place-order-left input {
@@ -317,6 +323,7 @@ main {
 }
 .place-order-right {
   width: 90%;
+  margin-bottom: 15px;
   padding-right: 2rem;
 }
 .place-order .cart-total .submit {

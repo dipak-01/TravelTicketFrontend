@@ -1,5 +1,14 @@
 document.addEventListener("DOMContentLoaded", function () {
   checkLoggedIn();
+  let loader = document.querySelector(".loader");
+  document.body.style.overflowY = "hidden";
+  // Fetch data and remove loader after rendering
+  fetchData().then(() => {
+    setTimeout(() => {
+      loader.style.left = "-100%";
+      document.body.style.overflowY = "";
+    }, 1500);
+  });
 });
 
 // Fetch token from cookies
@@ -49,8 +58,11 @@ function hideSidebar() {
 }
 
 //seach bar functionality
+let searchButtonClicked = false;
+
 const searchBar = document.getElementById("searchLocation");
 const searchButton = document.getElementById("search-btn");
+const paginationPage = document.querySelector(".pagination");
 let locationSearch = "";
 
 searchBar.addEventListener("keyup", (event) => {
@@ -59,7 +71,8 @@ searchBar.addEventListener("keyup", (event) => {
 
 searchButton.addEventListener("click", async (event) => {
   event.preventDefault();
-
+  searchButtonClicked = true;
+  paginationPage.style.display = "none";
   try {
     const response = await axios.get(
       `https://travel-ticket-backend.onrender.com/api/package/filter`,
@@ -83,7 +96,7 @@ function renderSearchData(packages) {
     const packageHtml = `
         <a href="/TravelTicketFrontend/public/pages/package-detail.html?id=${packageItem._id}" class="listing-link">
           <div class="card">
-            <img src="${packageItem.image.url}" class="card-img" alt="..." />
+            <img src="${packageItem.image.url}" class="card-img" alt="..."/>
             <div class="card-body">
               <h2 class="card-title">${packageItem.title}</h2>
               <p class="card-text">${packageItem.location}</p>
@@ -149,22 +162,23 @@ function prevactive() {
   fetchData();
 }
 
-function fetchData() {
-  axios
-    .get("https://travel-ticket-backend.onrender.com/api/package/listings", {
-      params: {
-        page: page,
-        limit: 9,
-      },
-    })
-    .then((response) => {
-      packages = response.data.results;
-      totalPages = response.data.totalPages;
-      renderData();
-    })
-    .catch((error) => {
-      console.error(error);
-    });
+async function fetchData() {
+  try {
+    const response = await axios.get(
+      "https://travel-ticket-backend.onrender.com/api/package/listings",
+      {
+        params: {
+          page: page,
+          limit: 9,
+        },
+      }
+    );
+    packages = response.data.results;
+    totalPages = response.data.totalPages;
+    renderData();
+  } catch (error) {
+    console.error(error);
+  }
 }
 
 function renderData() {
@@ -175,7 +189,7 @@ function renderData() {
     const packageHtml = `
         <a href="/TravelTicketFrontend/public/pages/package-detail.html?id=${packageItem._id}" class="listing-link">
           <div class="card">
-            <img src="${packageItem.image.url}" class="card-img" alt="..." />
+            <img src="${packageItem.image.url}" class="card-img" alt="..."/>
             <div class="card-body">
               <h2 class="card-title">${packageItem.title}</h2>
               <p class="card-text">${packageItem.location}</p>
@@ -253,5 +267,14 @@ nextButton.addEventListener("click", () => {
     pageCarousel.scrollLeft += linkWidth * 1.8;
   } else {
     pageCarousel.scrollLeft += linkWidth * 2;
+  }
+});
+
+document.getElementById("cross-btn").addEventListener("click", function () {
+  if (searchButtonClicked) {
+    document.getElementById("searchLocation").value = "";
+    paginationPage.style.display = "block";
+    window.location.reload();
+    searchButtonClicked = false;
   }
 });

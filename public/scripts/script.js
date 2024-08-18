@@ -1,7 +1,16 @@
+let loggedIn = false;
+let textChanged = false;
+let textChangeTimeout;
+
 document.addEventListener("DOMContentLoaded", function () {
   checkLoggedIn();
+  let loader = document.querySelector(".loader");
+  document.body.style.overflowY = "hidden";
+  setTimeout(() => {
+    loader.style.top = "-100%";
+    document.body.style.overflowY = "";
+  }, 4500);
 });
-
 // Fetch token from cookies
 const token = Cookies.get("token");
 
@@ -19,6 +28,7 @@ async function checkLoggedIn() {
 
     if (response.data.loggedIn) {
       // Show logged in UI elements
+      loggedIn = true;
       document.querySelectorAll("[id='logout-btn']").forEach((element) => {
         element.style.display = "block";
       });

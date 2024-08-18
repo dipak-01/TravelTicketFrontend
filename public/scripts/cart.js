@@ -78,7 +78,7 @@ document.querySelectorAll("[id='logout-btn']").forEach((element) => {
 function showSidebar() {
   const sidebar = document.querySelector(".sidebar");
   sidebar.classList.add("show");
-  const body = document.querySelector(".body");
+  const body = document.getElementById("body");
   body.style.overflow = "hidden";
   document.querySelectorAll("hideonMobile").forEach((element) => {
     element.style.display = "none";
@@ -88,7 +88,7 @@ function showSidebar() {
 function hideSidebar() {
   const sidebar = document.querySelector(".sidebar");
   sidebar.classList.remove("show");
-  const body = document.querySelector(".body");
+  const body = document.getElementById("body");
   body.style.overflow = "";
 }
 
@@ -104,6 +104,11 @@ if (!token) {
     const journeySelect = document.getElementById("journey-duration");
     const journeyDateInput = document.getElementById("journey-date");
 
+    const today = new Date();
+    const minDate = today.toISOString().split("T")[0];
+
+    journeyDateInput.min = minDate;
+
     for (let i = 1; i <= 15; i++) {
       const option = document.createElement("option");
       option.value = i;
@@ -114,6 +119,7 @@ if (!token) {
       }
       journeySelect.appendChild(option);
     }
+
     let basePrice = 0;
     let totalAmount = 0;
 
@@ -143,7 +149,32 @@ if (!token) {
         console.error(error);
       });
 
+    //Total Calculation
+    function updateTotal() {
+      const journeyDuration = parseInt(
+        document.getElementById("journey-duration").value
+      );
+      const subTotal = journeyDuration * basePrice;
+      const travelExpenses = 2000;
+      let totalAmount = subTotal + travelExpenses + 300;
+
+      if (promoCodeApplied) {
+        discountAmount = parseInt(totalAmount * discountPercentage) / 100;
+        totalAmount -= discountAmount;
+      }
+
+      document.getElementById("sub-total").innerHTML = `&#8377;${subTotal}`;
+      document.getElementById(
+        "travel-expenses"
+      ).innerHTML = `&#8377;${travelExpenses}`;
+      document.getElementById(
+        "total-amount"
+      ).innerHTML = `&#8377;${totalAmount}`;
+    }
+
     //promo code implementation
+    let promoCodeApplied = false;
+
     const promoCodeInput = document.getElementById("promo-code");
     const applyPromoCodeButton = document.getElementById("apply-promo");
     let promoCode = "";
@@ -154,14 +185,21 @@ if (!token) {
       promoCodeInput.style.boxShadow = "";
       applyPromoCodeButton.disabled = false;
       applyPromoCodeButton.style.opacity = 1;
-      const subTotal = basePrice;
-      document.getElementById("sub-total").innerHTML = `&#8377;${subTotal}`;
-      totalAmount = subTotal + 2000 + 300;
-      document.getElementById(
-        "total-amount"
-      ).innerHTML = `&#8377;${totalAmount}`;
+      promoCodeApplied = false;
+      promoCode = "";
+      discountPercentage = 0;
+      discountAmount = 0;
+      updateTotal();
       document.getElementById("promo-code-message").innerHTML = "";
     }
+
+    promoCodeInput.addEventListener("input", () => {
+      if (!promoCodeApplied) {
+        resetPromoCodeDiv();
+      }
+    });
+
+    let discountPercentage = 0;
 
     applyPromoCodeButton.addEventListener("click", async () => {
       const inputPromoCode = promoCodeInput.value.trim();
@@ -175,10 +213,22 @@ if (!token) {
             }
           );
           if (response.data.success) {
+            promoCodeApplied = true;
             promoCode = inputPromoCode;
-            const discountPercentage = response.data.discountPercentage;
-            discountAmount = (totalAmount * discountPercentage) / 100;
-            totalAmount -= discountAmount;
+            discountPercentage = response.data.discountPercentage;
+            const totalAmountBeforeDiscount = parseInt(
+              document
+                .getElementById("total-amount")
+                .textContent.replace(/[^0-9]/g, "")
+            );
+            console.log(totalAmountBeforeDiscount);
+
+            discountAmount =
+              parseInt(totalAmountBeforeDiscount * discountPercentage) / 100;
+            console.log(discountAmount);
+            updateTotal();
+            totalAmount = totalAmountBeforeDiscount - discountAmount;
+            console.log(totalAmount);
             document.getElementById(
               "total-amount"
             ).innerHTML = `&#8377;${totalAmount}`;
@@ -190,10 +240,11 @@ if (!token) {
               "promo-code-message"
             ).innerHTML = `Promo code applied! You got a ${discountPercentage}% discount.`;
             document.getElementById("promo-code-message").style.color = "green";
-            applyPromoCodeButton.disabled = true;
+            // applyPromoCodeButton.disabled = true;
             applyPromoCodeButton.style.opacity = 0.5;
           } else {
             alert(response.data.message);
+            promoCodeApplied = false;
             resetPromoCodeDiv();
           }
         } catch (error) {
@@ -205,30 +256,22 @@ if (!token) {
       }
     });
 
-    promoCodeInput.addEventListener("input", () => {
-      resetPromoCodeDiv();
-    });
+    promoCodeInput.addEventListener("click", resetPromoCodeDiv);
 
-    //Total Calculation
-    function updateTotal() {
-      const journeyDuration = parseInt(
-        document.getElementById("journey-duration").value
-      );
-      const subTotal = journeyDuration * basePrice;
-      const travelExpenses = 2000;
-      totalAmount = subTotal + travelExpenses + 300 - discountAmount;
-      document.getElementById("sub-total").innerHTML = `&#8377;${subTotal}`;
-      document.getElementById(
-        "travel-expenses"
-      ).innerHTML = `&#8377;${travelExpenses}`;
-      document.getElementById(
-        "total-amount"
-      ).innerHTML = `&#8377;${totalAmount}`;
-    }
+    document
+      .getElementById("remove-promo-code")
+      .addEventListener("click", () => {
+        resetPromoCodeDiv();
+        promoCodeInput.value = "";
+      });
 
     document
       .getElementById("journey-duration")
-      .addEventListener("change", updateTotal);
+      .addEventListener("change", function () {
+        //resetPromoCodeDiv();
+        // promoCodeApplied = false;
+        updateTotal();
+      });
 
     const form = document.querySelector(".place-order");
 

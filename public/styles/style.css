@@ -14,6 +14,7 @@ body {
   scroll-behavior: smooth;
   background-color: #fff;
 }
+
 main {
   width: 100%;
   max-width: 1420px;
@@ -996,12 +997,11 @@ nav li .toor {
   flex-direction: column;
   align-items: center;
   gap: 30px;
-  padding: 30px 9vw;
-  padding-top: 90px;
-  margin-top: 100px;
+  padding-top: 60px;
+  margin-top: 60px;
 }
 .footer-content {
-  width: 100%;
+  width: 90%;
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
   gap: 90px;
@@ -1016,9 +1016,13 @@ nav li .toor {
 }
 
 .footer-content-left p {
+  margin-top: 0px;
   font-size: 16px;
+  line-height: 24px;
 }
-
+.footer h1 {
+  font-size: 24px;
+}
 .footer-content-left li,
 .footer-content-right li,
 .footer-content-center li {
@@ -1030,17 +1034,116 @@ nav li .toor {
 .footer-content-right h2,
 .footer-content-center h2 {
   color: white;
+  font-size: 24px;
 }
-.footer-social-icons img {
-  width: 50px;
-  margin-right: 25px;
+.footer-social-icons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.icon-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.icon-container img {
+  width: 30px;
+  height: 30px;
+  margin-bottom: 5px;
+}
+
+.icon-container span {
+  font-size: 14px;
 }
 .footer hr {
   width: 100%;
   height: 2px;
-  margin: 20px 0px;
+  margin: 10px 0px;
   background-color: white;
   border: none;
+}
+.footer-copyright {
+  margin-bottom: 40px;
+}
+
+/*responsive styles for footer*/
+@media (max-width: 800px) {
+  .footer {
+    gap: 20px;
+    padding-top: 90px;
+    margin-top: 50px;
+  }
+  .footer-content {
+    gap: 60px;
+  }
+  .footer-content-left,
+  .footer-content-right,
+  .footer-content-center {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 30px;
+  }
+
+  .footer-content-left p {
+    font-size: 14px;
+  }
+
+  .footer-content-left li,
+  .footer-content-right li,
+  .footer-content-center li {
+    list-style: none;
+    margin-bottom: 30px;
+    cursor: pointer;
+  }
+  .footer-content-left h2,
+  .footer-content-right h2,
+  .footer-content-center h2 {
+    color: white;
+    font-size: 20px;
+  }
+  .footer-social-icons img {
+    margin-right: 25px;
+  }
+  .footer hr {
+    width: 100%;
+    height: 2px;
+    margin: 20px 0px;
+    background-color: white;
+    border: none;
+  }
+}
+@media (max-width: 750px) {
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+  }
+  .footer-copyright {
+    text-align: center;
+  }
+}
+@media (max-width: 765px) {
+  .para_content {
+    display: none;
+  }
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.footer-content-center ul {
+  padding-inline-start: 0;
+}
+.footer-content-right ul {
+  padding-inline-start: 0;
+}
+hr {
+  margin-bottom: 10px;
+  width: 100%;
+  opacity: 0.5;
 }
 
 /*responsive*/
@@ -1989,8 +2092,22 @@ nav li .toor {
     width: 220px;
   }
   .carousel .card .img {
-    height: 300px;
+    margin-top: -1rem;
+    height: 150px;
   }
+  .carousel .card .rating {
+    margin-top: 7rem;
+  }
+  .carousel .card h2 {
+    margin-top: 10px;
+  }
+  .carousel .card p {
+    margin-top: 5px;
+  }
+  .carousel .card .icons {
+    margin-top: 20px;
+  }
+
   .review-wrapper .review-carousel {
     grid-auto-columns: calc((100% / 1));
   }
@@ -2752,71 +2869,6 @@ nav li .toor {
   }
 }
 
-/*responsive styles for footer*/
-@media (max-width: 800px) {
-  .footer {
-    gap: 20px;
-    padding: 20px 6vw;
-    padding-top: 90px;
-    margin-top: 50px;
-  }
-  .footer-content {
-    gap: 60px;
-  }
-  .footer-content-left,
-  .footer-content-right,
-  .footer-content-center {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    gap: 30px;
-  }
-
-  .footer-content-left p {
-    font-size: 14px;
-  }
-
-  .footer-content-left li,
-  .footer-content-right li,
-  .footer-content-center li {
-    list-style: none;
-    margin-bottom: 30px;
-    cursor: pointer;
-  }
-  .footer-content-left h2,
-  .footer-content-right h2,
-  .footer-content-center h2 {
-    color: white;
-    font-size: 20px;
-  }
-  .footer-social-icons img {
-    width: 50px;
-    margin-right: 25px;
-  }
-  .footer hr {
-    width: 100%;
-    height: 2px;
-    margin: 20px 0px;
-    background-color: white;
-    border: none;
-  }
-}
-@media (max-width: 750px) {
-  .footer-content {
-    display: flex;
-    flex-direction: column;
-    gap: 35px;
-  }
-  .footer-copyright {
-    text-align: center;
-  }
-}
-@media (max-width: 765px) {
-  .para_content {
-    display: none;
-  }
-}
-
 @import url("https://fonts.googleapis.com/css?family=Mukta:700");
 
 :root {
@@ -2990,4 +3042,55 @@ button.learn-more:hover .button-text {
   height: auto;
   width: 70px;
   max-width: 100%;
+}
+
+/* Loader */
+
+.loader {
+  height: 100%;
+  width: 100%;
+  background-color: #000;
+  position: fixed;
+  z-index: 100000000;
+  top: 0;
+  transition: all ease 0.7s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 0;
+}
+
+.loader h1 {
+  font-size: 4vw;
+  color: transparent;
+  background: linear-gradient(to right, orange, orangered);
+  background-clip: text;
+  -webkit-background-clip: text;
+  position: absolute;
+  opacity: 0;
+  animation-name: load;
+  animation-duration: 1s;
+  animation-delay: 1s;
+  animation-timing-function: linear;
+}
+.loader h1:nth-child(2) {
+  animation-delay: 2s;
+}
+.loader h1:nth-child(3) {
+  animation-delay: 3s;
+}
+
+@keyframes load {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }

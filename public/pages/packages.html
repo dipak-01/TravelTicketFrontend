@@ -15,8 +15,15 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body class="body">
+    <div class="loader">
+      <h1>Loading...</h1>
+    </div>
     <div class="child">
       <main id="main">
         <!-- navbar -->
@@ -85,7 +92,9 @@
           <button id="search-btn" type="submit">
             <i class="fa-solid fa-magnifying-glass"></i>
           </button>
-          <button id="cross-btn"></button>
+          <button id="cross-btn" type="button">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
         </form>
 
         <div class="row"></div>
@@ -112,15 +121,27 @@
           <div class="footer-content-left">
             <h1>TravelToor</h1>
             <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-              Voluptatum, tenetur reprehenderit suscipit a sit ad ullam, debitis
-              inventore iure totam corrupti optio adipisci accusantium nostrum
-              perferendis vitae soluta asperiores? Sapiente.
+              At TravelToor, we believe that travel should be a transformative
+              experience that broadens your horizons and enriches your life. Our
+              mission is to provide exceptional travel experiences that exceed
+              your expectations, while also promoting cultural understanding and
+              environmental sustainability.Whether you're a seasoned traveler or
+              embarking on your first journey.
             </p>
             <div class="footer-social-icons">
-              <img src="../../assets/facebook_icon.png" alt="" />
-              <img src="../../assets/linkedin_icon.png" alt="" />
-              <img src="../../assets/twitter_icon.png" alt="" />
+              <div class="icon-container">
+                <a
+                  href="https://github.com/akashtripathi12/TravelTicketFrontend"
+                  ><img src="../../assets/github-logo.png" alt=""
+                /></a>
+                <span>Frontend</span>
+              </div>
+              <div class="icon-container">
+                <a href="https://github.com/akashtripathi12/TravelTicketBackend"
+                  ><img src="../../assets/github-logo.png" alt=""
+                /></a>
+                <span>Backend</span>
+              </div>
             </div>
           </div>
           <div class="footer-content-center">
