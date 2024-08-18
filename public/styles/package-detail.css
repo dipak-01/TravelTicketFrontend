@@ -63,6 +63,7 @@ button {
   outline: none;
   border: none;
   color: aliceblue;
+  cursor: pointer;
   background-color: #ffa03f;
   font-size: 16px;
   font-weight: 600;
